@@ -19,7 +19,7 @@ class StatFileGenerator
 	attr_accessor :stat
 	def initialize
 		@file = FileSys.new()
-		@filename = "stat.stat"
+		@filename = "stat.yml"
 		@stat = stat
 		check()
 	end
@@ -31,8 +31,17 @@ class StatFileGenerator
 		end
 	end
 	def create
-		data = { 
-		'1' => ["player",0] 
+		data = {
+		'1' => ["player",0] ,
+		'2' => ["player",0] ,
+		'3' => ["player",0] ,
+		'4' => ["player",0] ,
+		'5' => ["player",0] ,
+		'6' => ["player",0] ,
+		'7' => ["player",0] ,
+		'8' => ["player",0] ,
+		'9' => ["player",0] ,
+		'10' => ["player",0] ,
 		}
 		@file.yaml_write(data , @filename)
 		@stat = @file.yaml_read(@filename)
