@@ -21,7 +21,7 @@ class Starter
 		@main = Main.new
 		@main.screen_set(800,600)
 		@main.fgcolor =[300,200,300]
-		@main.bgcolor =[400,400,400]
+		@main.bgcolor =[200,200,200]
 		@main.font_set("freesansbold.ttf",15)
 		@text = TextMode.new(@main)
 		@queue = MQueue.new(self,@main,@text)
