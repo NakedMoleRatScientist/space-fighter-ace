@@ -1,0 +1,56 @@
+Space Fighter Ace:
+
+Space Fighter Ace version 0.0.1 is an "Space Invader" style video game in which you kill enemies or they kill you.
+Copyright (C) 2006 Han Dao (wikipediankiba@gmail.com) and contributors.
+
+This readme file is intended only for version 0.0.1 and no later version of this game.
+The website of Space Fighter Ace is http://spaceshooter.rubyforge.org and the project page of Space Fighter Ace is http://www.rubyforge.org/projects/spaceshooter
+
+==INSTALLION==
+
+You simply download the game, unzip the file to a desired location, install dependencies if any, and then click on spacefighterace.rb to play the game.
+
+==DEPENDENCIES==
+All version require the Ruby interpreter to run.
+
+The dependency RbGooey come with all download version of SpaceFighterAce due to the library's inmaturity and the fact it is still in early developments. 
+
+Source file: File name is spacefighterace-source-0.0.1.tar.bzip
+
+As for the dependency, Rubygame: 
+rubygame DLL is available only for window-source of SpaceFighterAce. File name is spacefighterace-window-source-0.0.1.tar.bzip
+
+However, for linux and mac users, they need to install Rubygame themsleves. So they will just get the spacefighterace-source-0.0.1.tar.bzip
+
+Websites of dependency:
+
+ruby http://ruby-lang.org
+rubygame http://rubygame.infogami.com
+
+==Playing==
+
+When playing the game....
+
+Key:
+
+s - to stop motion of the spacecraft
+arrow key right - change the motion to move right
+arrow key left - change the motion to move left
+space - shoot rockets
+==LICENSE==
+
+The Space Fighter Ace source code is copyright (C) 2006 Han Dao and contributors.
+
+Space Fighter Ace is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+
+Space Fighter Ace is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Dynpet; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
