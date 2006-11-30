@@ -31,18 +31,12 @@ class StatFileGenerator
 		end
 	end
 	def create
-		data = {
-		'1' => ["player",0] ,
-		'2' => ["player",0] ,
-		'3' => ["player",0] ,
-		'4' => ["player",0] ,
-		'5' => ["player",0] ,
-		'6' => ["player",0] ,
-		'7' => ["player",0] ,
-		'8' => ["player",0] ,
-		'9' => ["player",0] ,
-		'10' => ["player",0] ,
-		}
+		data = []
+		count = 1
+		10.times do 
+			data << ["player#{count.to_s}",0]
+			count +=1
+		end
 		@file.yaml_write(data , @filename)
 		@stat = @file.yaml_read(@filename)
 	end
