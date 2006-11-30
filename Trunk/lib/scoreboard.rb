@@ -47,7 +47,7 @@ class Scoreboard
 		change = compare()
 		if Integer === change
 			@stat.stat[change][1] = @points
-			n = change +=1
+			n = change + 1
 			@text.clear()
 			@text.add("You broke record with #{points.to_s}! The ranking you beat is #{n.to_s}.")
 			@text.add("Time to name the player! After the naming process, we take you to the scoreboard.")
