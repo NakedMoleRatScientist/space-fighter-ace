@@ -15,12 +15,12 @@ All version require the Ruby interpreter to run.
 
 The dependency RbGooey come with all download version of SpaceFighterAce due to the library's inmaturity and the fact it is still in early developments. 
 
-Source file: File name is spacefighterace-source-0.0.1.tar.bzip
+Source file: File name is spacefighterace-source-0.0.1.tar.bz2
 
 As for the dependency, Rubygame: 
-rubygame DLL is available only for window-source of SpaceFighterAce. File name is spacefighterace-window-source-0.0.1.tar.bzip
+rubygame DLL is available only for window-source of SpaceFighterAce. File name is spacefighterace-window-source-0.0.1.tar.bz2
 
-However, for linux and mac users, they need to install Rubygame themsleves. So they will just get the spacefighterace-source-0.0.1.tar.bzip
+However, for linux and mac users, they need to install Rubygame themsleves. So they will just get the spacefighterace-source-0.0.1.tar.bz2
 
 Websites of dependency:
 
