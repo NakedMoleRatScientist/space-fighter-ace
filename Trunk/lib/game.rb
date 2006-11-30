@@ -64,7 +64,7 @@ class Controller
 		determine = @delete.detect()
 		if determine == false
 			@text.textrender.background_cleanup(800,600)
-			@point.render()
+			@point.gameover()
 			exit
 		end
 	end

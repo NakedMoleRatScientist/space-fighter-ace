@@ -22,9 +22,8 @@ class Scoreboard
 		@main = main
 		@game = game
 		@text = TextMode.new(@main)
-		@queue = MQueue.new(self,@main,@text)
-		@queue.mouse.name("cursor.png")
 		@points = points
+		@stat = StatFileGenerator.new
 		setup()
 	end
 	def setup
@@ -34,20 +33,50 @@ class Scoreboard
 		@points += 1
 		@game.scoreboard()
 	end
-	def render
-		@text.clear()
-		@text.add("You scored #{@points.to_s}!")
-		@text.add("Press this to continue!")
-		@text.size=(20)
-		@text.pos(200,200)
-		@text.active()
-		@text.textrender.render_text()
-		@queue.queue(@text,"move")
-	end
-	def move activate
-		case activate
-			when 1
-				GameOver.new(@main)
+	def compare
+		score = 0
+		@stat.stat.each do |previous|
+			if @points > previous[1]
+				return score
+			end
+			score += 1
 		end
+		return false
+	end
+	def gameover
+		change = compare()
+		if Integer === change
+			@stat.stat[change][1] = @points
+			n = change +=1
+			@text.clear()
+			@text.add("You broke record with #{points.to_s}! The ranking you beat is #{n.to_s}.")
+			@text.add("Time to name the player! After the naming process, we take you to the scoreboard.")
+			@text.add("Please type your name.")
+			@text.textrender.render_text()
+			input = @text.textinput.input()
+			@stat.stat[change][0] = input
+			@stat.save()
+			scoreboard()
+		else
+			@text.clear()
+			@text.add("You scored #{@points.to_s}. However you failed to make the highscore.")
+			@text.add("To continue to the scoreboard, type anything and enter in the keyboard.")
+			@text.textrender.render_text()
+			@text.textinput.input()
+			scoreboard()
+		end
+	end
+	def scoreboard
+		@text.clear()
+		@text.add("Current ranking!")
+		n = 1
+		@stat.stat.each do |stat|
+			@text.add("#{n.to_s}. #{stat[0]} , #{stat[1].to_s}")
+			n +=1
+		end
+		@text.add("type anything and enter the keyboard to continue to the post game menu.")
+		@text.textrender.render_text()
+		@text.textinput.input()
+		GameOver.new(@main)
 	end
 end
