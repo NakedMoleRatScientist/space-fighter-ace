@@ -50,7 +50,7 @@ class Controller
 						end
 				end
 			end
-			@warrior(x)
+			@warrior.pos(x)
 			execute()
 		end
 	end
