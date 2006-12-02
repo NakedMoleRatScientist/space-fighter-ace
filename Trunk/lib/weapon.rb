@@ -26,7 +26,7 @@ class Weapon
 		return @rect
 	end
 	def generate x , y , status = false
-		@rect << Rect.new(x,y,*@image.size)
+		@rect << Rect.new(x,y,10,10)
 		@status << status
 	end
 	def movement

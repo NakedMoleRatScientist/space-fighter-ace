@@ -33,8 +33,8 @@ class Enemy
 			end
 		end
 	end
-	def generate x , y
-		@rect << Rect.new(x,y,*@image.size)
+	def generate x 
+		@rect << Rect.new(x,0,50,50)
 	end
 	def movement
 		number = 0

@@ -50,13 +50,13 @@ class Controller
 						end
 				end
 			end
-			execute(x)
+			@warrior(x)
+			execute()
 		end
 	end
-	def execute x
+	def execute 
 		@main.screen.flip()
 		@main.screen_clear()
-		@warrior.pos(x)
 		@warrior.draw(@main.screen)
 		@weapon.movement()
 		@weapon.draw(@main.screen)
@@ -70,7 +70,7 @@ class Controller
 	end
 	def enemy
 		if rand(51) == 0
-			@target.generate(rand(801),0)
+			@target.generate(rand(801))
 		end
 		if rand(21) == 0
 			x , y = @target.return
