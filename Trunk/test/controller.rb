@@ -14,7 +14,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #This is a benchmark test.
-class Altcontroller
+class Controller
 	def initialize main
 		@main = main
 		@warrior = Fighter.new

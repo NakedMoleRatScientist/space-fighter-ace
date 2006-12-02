@@ -13,12 +13,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-#This is the game SpaceFighterAce
-#You can contact the author at wikipediankiba@gmail.com
+#This is a benchmark test.
 require 'rubygame'
 require 'RbGooey'
 require 'yaml'
-require "lib/game.rb"
 require "lib/starter.rb"
 require "lib/fighter.rb"
 require "lib/enemy.rb"
@@ -29,6 +27,7 @@ require "lib/scoreboard.rb"
 require "lib/file.rb"
 require "lib/boardgenerator.rb"
 require "test/alt_game.rb"
+require "test/controller.rb"
 require "benchmark"
 include Benchmark
 include Rubygame
@@ -45,35 +44,37 @@ class BenchTest
 		test()
 	end
 	def test()
-		bm(12) do |test|
+		bmbm(12) do |test|
 			test.report("test1:") do
 				Controller.new(@main)
 			end
-			test.report("test2") do
+			test.report("test2:") do
 				Controller.new(@main)
 			end
-			test.report("test3") do
+			test.report("test3:") do
 				Controller.new(@main)
 			end
-			test.report("test4") do
+			test.report("test4:") do
 				Controller.new(@main)
 			end
-			test.report("test5") do
+			test.report("test5:") do
 				Altcontroller.new(@main)
 			end
-			test.report("alt-test1") do
+		end
+		bmbm(12) do |test|
+			test.report("alt-test1:") do
 				Altcontroller.new(@main)
 			end
-			test.report("alt-test2") do
+			test.report("alt-test2:") do
 				Altcontroller.new(@main)
 			end
-			test.report("alt-test3") do
+			test.report("alt-test3:") do
 				Altcontroller.new(@main)
 			end
-			test.report("alt-test4") do
+			test.report("alt-test4:") do
 				Altcontroller.new(@main)
 			end
-			test.report("alt-test5") do
+			test.report("alt-test5:") do
 				Altcontroller.new(@main)
 			end
 		end
