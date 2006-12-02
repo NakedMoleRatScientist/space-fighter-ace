@@ -33,7 +33,7 @@ class Starter
 		@text.size=(100)
 		@text.pos(300,200)
 		@text.active()
-		@text.textrender.render_text()
+		@text.render.render_text()
 		@queue.queue(@text,"start")
 	end
 	def start activate

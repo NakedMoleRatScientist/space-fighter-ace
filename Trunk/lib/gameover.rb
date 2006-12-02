@@ -30,7 +30,7 @@ class GameOver
 		@text.size=(70)
 		@text.pos(200,200)
 		@text.active()
-		@text.textrender.render_text()
+		@text.render.render_text()
 		@queue.queue(@text,"start")
 	end
 	def start activate

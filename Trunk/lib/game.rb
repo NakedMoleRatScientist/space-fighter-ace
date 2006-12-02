@@ -26,7 +26,7 @@ class Controller
 		@delete = CollideDetector.new(@weapon,@warrior,@target, @point)
 		@text = TextMode.new(@main)
 		@text.add("0")
-		@text.textrender.render_text(true)
+		@text.render.render_text(true)
 		controller()
 	end
 	def controller
@@ -55,7 +55,7 @@ class Controller
 	end
 	def execute x
 		@main.screen.flip()
-		@text.textrender.screen_clear()
+		@main.screen_clear()
 		@warrior.pos(x)
 		@warrior.draw(@main.screen)
 		@weapon.movement()
@@ -63,7 +63,7 @@ class Controller
 		enemy()
 		determine = @delete.detect()
 		if determine == false
-			@text.textrender.background_cleanup(800,600)
+			@main.background_cleanup(800,600)
 			@point.gameover()
 			exit
 		end
@@ -83,6 +83,6 @@ class Controller
 	end
 	def scoreboard
 		@text.text[0] = @point.points.to_s
-		@text.textrender.render_text(true)
+		@text.render.render_text(true)
 	end
 end

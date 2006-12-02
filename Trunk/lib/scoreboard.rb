@@ -52,8 +52,8 @@ class Scoreboard
 			@text.add("You broke record with #{points.to_s}! The ranking you beat is #{n.to_s}.")
 			@text.add("Time to name the player! After the naming process, we take you to the scoreboard.")
 			@text.add("Please type your name.")
-			@text.textrender.render_text()
-			input = @text.textinput.input()
+			@text.render.render_text()
+			input = @text.input.input()
 			@stat.stat[change][0] = input
 			@stat.save()
 			scoreboard()
@@ -61,8 +61,8 @@ class Scoreboard
 			@text.clear()
 			@text.add("You scored #{@points.to_s}. However you failed to make the highscore.")
 			@text.add("To continue to the scoreboard, type anything and enter in the keyboard.")
-			@text.textrender.render_text()
-			@text.textinput.input()
+			@text.render.render_text()
+			@text.input.input()
 			scoreboard()
 		end
 	end
@@ -75,8 +75,8 @@ class Scoreboard
 			n +=1
 		end
 		@text.add("type anything and enter the keyboard to continue to the post game menu.")
-		@text.textrender.render_text()
-		@text.textinput.input()
+		@text.render.render_text()
+		@text.input.input()
 		GameOver.new(@main)
 	end
 end
