@@ -10,10 +10,13 @@ The website of Space Fighter Ace is http://spaceshooter.rubyforge.org and the pr
 
 You simply download the game, unzip the file to a desired location, install dependencies if any, and then click on spacefighterace.rb to play the game.
 
+SPECIAL NOTES: For trunk, you will need to get the RbGooey dependency in Dynpet's SVN at http://sourceforge.net/projects/dynpet
+
+All the other dependencies and their website are listed below in the next section.
 ==DEPENDENCIES==
 All version require the Ruby interpreter to run.
 
-The dependency RbGooey come with all download version of SpaceFighterAce due to the library's inmaturity and the fact it is still in early developments. 
+The dependency RbGooey will come with all released version of SpaceFighterAce due to the library's inmaturity and the fact it is still in early developments. 
 
 Source file: File name is spacefighterace-source-0.0.1.tar.bz2
 
