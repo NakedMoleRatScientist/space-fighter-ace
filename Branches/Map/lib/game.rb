@@ -32,21 +32,16 @@ class Controller
 							when Rubygame::K_ESCAPE
 								exit
 							when Rubygame::K_LEFT
-								x = -3
 							when Rubygame::K_RIGHT
-								x = 3
 							when Rubygame::K_S
-								x = 0
 						end
 				end
-			end
-			@fighter.pos(x)
+			end			
 			execute()
 		end
 	end
 	def execute 
 		@main.screen.flip()
-		@main.screen_clear()
 		@fighter.draw(@main.screen)
 	end
 end

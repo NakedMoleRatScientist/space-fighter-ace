@@ -22,12 +22,7 @@ class Fighter
 	def initialize
 		super
 		@image = Rubygame::Image.load("fighter.png")
-		@rect = Rubygame::Rect.new(350,550,*@image.size)
-	end
-	def pos x
-		@rect.centerx += x
-		@rect.centerx %= 800
-		@rect.centery %= 600
+		@rect = Rubygame::Rect.new(350,300,*@image.size)
 	end
 	def return
 		return @rect
