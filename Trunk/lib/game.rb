@@ -83,6 +83,6 @@ class Controller
 	end
 	def scoreboard
 		@text.text[0] = @point.points.to_s
-		@text.render.render_text(true)
+		@text.render.render_text(false,1)
 	end
 end
