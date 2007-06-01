@@ -16,7 +16,8 @@
 #This is the game SpaceFighterAce
 #You can contact the author at wikipediankiba@gmail.com
 require 'rubygame'
-require 'RbGooey'
+require 'rubygems'
+require 'rbgooey'
 require 'yaml'
 require "lib/game.rb"
 require "lib/starter.rb"
