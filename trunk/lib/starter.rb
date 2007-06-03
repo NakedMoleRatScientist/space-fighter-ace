@@ -18,28 +18,34 @@
 
 class Starter
 	def initialize
-		@main = Main.new
-		@main.screen_set(800,600)
-		@main.fgcolor =[300,200,300]
-		@main.bgcolor =[200,200,200]
-		@main.font_set("freesansbold.ttf",15)
-		@text = TextMode.new(@main)
-		@queue = MQueue.new(self,@main,@text)
-		@queue.mouse.name("cursor.png")
-		play()
+		@display = Display.new
+		@display.setup(800,600,true)
+		@display.color([100 , 100 ,100],[20 , 20 ,20])
+		@data = UiData.new(@display)
+		@data.text.setup("test/freesansbold.ttf",16)
+		@clock = Rubygame::Clock.new
+		@clock.target_frametime= 40
+		@q = Rubygame::EventQueue.new()
+		@background = Rubygame::Surface.load_image("data/startscreen.jpeg")
+		@background.blit(@display.screen,[0,0])
 	end
 	def play
-		@text.add("Play?")
-		@text.size=(100)
-		@text.pos(300,200)
-		@text.active()
-		@text.render.render_text()
-		@queue.queue(@text,"start")
-	end
-	def start activate
-		case activate
-			when 1
-				Controller.new(@main)
+		loop do
+			@clock.tick
+			@q.each do |ev|
+				case ev
+				when Rubygame::QuitEvent
+					Rubygame.quit()
+					return
+				when Rubygame::KeyDownEvent
+					case ev.key
+					when Rubygame::K_ESCAPE
+						Rubygame.quit()
+						return
+					end
+				end
+			end
+			@display.screen.flip()
 		end
 	end
 end

@@ -32,4 +32,5 @@ require "lib/boardgenerator.rb"
 include Rubygame
 TTF.setup
 StatFileGenerator.new
-Starter.new
+game = Starter.new
+game.play
