@@ -22,7 +22,7 @@ class Starter
 		@display.setup(800,600,true)
 		@display.color([100 , 100 ,100],[20 , 20 ,20])
 		@data = UiData.new(@display)
-		@data.text.setup("test/freesansbold.ttf",16)
+		@data.text.setup("data/freesansbold.ttf",16)
 		@clock = Rubygame::Clock.new
 		@clock.target_frametime= 40
 		@q = Rubygame::EventQueue.new()
