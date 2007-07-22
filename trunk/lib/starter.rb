@@ -18,16 +18,12 @@
 
 class Starter
 	def initialize
-		@display = Display.new
-		@display.setup(800,600,true)
-		@display.color([100 , 100 ,100],[20 , 20 ,20])
-		@data = UiData.new(@display)
-		@data.text.setup("data/freesansbold.ttf",16)
-		@clock = Rubygame::Clock.new
+		@data = UiData.new("data/setup.yml")
+		@clock = Rubygame::Clock.new()
 		@clock.target_frametime= 40
 		@q = Rubygame::EventQueue.new()
 		@background = Rubygame::Surface.load_image("data/startscreen.jpeg")
-		@background.blit(@display.screen,[0,0])
+		@background.blit(@data.display.screen,[0,0])
 	end
 	def play
 		loop do
@@ -45,7 +41,7 @@ class Starter
 					end
 				end
 			end
-			@display.screen.flip()
+			@data.display.screen.flip()
 		end
 	end
 end
