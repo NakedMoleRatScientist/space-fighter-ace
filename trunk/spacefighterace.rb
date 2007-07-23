@@ -33,4 +33,5 @@ include Rubygame
 TTF.setup
 StatFileGenerator.new
 game = Starter.new
-game.play
+game.ui()
+game.play()

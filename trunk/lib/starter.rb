@@ -25,6 +25,10 @@ class Starter
 		@background = Rubygame::Surface.load_image("data/startscreen.jpeg")
 		@background.blit(@data.display.screen,[0,0])
 	end
+  def ui
+    @data.declare(:menu)
+    @data.imageui.add("play.png",300,300)
+  end
 	def play
 		loop do
 			@clock.tick
