@@ -29,6 +29,10 @@ class Starter
     @data.declare(:menu)
     @data.imageui.add("play.png",300,300)
     @data.imageui.add("quit.png",300,330)
+    @data.imageui.active() {
+      Rubygame.quit()
+      exit
+    }
   end
 	def play
 		loop do
@@ -44,9 +48,14 @@ class Starter
 						Rubygame.quit()
 						return
 					end
+         when Rubygame::MouseDownEvent
+          @data.collide.check()
 				end
+        @data.mouse.tell(ev)
 			end
+      @data.mouse.update()
 			@data.display.screen.flip()
+      @clock.tick()
 		end
 	end
 end
