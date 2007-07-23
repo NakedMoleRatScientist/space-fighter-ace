@@ -28,6 +28,7 @@ class Starter
   def ui
     @data.declare(:menu)
     @data.imageui.add("play.png",300,300)
+    @data.imageui.add("quit.png",300,330)
   end
 	def play
 		loop do
