@@ -15,26 +15,11 @@
 
 #This is the game SpaceFighterAce
 #You can contact the author at wikipediankiba@gmail.com
-class Fighter
+class Player
 	include Rubygame::Sprites::Sprite
 	def initialize
 		super
-		@image = Rubygame::Image.load("fighter.png")
+		@image = Rubygame::Surface.load_image("data/game/player.png")
 		@rect = Rubygame::Rect.new(350,550,*@image.size)
-	end
-	def pos x
-		@rect.centerx += x
-		@rect.centerx %= 800
-		@rect.centery %= 600
-	end
-	def return
-		return @rect
-	end
-	def x
-		return @rect.centerx
-	end
-	def y
-		y = @rect.centery
-		return y -= 50 
 	end
 end

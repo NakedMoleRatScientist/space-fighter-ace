@@ -19,6 +19,6 @@
 class Controller
 	def initialize data
     @data = data
-    puts("hello world")
+    @player = Player.new()
   end
 end
