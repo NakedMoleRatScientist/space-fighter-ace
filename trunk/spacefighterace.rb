@@ -19,7 +19,7 @@ require 'rubygame'
 require 'rubygems'
 require 'rbgooey'
 require 'yaml'
-require "lib/game.rb"
+require "lib/controller.rb"
 require "lib/starter.rb"
 require "lib/fighter.rb"
 require "lib/enemy.rb"
