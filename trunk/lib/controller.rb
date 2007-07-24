@@ -19,6 +19,9 @@
 class Controller
   def initialize data
     @data = data
+    @data.clear()
+    background = Rubygame::Surface.load_image("data/game/starfield.jpeg")
+    background.blit(@data.display.screen,[0,0])
     @player = Player.new()
     @clock = Rubygame::Clock.new
     @clock.target_frametime= 40
