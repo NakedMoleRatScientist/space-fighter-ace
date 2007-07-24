@@ -20,13 +20,16 @@ class Controller
   def initialize data
     @data = data
     @data.clear()
-    background = Rubygame::Surface.load_image("data/game/starfield.jpeg")
-    background.blit(@data.display.screen,[0,0])
+    @background = Rubygame::Surface.load_image("data/game/starfield.jpeg")
+    draw()
     @player = Player.new()
     @clock = Rubygame::Clock.new
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
     mode()
+  end
+  def draw
+   @background.blit(@data.display.screen,[0,0])
   end
   def mode
     loop do
@@ -40,9 +43,15 @@ class Controller
 	  case ev.key
 	  when Rubygame::K_ESCAPE
 	    return
+	  when Rubygame::K_RIGHT
+	    @player.right()
+	  when Rubygame::K_LEFT
+	    @player.left()
 	  end
 	end
       end
+      draw()
+      @player.pos()
       @player.draw(@data.display.screen)
       @data.display.screen.flip()
       @clock.tick()
