@@ -17,14 +17,14 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Starter
-	def initialize
-		@data = UiData.new("data/setup.yml")
-		@clock = Rubygame::Clock.new()
-		@clock.target_frametime= 40
-		@q = Rubygame::EventQueue.new()
-		@background = Rubygame::Surface.load_image("data/startscreen.jpeg")
-		@background.blit(@data.display.screen,[0,0])
-	end
+  def initialize
+    @data = UiData.new("data/setup.yml")
+    @clock = Rubygame::Clock.new()
+    @clock.target_frametime= 40
+    @q = Rubygame::EventQueue.new()
+    @background = Rubygame::Surface.load_image("data/startscreen.jpeg")
+    @background.blit(@data.display.screen,[0,0])
+  end
   def ui
     @data.declare(:menu)
     @data.imageui.add("play.png",300,300)
@@ -37,28 +37,28 @@ class Starter
       exit
     }
   end
-	def play
-		loop do
-			@clock.tick
-			@q.each do |ev|
-				case ev
-				when Rubygame::QuitEvent
-					Rubygame.quit()
-					return
-				when Rubygame::KeyDownEvent
-					case ev.key
-					when Rubygame::K_ESCAPE
-						Rubygame.quit()
-						return
-					end
-         when Rubygame::MouseDownEvent
+  def play
+    loop do
+      @clock.tick
+      @q.each do |ev|
+	case ev
+	when Rubygame::QuitEvent
+	  Rubygame.quit()
+	  exit
+	when Rubygame::KeyDownEvent
+	  case ev.key
+	  when Rubygame::K_ESCAPE
+	    Rubygame.quit()
+	    exit
+	  end
+        when Rubygame::MouseDownEvent
           @data.collide.check()
-				end
-        @data.mouse.tell(ev)
-			end
-      @data.mouse.update()
-			@data.display.screen.flip()
-      @clock.tick()
-		end
 	end
+        @data.mouse.tell(ev)
+       end
+      @data.mouse.update()
+      @data.display.screen.flip()
+      @clock.tick()
+    end
+  end
 end

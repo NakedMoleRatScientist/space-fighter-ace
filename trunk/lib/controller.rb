@@ -17,8 +17,32 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Controller
-	def initialize data
+  def initialize data
     @data = data
     @player = Player.new()
+    @clock = Rubygame::Clock.new
+    @clock.target_frametime= 40
+    @q = Rubygame::EventQueue.new()
+    mode()
+  end
+  def mode
+    loop do
+      @clock.tick
+      @q.each do |ev|
+	case ev
+	when Rubygame::QuitEvent
+	  Rubygame.quit()
+	  exit
+	when Rubygame::KeyDownEvent
+	  case ev.key
+	  when Rubygame::K_ESCAPE
+	    return
+	  end
+	end
+      end
+      @player.draw(@data.display.screen)
+      @data.display.screen.flip()
+      @clock.tick()
+    end
   end
 end
