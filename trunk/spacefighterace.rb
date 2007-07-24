@@ -21,7 +21,7 @@ require 'rbgooey'
 require 'yaml'
 require "lib/controller.rb"
 require "lib/starter.rb"
-require "lib/fighter.rb"
+require "lib/player.rb"
 require "lib/enemy.rb"
 require "lib/weapon.rb"
 require "lib/gameover.rb"
