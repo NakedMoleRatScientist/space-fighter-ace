@@ -18,22 +18,20 @@
 
 class Player
   include Rubygame::Sprites::Sprite
+  attr_accessor :action
   def initialize
     super
     @image = Rubygame::Surface.load_image("data/game/player.png")
     @rect = Rubygame::Rect.new(350,550,*@image.size)
-    @x = 0
+    @action = 0
   end
   def pos 
     @rect.centerx += @x
     @rect.centerx %= 800
     @rect.centery %= 600
-    @x = 0
   end
-  def left
-    @x += -3
-  end
-  def right
-    @x += 3
+  def act
+    @x = @action
+    pos()
   end
 end

@@ -44,14 +44,16 @@ class Controller
 	  when Rubygame::K_ESCAPE
 	    return
 	  when Rubygame::K_RIGHT
-	    @player.right()
+	    @player.action = 10
 	  when Rubygame::K_LEFT
-	    @player.left()
+	    @player.action = -10
 	  end
+	when Rubygame::KeyUpEvent
+	  @player.action = 0
 	end
       end
       draw()
-      @player.pos()
+      @player.act()
       @player.draw(@data.display.screen)
       @data.display.screen.flip()
       @clock.tick()
