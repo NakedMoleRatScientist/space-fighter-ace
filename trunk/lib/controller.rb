@@ -23,6 +23,7 @@ class Controller
     @background = Rubygame::Surface.load_image("data/game/starfield.jpeg")
     draw()
     @player = Player.new()
+    @weapon = Weapon.new()
     @clock = Rubygame::Clock.new
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
@@ -47,7 +48,8 @@ class Controller
 	    @player.action = 10
 	  when Rubygame::K_LEFT
 	    @player.action = -10
-	  end
+	  when Rubygame::K_SPACE
+	    @weapon.fire()
 	when Rubygame::KeyUpEvent
 	  @player.action = 0
 	end
