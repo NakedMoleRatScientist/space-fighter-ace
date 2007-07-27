@@ -50,6 +50,7 @@ class Controller
 	    @player.action = -10
 	  when Rubygame::K_SPACE
 	    @weapon.fire()
+	  end
 	when Rubygame::KeyUpEvent
 	  @player.action = 0
 	end

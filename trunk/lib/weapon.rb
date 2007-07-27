@@ -18,6 +18,8 @@
 
 class Weapon
   def initialize
+	@play = Rubygame::Surface.load_image("data/game/rocket.png")
+	@enem = Rubygame::Surface.load_image("data/game/badrocket.png")
   end
   def fire
   end
