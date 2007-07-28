@@ -34,4 +34,7 @@ class Player
     @x = @action
     pos()
   end
+  def info
+    return @rect.centerx
+  end
 end

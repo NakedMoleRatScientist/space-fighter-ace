@@ -49,7 +49,7 @@ class Controller
 	  when Rubygame::K_LEFT
 	    @player.action = -10
 	  when Rubygame::K_SPACE
-	    @weapon.fire()
+	    @weapon.fire(@player.info)
 	  end
 	when Rubygame::KeyUpEvent
 	  @player.action = 0
@@ -57,6 +57,7 @@ class Controller
       end
       draw()
       @player.act()
+      @weapon.draw(@data.display.screen)
       @player.draw(@data.display.screen)
       @data.display.screen.flip()
       @clock.tick()
