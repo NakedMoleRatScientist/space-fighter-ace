@@ -17,19 +17,31 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Weapon
-	def initialize
-		@play = Rubygame::Surface.load_image("data/game/rocket.png")
-		@enem = Rubygame::Surface.load_image("data/game/badrocket.png")
-		@p = []
-		@e = []
-	end
-	def fire x
-		@p << Rect.new(x,550,5,15)
-	end
-	def draw screen
-		@p.each do |rect|
-			@play.blit(screen,[rect.centerx,rect.centery])
-			
-		end
-	end
+  def initialize
+    @play = Rubygame::Surface.load_image("data/game/rocket.png")
+    @enem = Rubygame::Surface.load_image("data/game/badrocket.png")
+    @p = []
+    @e = []
+  end
+  def fire x
+    if @p.size != 10
+      @p << Rect.new(x,550,5,15)
+    end
+  end
+  def pmove
+    number = 0
+    @p.each do |pos|
+      pos.centery -= 3
+      if pos.centery <= 0
+	@p.delete_at(number)
+      end
+      number += 1
+    end
+  end
+  def draw screen
+    pmove()
+    @p.each do |rect|
+      @play.blit(screen,[rect.centerx,rect.centery])
+    end
+  end
 end
