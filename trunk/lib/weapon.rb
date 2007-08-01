@@ -31,7 +31,7 @@ class Weapon
   def pmove
     number = 0
     @p.each do |pos|
-      pos.centery -= 3
+      pos.centery -= 9
       if pos.centery <= 0
 	@p.delete_at(number)
       end
