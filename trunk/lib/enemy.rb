@@ -18,7 +18,11 @@
 
 
 class Enemy
+  include Rubygame::Sprites::Sprite
+  attr_accessor :action
   def initialize weapon
+    @image = Rubygame::Surface.load_image("data/game/enemy.png")
+    @rect = Rubygame::Rect.new(350,0,*@image.size)
     @weapon = weapon
   end
 end

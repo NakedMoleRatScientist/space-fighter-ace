@@ -71,6 +71,7 @@ class Controller
       @player.act()
       @weapon.draw(@data.display.screen)
       @player.draw(@data.display.screen)
+      @enemy.draw(@data.display.screen)
       @data.display.screen.flip()
       @clock.tick()
     end
