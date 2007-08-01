@@ -46,17 +46,23 @@ class Controller
 	    return
 	  when Rubygame::K_RIGHT
 	    @player.action = 10
+	    @act = true
 	  when Rubygame::K_LEFT
 	    @player.action = -10
+            @act = false
 	  when Rubygame::K_SPACE
 	    @weapon.fire(@player.info)
 	  end
 	when Rubygame::KeyUpEvent
           case ev.key
           when Rubygame::K_RIGHT
-	    @player.action = 0
+	    if @act != false
+	      @player.action = 0
+	    end
           when Rubygame::K_LEFT
-            @player.action = 0
+            if @act != true
+              @player.action = 0
+            end
           end
 	end
       end
