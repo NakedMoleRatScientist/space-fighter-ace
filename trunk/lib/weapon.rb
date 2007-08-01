@@ -31,7 +31,7 @@ class Weapon
   def pmove
     number = 0
     @p.each do |pos|
-      pos.centery -= 9
+      pos.centery -= rand(40)
       if pos.centery <= 0
 	@p.delete_at(number)
       end
