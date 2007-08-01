@@ -52,7 +52,12 @@ class Controller
 	    @weapon.fire(@player.info)
 	  end
 	when Rubygame::KeyUpEvent
-	  @player.action = 0
+          case ev.key
+          when Rubygame::K_RIGHT
+	    @player.action = 0
+          when Rubygame::K_LEFT
+            @player.action = 0
+          end
 	end
       end
       draw()
