@@ -18,6 +18,7 @@
 
 
 class Enemy
-	def initialize
-	end
+  def initialize weapon
+    @weapon = weapon
+  end
 end
