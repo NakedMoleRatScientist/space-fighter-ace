@@ -17,6 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Weapon
+  attr_accessor :p
   def initialize
     @play = Rubygame::Surface.load_image("data/game/rocket.png")
     @enem = Rubygame::Surface.load_image("data/game/badrocket.png")

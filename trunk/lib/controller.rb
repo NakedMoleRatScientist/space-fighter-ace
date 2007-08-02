@@ -71,6 +71,7 @@ class Controller
       draw()
       @player.act()
       @enemy.act()
+      @collide.collide()
       @weapon.draw(@data.display.screen)
       @player.draw(@data.display.screen)
       @enemy.draw(@data.display.screen)

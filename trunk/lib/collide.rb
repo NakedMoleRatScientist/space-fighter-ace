@@ -20,4 +20,29 @@ class CollideDetector
     @weapon = weapon
     @enemy = enemy
   end
+  def collide
+    enemy()
+  end
+  def enemy
+    count = @weapon.p.size
+    if collide_detect(count)
+      destory()
+    end
+  end
+  def collide_detect count
+    number = 0
+    while 1
+      if number == count
+        return false
+      end
+      if @enemy.rect.collide_rect?(@weapon.p[number])
+        @weapon.p.delete_at(number)
+        return true
+      end
+      number += 1
+    end
+  end
+  def destory
+    @enemy.state = false
+  end
 end
