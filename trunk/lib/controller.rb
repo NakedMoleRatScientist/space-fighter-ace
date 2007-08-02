@@ -28,6 +28,7 @@ class Controller
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
     @enemy = Enemy.new(@weapon)
+    @collide = CollideDetector.new
     mode()
   end
   def draw
@@ -69,6 +70,7 @@ class Controller
       end
       draw()
       @player.act()
+      @enemy.act()
       @weapon.draw(@data.display.screen)
       @player.draw(@data.display.screen)
       @enemy.draw(@data.display.screen)

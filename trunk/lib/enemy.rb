@@ -24,5 +24,37 @@ class Enemy
     @image = Rubygame::Surface.load_image("data/game/enemy.png")
     @rect = Rubygame::Rect.new(350,0,*@image.size)
     @weapon = weapon
+    newgoal()
+  end
+  def newgoal
+    @x = rand(801)
+    target = @rect.centery + rand(601)
+    loop do
+      if target > 600
+        target -= rand(51)
+      end
+      if target < @rect.centery
+        targete += rand(51)
+      end
+      if target < 600 && target > @rect.centery
+         @y = target
+	 return
+      end
+    end
+  end
+  def move
+    if @rect.centery < @y
+      @rect.centery += 5
+    elsif @rect.centery > @y
+      @rect.centery -= 1
+    end
+    if @rect.centerx < @x
+      @rect.centerx += 5
+    elsif @rect.centery > @y
+      @rect.centery -= 1
+    end
+  end
+  def act
+    move()
   end
 end
