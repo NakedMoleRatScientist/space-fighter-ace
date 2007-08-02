@@ -21,7 +21,9 @@ class CollideDetector
     @enemy = enemy
   end
   def collide
-    enemy()
+    if @enemy.state != false
+      enemy()
+    end
   end
   def enemy
     count = @weapon.p.size
