@@ -28,30 +28,31 @@ class Enemy
   end
   def newgoal
     @x = rand(801)
-    target = @rect.centery + rand(601)
-    loop do
-      if target > 600
-        target -= rand(51)
-      end
-      if target < @rect.centery
-        targete += rand(51)
-      end
-      if target < 600 && target > @rect.centery
-         @y = target
-	 return
-      end
-    end
+    @y = rand(601)
   end
   def move
     if @rect.centery < @y
-      @rect.centery += 5
+      @rect.centery += 10
     elsif @rect.centery > @y
-      @rect.centery -= 1
+      @rect.centery -= 10
     end
     if @rect.centerx < @x
-      @rect.centerx += 5
-    elsif @rect.centery > @y
-      @rect.centery -= 1
+      @rect.centerx += 10
+    elsif @rect.centerx > @x
+      @rect.centerx -= 10
+    end
+    if @rect.centery - @y <= 10
+      if @rect.centery - @y >= -10
+        @rect.centery = @y
+      end
+    end
+    if @rect.centerx - @x <= 10
+      if @rect.centerx - @x >= -10
+        @rect.centerx = @x
+      end
+    end
+    if @rect.centerx == @x && @rect.centery == @y
+      newgoal()
     end
   end
   def act
