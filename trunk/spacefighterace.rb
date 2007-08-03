@@ -29,6 +29,7 @@ require "lib/collide.rb"
 require "lib/scoreboard.rb"
 require "lib/file.rb"
 require "lib/boardgenerator.rb"
+require "lib/timer.rb"
 include Rubygame
 TTF.setup
 StatFileGenerator.new
