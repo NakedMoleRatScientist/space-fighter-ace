@@ -32,17 +32,36 @@ class Weapon
   def pmove
     number = 0
     @p.each do |pos|
-      pos.centery -= rand(40) + 5
+      pos.centery -= rand(41) + 5
       if pos.centery <= 0
 	@p.delete_at(number)
       end
       number += 1
     end
   end
+  def emove
+    number = 0
+    @e.each do |pos|
+      pos.centery += 27
+      if pos.centery >= 600
+        @e.delete_at(number)
+      end
+      number += 1
+    end
+  end
+  def incoming x , y
+    if @e.size != 5
+      @e << Rect.new(x,y,5,15)
+    end
+  end
   def draw screen
     pmove()
+    emove()
     @p.each do |rect|
       @play.blit(screen,[rect.centerx,rect.centery])
+    end
+    @e.each do |rect|
+      @enem.blit(screen,[rect.centerx,rect.centery])
     end
   end
 end
