@@ -16,14 +16,20 @@
 
 #Youcan contact the author at wikipediankiba@gmail.com
 class CollideDetector
-  def initialize weapon , enemy
+  def initialize weapon , enemy , player
     @weapon = weapon
     @enemy = enemy
+    @player = player
   end
   def collide
     if @enemy.state != false
       enemy()
     end
+    if @player.state != false
+      player()
+    end
+  end
+  def player
   end
   def enemy
     count = @weapon.p.size
