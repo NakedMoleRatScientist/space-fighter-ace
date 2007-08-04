@@ -25,7 +25,7 @@ class Weapon
     @e = []
   end
   def fire x
-    if @p.size != 10
+    if @p.size != 2
       @p << Rect.new(x,550,5,15)
     end
   end
