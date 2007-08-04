@@ -42,7 +42,7 @@ class Weapon
   def emove
     number = 0
     @e.each do |pos|
-      pos.centery += 27
+      pos.centery += 10
       if pos.centery >= 600
         @e.delete_at(number)
       end
