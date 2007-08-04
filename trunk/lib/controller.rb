@@ -34,10 +34,11 @@ class Controller
   def undraw
    @background.blit(@data.display.screen,[0,0])
   end
-  def draw
+  def action
     @player.draw(@data.display.screen)
     if @enemy.state != false
-      @enemy.draw(@data.display.screen)
+       @enemy.draw(@data.display.screen)
+       @enemy.act()
     end
   end
   def mode
@@ -76,10 +77,9 @@ class Controller
       end
       undraw()
       @player.act()
-      @enemy.act()
       @collide.collide()
       @weapon.draw(@data.display.screen)
-      draw()
+      action()
       @data.display.screen.flip()
       @clock.tick()
     end
