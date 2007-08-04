@@ -28,7 +28,7 @@ class Controller
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
     @enemy = Enemy.new(@weapon)
-    @collide = CollideDetector.new(@weapon,@enemy)
+    @collide = CollideDetector.new(@weapon,@enemy,@player)
     mode()
   end
   def undraw
