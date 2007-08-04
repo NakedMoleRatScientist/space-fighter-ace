@@ -82,6 +82,9 @@ class Controller
       action()
       @data.display.screen.flip()
       @clock.tick()
+      if @player.state == false
+        return
+      end
     end
   end
 end
