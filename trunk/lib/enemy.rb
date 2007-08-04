@@ -24,6 +24,8 @@ class Enemy
     @image = Rubygame::Surface.load_image("data/game/enemy.png")
     @rect = Rubygame::Rect.new(350,0,*@image.size)
     @weapon = weapon
+    @shoot = Timer.new(0.9) { @weapon.incoming(@rect.centerx,@rect.centery) }
+    @shoot.start()
     @state = true
     newgoal()
   end
@@ -58,5 +60,6 @@ class Enemy
   end
   def act
     move()
+    @shoot.check()
   end
 end
