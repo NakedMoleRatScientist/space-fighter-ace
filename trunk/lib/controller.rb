@@ -29,6 +29,7 @@ class Controller
     @q = Rubygame::EventQueue.new()
     @enemy = Enemy.new(@weapon)
     @collide = CollideDetector.new(@weapon,@enemy,@player)
+    @score = Scoreboard.new(@data)
     mode()
   end
   def undraw
