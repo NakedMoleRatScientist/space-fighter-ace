@@ -22,4 +22,7 @@ class Scoreboard
 		@data = data
 		@points = 0
 	end
+	def hit
+		@points += 1
+	end
 end

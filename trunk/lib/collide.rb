@@ -16,10 +16,11 @@
 
 #Youcan contact the author at wikipediankiba@gmail.com
 class CollideDetector
-  def initialize weapon , enemy , player
+  def initialize weapon , enemy , player , score
     @weapon = weapon
     @enemy = enemy
     @player = player
+    @score = score
   end
   def collide
     if @enemy.state != false
@@ -49,6 +50,7 @@ class CollideDetector
       end
       if @enemy.rect.collide_rect?(@weapon.p[number])
         @weapon.p.delete_at(number)
+	@score.hit()
         return true
       end
       number += 1

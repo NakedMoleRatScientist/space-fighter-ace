@@ -24,12 +24,12 @@ class Controller
     undraw()
     @score = Scoreboard.new(@data)
     @player = Player.new()
-    @weapon = Weapon.new(@score)
+    @weapon = Weapon.new()
     @clock = Rubygame::Clock.new
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
     @enemy = Enemy.new(@weapon)
-    @collide = CollideDetector.new(@weapon,@enemy,@player)
+    @collide = CollideDetector.new(@weapon,@enemy,@player,@score)
     mode()
   end
   def undraw
