@@ -22,14 +22,14 @@ class Controller
     @data.clear()
     @background = Rubygame::Surface.load_image("data/game/starfield.jpeg")
     undraw()
+    @score = Scoreboard.new(@data)
     @player = Player.new()
-    @weapon = Weapon.new()
+    @weapon = Weapon.new(@score)
     @clock = Rubygame::Clock.new
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
     @enemy = Enemy.new(@weapon)
     @collide = CollideDetector.new(@weapon,@enemy,@player)
-    @score = Scoreboard.new(@data)
     mode()
   end
   def undraw
