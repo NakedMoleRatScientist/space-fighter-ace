@@ -30,6 +30,7 @@ require "lib/scoreboard.rb"
 require "lib/file.rb"
 require "lib/boardgenerator.rb"
 require "lib/timer.rb"
+require "lib/enemytracker.rb"
 include Rubygame
 TTF.setup
 StatFileGenerator.new
