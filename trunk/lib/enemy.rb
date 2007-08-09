@@ -22,7 +22,7 @@ class Enemy
   attr_accessor :action , :state
   def initialize weapon
     @image = Rubygame::Surface.load_image("data/game/enemy.png")
-    @rect = Rubygame::Rect.new(350,0,*@image.size)
+    @rect = Rubygame::Rect.new(rand(801),0,*@image.size)
     @weapon = weapon
     @shoot = Timer.new(1) { @weapon.incoming(@rect.centerx,@rect.centery) }
     @shoot.start()
