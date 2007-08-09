@@ -17,6 +17,13 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EnemyTracker
-  def initialize
+  def initialize weapon
+    @weapon = weapon
+    @target = []
+  end
+  def generate
+    if @target.size != 10
+      @target.add(Enemy.new(@weapon))
+    end
   end
 end
