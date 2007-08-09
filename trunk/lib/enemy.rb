@@ -31,7 +31,7 @@ class Enemy
   end
   def newgoal
     @x = rand(801)
-    @y = rand(601)
+    @y = rand(541)
   end
   def move
     if @rect.centery < @y
