@@ -22,14 +22,14 @@ class Controller
     @data.clear()
     @background = Rubygame::Surface.load_image("data/game/starfield.jpeg")
     undraw()
-    @score = Scoreboard.new(@data)
-    @player = Player.new()
-    @weapon = Weapon.new()
     @clock = Rubygame::Clock.new
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
+    @score = Scoreboard.new(@data)
+    @player = Player.new()
+    @weapon = Weapon.new()
     @enemy = Enemy.new(@weapon)
-    @enemy1 = EnemyTracker.new(@weapon)
+    @enemy1 = EnemyTracker.new(@weapon,@data)
     @enemy1.generate()
     @collide = CollideDetector.new(@weapon,@enemy,@player,@score)
     mode()
@@ -39,10 +39,7 @@ class Controller
   end
   def action
     @player.draw(@data.display.screen)
-    if @enemy.state != false
-       @enemy.draw(@data.display.screen)
-       @enemy.act()
-    end
+    @enemy1.action()
   end
   def mode
     loop do

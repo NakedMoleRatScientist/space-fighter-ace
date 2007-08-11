@@ -17,13 +17,25 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EnemyTracker
-  def initialize weapon
+  def initialize weapon , data
     @weapon = weapon
+    @data = data
     @target = []
   end
   def generate
     if @target.size != 10
       @target << (Enemy.new(@weapon))
+    end
+  end
+  def draw
+    @target.each do |en|
+      en.draw(@data.display.screen)
+    end
+  end
+  def action
+    @target.each do |en|
+      en.act()
+      en.draw(@data.display.screen)
     end
   end
 end
