@@ -23,7 +23,7 @@ class EnemyTracker
   end
   def generate
     if @target.size != 10
-      @target.add(Enemy.new(@weapon))
+      @target << (Enemy.new(@weapon))
     end
   end
 end
