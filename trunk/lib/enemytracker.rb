@@ -17,6 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EnemyTracker
+  attr_accessor :target
   def initialize weapon , data
     @weapon = weapon
     @data = data
@@ -34,8 +35,10 @@ class EnemyTracker
   end
   def action
     @target.each do |en|
-      en.act()
-      en.draw(@data.display.screen)
+      if en.state != false
+        en.act()
+        en.draw(@data.display.screen)
+      end
     end
   end
 end

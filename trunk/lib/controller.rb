@@ -31,7 +31,7 @@ class Controller
     @enemy = Enemy.new(@weapon)
     @enemy1 = EnemyTracker.new(@weapon,@data)
     @enemy1.generate()
-    @collide = CollideDetector.new(@weapon,@enemy,@player,@score)
+    @collide = CollideDetector.new(@weapon,@enemy1,@player,@score)
     mode()
   end
   def undraw

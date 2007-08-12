@@ -23,12 +23,10 @@ class CollideDetector
     @score = score
   end
   def collide
-    if @enemy.state != false
-      enemy()
-    end
     if @player.state != false
       player()
     end
+    enemy()
   end
   def player
    counte = @weapon.e.size
@@ -37,18 +35,24 @@ class CollideDetector
    end
   end
   def enemy
-    countp = @weapon.p.size
-    if enemy_detect(countp)
-      destory(1)
+    c = 0
+    @enemy.target.each do |en|
+      if en.state != false
+        countp = @weapon.p.size
+        if enemy_detect(countp,en)
+          destory(1,c)
+        end
+        c += 1
+      end
     end
   end
-  def enemy_detect count
+  def enemy_detect count , en
     number = 0
     while 1
       if number == count
         return false
       end
-      if @enemy.rect.collide_rect?(@weapon.p[number])
+      if en.rect.collide_rect?(@weapon.p[number])
         @weapon.p.delete_at(number)
 	@score.hit()
         return true
@@ -69,10 +73,10 @@ class CollideDetector
       number += 1
     end
   end
-  def destory n
+  def destory n , t = 0
     case n
     when 1 
-      @enemy.state = false
+      @enemy.target[t].state = false
     when 2
       @player.state = false
     end
