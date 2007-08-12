@@ -28,10 +28,11 @@ class Controller
     @score = Scoreboard.new(@data)
     @player = Player.new()
     @weapon = Weapon.new()
-    @enemy = Enemy.new(@weapon)
-    @enemy1 = EnemyTracker.new(@weapon,@data)
-    @enemy1.generate()
-    @collide = CollideDetector.new(@weapon,@enemy1,@player,@score)
+    @enemy = EnemyTracker.new(@weapon,@data)
+    @enemy.generate()
+    @collide = CollideDetector.new(@weapon,@enemy,@player,@score)
+    @generate = Timer.new(5) { @enemy.generate }
+    @generate.start()
     mode()
   end
   def undraw
@@ -39,7 +40,8 @@ class Controller
   end
   def action
     @player.draw(@data.display.screen)
-    @enemy1.action()
+    @enemy.action()
+    @generate.check()
   end
   def mode
     loop do
