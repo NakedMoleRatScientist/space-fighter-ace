@@ -33,12 +33,16 @@ class Controller
     @collide = CollideDetector.new(@weapon,@enemy,@player,@score)
     @generate = Timer.new(5) { @enemy.generate }
     @generate.start()
+    @data.declare(:points)
+    @data.text.add("points: 0",0,0)
     mode()
   end
   def undraw
    @background.blit(@data.display.screen,[0,0])
+   
   end
   def action
+    @data.string[-1] = "points: #{@score.points}"
     @player.draw(@data.display.screen)
     @enemy.action()
     @generate.check()
