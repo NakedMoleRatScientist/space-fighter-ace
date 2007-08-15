@@ -33,7 +33,7 @@ require "lib/timer.rb"
 require "lib/enemytracker.rb"
 include Rubygame
 TTF.setup
-StatFileGenerator.new
+
 game = Starter.new
 game.ui()
 game.play()

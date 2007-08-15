@@ -14,13 +14,14 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#Youcan contact the author at wikipediankiba@gmail.com
+#You can contact the author at wikipediankiba@gmail.com
 
 class Scoreboard
 	attr_accessor :points
 	def initialize data
 		@data = data
 		@points = 0
+                @board = BoardGenerator.new
 	end
 	def hit
 		@points += 1
