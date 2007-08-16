@@ -17,13 +17,19 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Scoreboard
-	attr_accessor :points
-	def initialize data
-		@data = data
-		@points = 0
-                @board = BoardGenerator.new
-	end
-	def hit
-		@points += 1
-	end
+  attr_accessor :points
+  def initialize data
+    @data = data
+    @board = BoardGenerator.new
+    @high = @board.data['high']
+    @points = 0
+  end
+  def hit
+    @points += 1
+  end
+  def check
+    if @points > @high
+      puts"high"
+    end
+  end
 end

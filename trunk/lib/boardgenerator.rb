@@ -16,31 +16,27 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 class  BoardGenerator
-	attr_accessor :stat
+	attr_accessor :data
 	def initialize
 		@file = FileSys.new()
-		@filename = "stat.yml"
-		@stat = stat
+		@filename = "data/stat.yml"
 		check()
 	end
 	def check
 		unless File.exist?(@filename)
 			create()
 		else
-			@stat = @file.yaml_read(@filename)
+			@data = @file.yaml_read(@filename)
 		end
 	end
 	def create
-		data = []
-		count = 1
-		10.times do 
-			data << ["player#{count.to_s}",0]
-			count +=1
-		end
+		data = {
+		'high' => 0,
+		}
 		@file.yaml_write(data , @filename)
-		@stat = @file.yaml_read(@filename)
+		@data = @file.yaml_read(@filename)
 	end
 	def save
-		@file.yaml_write(@stat, @filename)
+		@file.yaml_write(@data, @filename)
 	end
 end
