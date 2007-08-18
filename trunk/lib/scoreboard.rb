@@ -32,6 +32,8 @@ class Scoreboard
       @high = @points
       puts @points
       @board.data['high'] = @high
+      @board.data['name'] = "winner"
+      puts @board.data['name']
       @board.save()
     end
   end

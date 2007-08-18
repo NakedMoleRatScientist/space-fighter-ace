@@ -32,6 +32,7 @@ class  BoardGenerator
 	def create
 		data = {
 		'high' => 0,
+		'name' => "none"
 		}
 		@file.yaml_write(data , @filename)
 		@data = @file.yaml_read(@filename)
