@@ -42,8 +42,8 @@ class CollideDetector
         if enemy_detect(countp,en)
           destory(1,c)
         end
-        c += 1
       end
+      c += 1
     end
   end
   def enemy_detect count , en
