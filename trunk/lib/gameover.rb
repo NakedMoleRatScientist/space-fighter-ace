@@ -19,7 +19,7 @@
 class GameOver
   def initialize data
     @data = data
-    @display = Rubygame::Surface.load_image("data/gameover.png")
+    @display = Rubygame::Surface.load_image("data/startscreen.jpeg")
     @display.blit(@data.display.screen,[0,0])
   end
 end
