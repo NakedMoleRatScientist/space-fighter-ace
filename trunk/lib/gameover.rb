@@ -17,8 +17,9 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class GameOver
-  def initialize data
+  def initialize data , score
     @data = data
+    @score = score
     @display = Rubygame::Surface.load_image("data/startscreen.jpeg")
     @display.blit(@data.display.screen,[0,0])
   end

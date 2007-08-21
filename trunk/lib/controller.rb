@@ -90,7 +90,7 @@ class Controller
       @clock.tick()
       if @player.state == false
 	@score.check()
-        GameOver.new(@data)
+        GameOver.new(@data,@score)
 	return
       end
     end
