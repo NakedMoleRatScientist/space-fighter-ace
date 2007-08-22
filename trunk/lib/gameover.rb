@@ -22,5 +22,11 @@ class GameOver
     @score = score
     @display = Rubygame::Surface.load_image("data/startscreen.jpeg")
     @display.blit(@data.display.screen,[0,0])
+    text()
+  end
+  def text
+    @data.clear()
+    @data.declare(:gameover)
+    @data.text.add("SCORE TOTAL: #{@score.points}",0,0)
   end
 end

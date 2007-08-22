@@ -30,10 +30,8 @@ class Scoreboard
   def check
     if @points > @high
       @high = @points
-      puts @points
       @board.data['high'] = @high
-      @board.data['name'] = "winner"
-      puts @board.data['name']
+      @board.data['name'] = "player"
       @board.save()
     end
   end
