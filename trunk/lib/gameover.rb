@@ -22,7 +22,14 @@ class GameOver
     @score = score
     @display = Rubygame::Surface.load_image("data/startscreen.jpeg")
     @display.blit(@data.display.screen,[0,0])
+    @q = Rubygame::EventQueue.new()
     text()
+    controller()
+  end
+  def controller
+    loop do
+      return
+    end
   end
   def text
     @data.clear()
