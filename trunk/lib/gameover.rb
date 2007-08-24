@@ -28,7 +28,16 @@ class GameOver
   end
   def controller
     loop do
-      return
+      @q.each do |ev|
+        case ev
+        when Rubygame::KeyDownEvent
+          case ev.key
+          when Rubygame::K_ESCAPE
+            puts"success"
+            return
+          end
+        end
+      end
     end
   end
   def text
