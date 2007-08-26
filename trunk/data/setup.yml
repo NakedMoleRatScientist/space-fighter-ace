@@ -13,5 +13,5 @@ bg:
 flags:
 - 0
 font: data/fonts/freesansbold.ttf
-size: 100
+size: 20
 dir: data/ui

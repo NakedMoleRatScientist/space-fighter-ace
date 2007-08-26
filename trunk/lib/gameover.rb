@@ -28,6 +28,7 @@ class GameOver
   end
   def controller
     loop do
+      @data.display.screen.flip()
       @q.each do |ev|
         case ev
         when Rubygame::KeyDownEvent
@@ -35,6 +36,11 @@ class GameOver
           when Rubygame::K_ESCAPE
             puts"success"
             return
+          when Rubygame::K_RETURN
+            if @score.check() == true
+              puts"bingo"
+            end
+            puts"return"
           end
         end
       end

@@ -89,7 +89,6 @@ class Controller
       @data.display.screen.flip()
       @clock.tick()
       if @player.state == false
-	@score.check()
         GameOver.new(@data,@score)
 	return
       end

@@ -33,6 +33,8 @@ class Scoreboard
       @board.data['high'] = @high
       @board.data['name'] = "player"
       @board.save()
+      return true
     end
+    return false
   end
 end
