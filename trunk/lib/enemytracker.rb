@@ -34,11 +34,15 @@ class EnemyTracker
     end
   end
   def action
+    c = 0
     @target.each do |en|
       if en.state != false
         en.act()
         en.draw(@data.display.screen)
+      else 
+        @target.delete_at(c)
       end
+      c += 1
     end
   end
 end
