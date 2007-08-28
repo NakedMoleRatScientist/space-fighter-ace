@@ -31,6 +31,9 @@ class GameOver
       @data.display.screen.flip()
       @q.each do |ev|
         case ev
+        when Rubygame::QuitEvent
+          Rubygame.quit()
+          exit
         when Rubygame::KeyDownEvent
           case ev.key
           when Rubygame::K_ESCAPE
@@ -40,7 +43,6 @@ class GameOver
             if @score.check() == true
               puts"bingo"
             end
-            puts"return"
           end
         end
       end
