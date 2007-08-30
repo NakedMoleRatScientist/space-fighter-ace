@@ -48,9 +48,9 @@ class GameOver
     @data.clear()
     @data.declare(:gameover)
     @data.text.add("SCORE TOTAL: #{@score.points}",0,0)
-    @data.text.add("NAME:",0,0)
     if @score.check() == true
       @data.text.add("YOU SCORE!",0,0)
+      @data.text.add("NAME:",0,0)
     end
   end
 end
