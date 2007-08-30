@@ -39,10 +39,6 @@ class GameOver
           when Rubygame::K_ESCAPE
             puts"success"
             return
-          when Rubygame::K_RETURN
-            if @score.check() == true
-              puts"bingo"
-            end
           end
         end
       end
@@ -53,5 +49,8 @@ class GameOver
     @data.declare(:gameover)
     @data.text.add("SCORE TOTAL: #{@score.points}",0,0)
     @data.text.add("NAME:",0,0)
+    if @score.check() == true
+      @data.text.add("YOU SCORE!",0,0)
+    end
   end
 end
