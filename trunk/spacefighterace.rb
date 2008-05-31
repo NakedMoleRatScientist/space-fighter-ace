@@ -1,5 +1,5 @@
 #Space Fighter Ace is a space invader clone
-#Copyright (C) 2006-2007  Han Dao
+#Copyright (C) 2006-2008  Han Dao
 #
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -15,8 +15,8 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #You can contact the author at wikipediankiba@gmail.com
-require 'rubygame'
 require 'rubygems'
+require 'rubygame'
 require 'rbgooey'
 require 'yaml'
 require "lib/controller.rb"
