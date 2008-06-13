@@ -1,22 +1,30 @@
 Space Fighter Ace:
 
-Space Fighter Ace version 0.0.1 is an "Space Invader" style video game in which you kill enemies or they kill you.
+Space Fighter Ace version 0.0.2test is an "Space Invader" style video game in which you kill enemies or they kill you.
 Copyright (C) 2006-2007 Han Dao (wikipediankiba@gmail.com) and contributors.
 
-This readme file is intended only for version 0.0.1 and no later version of this game.
+This readme file is intended only for version 0.0.2test and no later version of this game.
 The website of Space Fighter Ace is http://spaceshooter.rubyforge.org and the project page of Space Fighter Ace is http://www.rubyforge.org/projects/spaceshooter
 
-==INSTALLION==
-
-You simply download the game, unzip the file to a desired location, install dependencies if any, and then click on spacefighterace.rb to play the game.
-
-SPECIAL NOTES: For trunk, you will need to get the RbGooey dependency in Dynpet's SVN at http://sourceforge.net/projects/dynpet
+==INSTALLION(Linux specific)==
+1. To install rubygame:
+    1. sudo apt-get install rubygame gem --platform ruby
+    2. sudo apt-get install libsdl1.2-all libsdl1.2-dev libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
+2. Install rbgooey gem
+3.Unzip the file to a desired location, and then run spacefighterace.rb to play the game.
 
 All the other dependencies and their website are listed below in the next section.
 ==DEPENDENCIES==
 
 ruby http://ruby-lang.org
 rubygame http://rubygame.sourceforge.net
+  --Required libsdl-mixer1.2-dev
+  --Required libsdl-gfx1.2-dev
+  --Required libsdl1.2-dev
+  --Required libsdl1.2-all
+  --Required libsdl-image1.2-dev
+  --Required libsdl-ttf2.0-dev
+
 rbgooey http://rbgooey.rubyforge.org
 ==Playing==
 
