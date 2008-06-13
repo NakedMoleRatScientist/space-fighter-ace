@@ -20,7 +20,7 @@ class Controller
   def initialize data
     @data = data
     @data.clear()
-    @background = Rubygame::Surface.load_image("data/game/starfield.jpeg")
+    @background = Rubygame::Surface.load("data/game/starfield.jpeg")
     undraw()
     @clock = Rubygame::Clock.new
     @clock.target_frametime= 40
@@ -39,7 +39,7 @@ class Controller
   end
   def undraw
    @background.blit(@data.display.screen,[0,0])
-   
+
   end
   def action
     @data.string[-1] = "points: #{@score.points}"

@@ -21,12 +21,12 @@ class Player
   attr_accessor :action , :state
   def initialize
     super
-    @image = Rubygame::Surface.load_image("data/game/player.png")
+    @image = Rubygame::Surface.load("data/game/player.png")
     @rect = Rubygame::Rect.new(350,550,*@image.size)
     @action = 0
     @state = true
   end
-  def pos 
+  def pos
     @rect.centerx += @x
     @rect.centerx %= 800
     @rect.centery %= 600

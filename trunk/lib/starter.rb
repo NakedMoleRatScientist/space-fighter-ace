@@ -22,7 +22,7 @@ class Starter
     @clock = Rubygame::Clock.new()
     @clock.target_frametime= 40
     @q = Rubygame::EventQueue.new()
-    @background = Rubygame::Surface.load_image("data/startscreen.jpeg")
+    @background = Rubygame::Surface.load("data/startscreen.jpeg")
     @background.blit(@data.display.screen,[0,0])
   end
   def ui

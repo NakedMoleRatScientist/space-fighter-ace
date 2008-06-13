@@ -21,7 +21,7 @@ class Enemy
   include Rubygame::Sprites::Sprite
   attr_accessor :action , :state
   def initialize weapon
-    @image = Rubygame::Surface.load_image("data/game/enemy.png")
+    @image = Rubygame::Surface.load("data/game/enemy.png")
     @rect = Rubygame::Rect.new(rand(801),0,*@image.size)
     @weapon = weapon
     @shoot = Timer.new(1) { @weapon.incoming(@rect.centerx,@rect.centery) }

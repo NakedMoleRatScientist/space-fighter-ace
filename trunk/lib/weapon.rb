@@ -19,8 +19,8 @@
 class Weapon
   attr_accessor :p , :e
   def initialize
-    @play = Rubygame::Surface.load_image("data/game/rocket.png")
-    @enem = Rubygame::Surface.load_image("data/game/badrocket.png")
+    @play = Rubygame::Surface.load("data/game/rocket.png")
+    @enem = Rubygame::Surface.load("data/game/badrocket.png")
     @p = []
     @e = []
   end
