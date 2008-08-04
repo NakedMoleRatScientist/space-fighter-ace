@@ -19,7 +19,7 @@
 class Player < Character
   attr_accessor :action
   IMAGE_PATH = "data/game/player.png"
-  def initialize
+  def initialize engine
     super(IMAGE_PATH,engine)
     @action = 0
   end
