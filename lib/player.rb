@@ -16,15 +16,12 @@
 #
 #You can contact the author at wikipediankiba@gmail.com
 
-class Player
-  include Rubygame::Sprites::Sprite
-  attr_accessor :action , :state
+class Player < Character
+  attr_accessor :action
+  IMAGE_PATH = "data/game/player.png"
   def initialize
-    super
-    @image = Rubygame::Surface.load("data/game/player.png")
-    @rect = Rubygame::Rect.new(350,550,*@image.size)
+    super(IMAGE_PATH,engine)
     @action = 0
-    @state = true
   end
   def pos
     @rect.centerx += @x
