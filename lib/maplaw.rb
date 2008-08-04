@@ -19,22 +19,31 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class MapLaw
+  # NOTE: All these nested ifs should go away
+  def initialize engine
+    @engine = engine
+    @m = @engine.mapengine.mapobj
+    @c = @engine.charstrack.characters
+    @items = @engine.itemstrack.items
+    @itemtrack = @engine.itemstrack
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
+  # NOTE:Check if map collide with the object in question.
+  def mapcollide t
+    @m.each do |m|
+	    if m.property == true
+        if m.rect.collide_rect?(t)
+          return 1
+        end
+	    end
     end
+    return 2
   end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  def maprevert t
+    s = mapcollide(t)
+    if s == 1
+	    change(t)
+    end
+    return t
   end
 end

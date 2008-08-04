@@ -20,21 +20,33 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class MapCalculator
+  attr_accessor :x , :y , :o 
+  def initialize engine
+    @engine = engine
+    @x = x
+    @y = y
+    @o = o
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
+  # NOTE: Calculate every possible location of every map objects. The results are feed in action.call, which use them as appropriately.
+  def rectlocation object , &action
+    rows = 0
+    columns = 0
+    object.each do |o|
+      a = columns * 80 + @engine.length
+      b = rows * 60 + @engine.height
+      @x = a
+      @y = b
+      @o = o
+      action.call()
+      columns += 1
+      if columns == 30
+        rows +=  1
+        columns = 0
+      end
+      if rows == 30
+        return
+      end
     end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
   end
 end

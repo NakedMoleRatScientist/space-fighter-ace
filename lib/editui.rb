@@ -1,7 +1,4 @@
-#YourGameHere
-#Copyright (C) 2008 YourNameHere
-
-#Kiba Role Playing Game Engine(KRPGE)
+#Mapeditor program
 #Copyright (C) 2008 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
@@ -19,22 +16,24 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class EditUi
+  attr_accessor :data , :engine , :typeui , :loggerui , :scrollerui
+  def initialize loggerui , data , engine
+    @engine = engine
+    @data = data
+    @loggerui = loggerui
+    @typeui = EditModeTypeUi.new(self)
+    @info = EditInfoUi.new(@data)
+    @scrollerui = EditScrollerUi.new(self)
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
+  def draw
+    @data.clear()
+    @typeui.text()
+    @info.text()
+    @scrollerui.text()
+    @loggerui.text()
   end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  def cycle
+    @scrollerui.scrollerdata.cycle()
   end
 end

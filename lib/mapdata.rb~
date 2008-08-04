@@ -20,21 +20,29 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
-  end
 
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
+class MapData
+  def initialize engine
+    @engine = engine
+    @adapter = @engine.adapter
+    @calculator = MapCalculator.new(@engine)
   end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  # NOTE: It use an image yaml file, which list the integer correspondance to image names. It used the integers from the mapobj's map array, which is m to determine what images to load.
+  def datacompute
+    n = 0
+    @calculator.rectlocation(@engine.mapfiles.map) {
+      image = Rubygame::Surface.load(@adapter.images['map'][@calculator.o])
+	    obj = MapTile.new()
+	    obj.imageload(image)
+	    obj.sets(@calculator.x,@calculator.y)
+      case @calculator.o
+	    when 0
+        obj.property = false
+	    when 7
+        obj.property = 3
+	    end
+	    @engine.mapobj << obj
+	    n = n + 1
+    }
   end
 end

@@ -19,22 +19,23 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
+class MapTile
+  include Rubygame::Sprites::Sprite
+  attr_accessor :rect , :image , :property
 
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+  def initialize
+    super
+    @image = Rubygame::Surface.load("data/blank.png")
+    @rect = Rubygame::Rect.new(0,0,*@image.size)
+    @property = true
   end
 
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
+  def sets x , y
+    @rect.x = x
+    @rect.y = y
   end
 
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  def imageload image
+    @image = image
   end
 end

@@ -19,22 +19,38 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
+%w{
+  rubygems
+  rubygame
+  rbgooey
+  yaml
+  lib/engineinfo.rb
+  lib/mapengine.rb
+  lib/gameengine.rb
+  lib/mapcalculator.rb
+  lib/mapfiles.rb
+  lib/character.rb
+  lib/setup.rb
+  lib/controller.rb
+  lib/mapdata.rb
+  lib/maptile.rb
+  lib/camera.rb
+  lib/timer.rb
+  lib/maplaw.rb
+  lib/itemslaw.rb
+  lib/characterslaw.rb
+  lib/itemstracker.rb
+  lib/itemexample.rb
+  lib/gamelaw.rb
+  lib/characterstracker.rb
+  lib/chartype.rb
+  lib/itemtype.rb
+  lib/charexample.rb
+  lib/charexample2.rb
+  lib/mapterrain.rb
+}.each{|lib| require lib}
+include Rubygame
+TTF.setup
 
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
-  end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
-  end
-end
+game = GameSetup.new()
+game.start()

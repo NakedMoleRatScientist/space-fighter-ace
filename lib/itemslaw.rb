@@ -19,22 +19,19 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class ItemsLaw < MapLaw
+  def initialize engine
+    super(engine)
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
+  # NOTE: Check if an item collided with an object
+  def itemscollide obj
+    n = 0
+    @items.each do |i|
+	    if i.rect.collide_rect?(obj)
+        return n
+	    end
+	    n += 1
     end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+    n = -1
   end
 end

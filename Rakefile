@@ -1,7 +1,4 @@
-#YourGameHere
-#Copyright (C) 2008 YourNameHere
-
-#Kiba Role Playing Game Engine(KRPGE)
+#The CopyPirate
 #Copyright (C) 2008 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
@@ -19,22 +16,32 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
+#sync commits to remote repository"
+require "yaml"
+require "lib/mapfiles.rb"
 
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
-  end
+task :sync do
+  sh "git push"
+end
 
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
-  end
+task :create do
+  files = MapFiles.new()
+  files.create("blank.map")
+end
 
-  def start
-    @fire_at = Time.now.tv_sec + @interval
-  end
+task :pack do
+  FileUtils.mkdir('krpge-0.0.3')
+  FileUtils.cp_r('lib','krpge-0.0.3/lib')
+  FileUtils.cp_r('data','krpge-0.0.3/data')
+  FileUtils.cp('AUTHORS','krpge-0.0.3/AUTHORS') 
+  FileUtils.cp('GPL','krpge-0.0.3/GPL')
+  FileUtils.cp('README','krpge-0.0.3/README')          
+  FileUtils.cp('app.rb','krpge-0.0.3/app.rb')
+  FileUtils.cp('mapeditor.rb','krpge-0.0.3/mapeditor.rb')
+  FileUtils.cp('Rakefile','krpge-0.0.3/Rakefile')
+  sh 'tar -cf krpge-0.0.3.tar krpge-0.0.3'
+  sh 'bzip2 krpge-0.0.3.tar'
+end
+
+task :package do
 end

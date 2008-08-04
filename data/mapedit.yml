@@ -1,0 +1,17 @@
+---
+x: 1024
+y: 768
+cursor: true
+fg:
+- 100
+- 100
+- 100
+bg:
+- 20
+- 20
+- 20
+flags:
+- 0
+font: data/fonts/freesansbold.ttf
+size: 20
+dir: data/ui

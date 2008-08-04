@@ -20,21 +20,27 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class ItemsTracker
+  attr_accessor :items , :sprites
+  def initialize engine
+    @engine = engine
+    @itemtype = @engine.itemtype
+    @items = []
+    @sprites = Rubygame::Sprites::Group.new()
+    @calculator = MapCalculator.new(@engine.mapengine)
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
+  def datacompute
+    @calculator.rectlocation(@engine.mapengine.mapfiles.items) {
+       item = @itemtype.options(@calculator.o,@calculator.x,@calculator.y)
+       if item !=false
+        @items << item
+        @sprites << item
+       end
+    }
   end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  # NOTE: Clean out the items and sprites array.
+  def clean
+    @items = []
+    @sprites = Rubygame::Sprites::Group.new()
   end
 end

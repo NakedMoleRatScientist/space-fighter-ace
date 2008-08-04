@@ -1,7 +1,4 @@
-#YourGameHere
-#Copyright (C) 2008 YourNameHere
-
-#Kiba Role Playing Game Engine(KRPGE)
+#Mapeditor program
 #Copyright (C) 2008 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
@@ -19,22 +16,21 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class EditScrollerUi
+  attr_accessor :scrollerdata
+  def initialize ui
+    @ui = ui
+    @data = @ui.data
+    @scrollerdata = EditScrollerData.new(@ui.engine)
+    @scrollerdata.extract()
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
+  def text
+    @data.declare(:Options)
+    @data.text.add("Current stamping",800,50)
+    @data.text.add("choice:",800,75)
+    @scrollerdata.object.draw(@data.display.screen)
   end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  def retrievestamp
+    return @scrollerdata.state , @scrollerdata.n
   end
 end

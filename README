@@ -1,17 +1,17 @@
-Space Fighter Ace:
+Kiba Role Playing Game Engine(KRPGE):
 
-Space Fighter Ace version 0.0.2test is an "Space Invader" style video game in which you kill enemies or they kill you.
-Copyright (C) 2006-2007 Han Dao (wikipediankiba@gmail.com) and contributors.
+KRPGE is a framework for creating RPG games. This version is 0.0.3.
 
-This readme file is intended only for version 0.0.2test and no later version of this game.
-The website of Space Fighter Ace is http://spaceshooter.rubyforge.org and the project page of Space Fighter Ace is http://www.rubyforge.org/projects/spaceshooter
+The homepage of KRPGE is http://kibabase.libregamewiki.org/index.php/KRPGE
 
-==INSTALLION(Linux specific)==
+==INSTALLION(Debian based GNU/Linux Distro)==
+You will need Rubygem to accomplish this task.
+
 1. To install rubygame:
-    1. sudo apt-get install rubygame gem --platform ruby
-    2. sudo apt-get install libsdl1.2-all libsdl1.2-dev libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
-2. Install rbgooey gem
-3.Unzip the file to a desired location, and then run spacefighterace.rb to play the game.
+    1. sudo apt-get install libsdl1.2-all libsdl1.2-dev libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
+    2. sudo gem install rubygame --platform=ruby
+2. sudo gem install rbgooey
+3.Unzip the file to a desired location, and then run thecopypirate.rb to play the game.
 
 All the other dependencies and their website are listed below in the next section.
 ==DEPENDENCIES==
@@ -25,25 +25,44 @@ rubygame http://rubygame.sourceforge.net
   --Required libsdl-image1.2-dev
   --Required libsdl-ttf2.0-dev
 
-rbgooey http://rbgooey.rubyforge.org
-==Playing==
+rbgooey http://kibabase.libregamewiki.org/index.php/RbGooey
 
-When playing the game....
+==Documentation==
+Documentation for KRPGE is sparse.
 
-==LICENSE==
+MapEditor documentation:
 
-The Space Fighter Ace source code is copyright (C) 2006-2007 Han Dao and contributors.
+ruby mapeditor.rb to run the program.
 
-Space Fighter Ace is free software; you can redistribute it and/or modify it
+When the screen opened up, you will see the list of files that you can load. Press J to list additional files.
+Type in a numerical value to load a file corresponding to that value.
+Press TAB for typing and then finishing. You will not be able to do anything else while you're typing.
+
+If successful, it will load the map and enter editing mode.
+Use the arrow key to move the stamp/delete cursor(Indicated by S or D). To change your choice for stamping, press enter.
+Press J to change the edit cursor mode.
+
+To stamp: press spacebar
+
+To save: type save.
+
+Also, you can alway quit the program by the escape key.
+==License==
+The KRPGE source code is copyright (C) 2008 Han Dao and contributors.
+
+KRPGE is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
-Space Fighter Ace is distributed in the hope that it will be useful, but
+The KRPGE is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Dynpet; if not, write to the Free Software Foundation,
+along with KRPGE; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Graphics are public domain and yml files are under the public domain.
+freesansbold.ttf presumed to be copyrighted by Free Software Foundation under the GNU GPL.

@@ -1,7 +1,4 @@
-#YourGameHere
-#Copyright (C) 2008 YourNameHere
-
-#Kiba Role Playing Game Engine(KRPGE)
+#Mapeditor program
 #Copyright (C) 2008 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
@@ -19,22 +16,14 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class EditInfoUi
+  def initialize data
+    @data = data
+    @clock = Rubygame::Clock.new
+    @clock.target_framerate = 30
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  def text
+    @clock.tick()
+    @data.text.add("FPS: #{@clock.framerate()}",800,0)
   end
 end

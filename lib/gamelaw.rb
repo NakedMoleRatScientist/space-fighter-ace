@@ -17,24 +17,8 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#You can contact the author at wikipediankiba@gmail.com
-
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
-  end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+class GameLaw < CharactersLaw
+  def initialize engine
+    super engine
   end
 end

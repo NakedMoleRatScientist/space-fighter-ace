@@ -1,7 +1,4 @@
-#YourGameHere
-#Copyright (C) 2008 YourNameHere
-
-#Kiba Role Playing Game Engine(KRPGE)
+#Mapeditor program
 #Copyright (C) 2008 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
@@ -19,22 +16,33 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class EditCursor
+  include Rubygame::Sprites::Sprite
+  attr_accessor :rect , :loggerui , :state
+  STAMP = "data/stamp.png"
+  DELETE = "data/delete.png"
+  def initialize loggerui
+    super()
+    @loggerui = loggerui
+    @image = Rubygame::Surface.load(STAMP)
+    @rect = Rubygame::Rect.new(0,0,80,60)
+    @state = false
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
+  def change
+    if @state == false
+      @state = true
+      @loggerui.deletemode()
+    else
+      @state = false
+      @loggerui.stampmode()
     end
+    imageload()
   end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+  def imageload
+    if @state == false
+      @image = Rubygame::Surface.load(STAMP)
+    elsif @state == true
+      @image = Rubygame::Surface.load(DELETE)
+    end
   end
 end

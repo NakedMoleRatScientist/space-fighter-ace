@@ -19,22 +19,25 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class CharType
+  def initialize adapter
+    @adapter = adapter
+    @letter = 'A'
   end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
+  def options opt , x , y
+    case opt
+    when 1
+      example2 = CharExample2.new(@adapter)
+      example2.sets(x,y)
+      example2.name = "Example " + @letter
+      @letter.succ!
+      return example2
+    when 2
+      example = CharExample.new(@adapter)
+      example.name = "Example"
+      example.sets(x,y)
+      return example
     end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+    return false
   end
 end

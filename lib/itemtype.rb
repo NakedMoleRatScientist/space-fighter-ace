@@ -1,5 +1,5 @@
 #YourGameHere
-#Copyright (C) 2008 YourNameHere
+#Copyright (C) 2008 YourNameHerea
 
 #Kiba Role Playing Game Engine(KRPGE)
 #Copyright (C) 2008 Han Dao and contributors
@@ -19,22 +19,18 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
-  end
-
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
+class ItemType
+  def options opt, x , y
+    case opt
+    when 1
+      item = ItemExample.new()
+      item.sets(x,y)
+      return item
+    when 2
+      item = ItemExample2.new()
+      item.sets(x,y)
+      return item
     end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
+    return false
   end
 end

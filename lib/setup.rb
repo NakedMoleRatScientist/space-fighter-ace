@@ -1,5 +1,5 @@
-#YourGameHere
-#Copyright (C) 2008 YourNameHerea
+#Your game here
+#Copyright (C) 2008 YourNameHere
 
 #Kiba Role Playing Game Engine(KRPGE)
 #Copyright (C) 2008 Han Dao and contributors
@@ -16,30 +16,17 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+#
 #You can contact the author at wikipediankiba@gmail.com
 
-class Controller
-  def initialize data
-    @data = data
-    @engine = GameEngine.new()
-    @engine.setmapsurface([800,600])
-    @engine.setmapfile("data/maps/blank.map")
-    @engine.setimages("data/images.yml")
-    @engine.setchar(CharType.new(@engine))
-    @engine.setitem(ItemType.new())
-    @engine.setfollow("Example")
-    @engine.setup()
-    @engine.ruleset(GameLaw.new(@engine))
+class GameSetup
+  def initialize
+    @data = UiData.new("data/setup.yml")
     @q = Rubygame::EventQueue.new()
+    @control = Controller.new(@data)
   end
-  def action
-    @engine.compute()
-    @engine.draw(@data.display.screen)
-  end
-  def mode
+  def start
     loop do
-      @engine.prevposition()
 	    @q.each do |ev|
         case ev
         when Rubygame::QuitEvent
@@ -50,11 +37,11 @@ class Controller
           when Rubygame::K_ESCAPE
             Rubygame.quit()
             exit
+          when Rubygame::K_RETURN
+            @control.mode()
           end
-		    end
+        end
       end
-      action()
-      @data.display.screen.flip()
     end
   end
 end

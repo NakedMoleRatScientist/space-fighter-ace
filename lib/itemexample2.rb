@@ -1,5 +1,5 @@
 #YourGameHere
-#Copyright (C) 2008 YourNameHere
+#Copyright (C) 2008 YourNameHerea
 
 #Kiba Role Playing Game Engine(KRPGE)
 #Copyright (C) 2008 Han Dao and contributors
@@ -19,22 +19,18 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-
-class Timer
-  def initialize seconds , &action
-    @interval = seconds
-    @action = action
+class ItemExample2
+  include Rubygame::Sprites::Sprite
+	attr_accessor :rect
+  IMAGE_PATH = "data/ball.png"
+  def initialize
+    super
+    @image = Rubygame::Surface.load(IMAGE_PATH)
+    @rect  = Rubygame::Rect.new(0,0, *@image.size)
+  end
+  def sets x, y
+    @rect.x = x
+    @rect.y = y
   end
 
-  def check
-    t = Time.now.tv_sec
-    if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
-    end
-  end
-
-  def start
-    @fire_at = Time.now.tv_sec + @interval
-  end
 end
