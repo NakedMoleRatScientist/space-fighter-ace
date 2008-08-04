@@ -31,7 +31,7 @@ class GameSetup
     @data.declare(:menu)
     @data.imageui.add("play.png",300,300)
     @data.imageui.active() {
-      Controller.new(@data)
+      @control.mode()
     }
     @data.imageui.add("quit.png",300,330)
     @data.imageui.active() {
