@@ -56,6 +56,7 @@ class GameSetup
           end
         end
       end
+      @data.display.screen.flip()
     end
   end
 end
