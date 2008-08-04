@@ -28,7 +28,7 @@ class Controller
     @engine.setimages("data/images.yml")
     @engine.setchar(CharType.new(@engine))
     @engine.setitem(ItemType.new())
-    @engine.setfollow("Example")
+    @engine.setfollow("Player")
     @engine.setup()
     @engine.ruleset(GameLaw.new(@engine))
     @q = Rubygame::EventQueue.new()
