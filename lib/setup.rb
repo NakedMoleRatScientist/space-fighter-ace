@@ -54,8 +54,12 @@ class GameSetup
           when Rubygame::K_RETURN
             @control.mode()
           end
+        when Rubygame::MouseDownEvent
+          @data.collide.check()
         end
+        @data.mouse.tell(ev)
       end
+      @data.mouse.update()
       @data.display.screen.flip()
     end
   end
