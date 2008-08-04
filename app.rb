@@ -53,4 +53,5 @@ include Rubygame
 TTF.setup
 
 game = GameSetup.new()
+game.ui()
 game.start()
