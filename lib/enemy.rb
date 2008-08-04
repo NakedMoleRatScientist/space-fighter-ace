@@ -17,12 +17,12 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 
-class Enemy
-  include Rubygame::Sprites::Sprite
-  attr_accessor :action , :state
-  def initialize weapon
-    @image = Rubygame::Surface.load("data/game/enemy.png")
-    @rect = Rubygame::Rect.new(rand(801),0,*@image.size)
+class Enemy < Character
+  IMAGE_PATH = "data/game/enemy.png"
+  attr_accessor :action
+  def initialize  weapon
+    super(IMAGE_PATH)
+    @image = Rubygame::Surface.load(IMAGE_PATH)
     @weapon = weapon
     @shoot = Timer.new(1) { @weapon.incoming(@rect.centerx,@rect.centery) }
     @shoot.start()
