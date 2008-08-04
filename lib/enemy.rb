@@ -20,12 +20,9 @@
 class Enemy < Character
   IMAGE_PATH = "data/game/enemy.png"
   attr_accessor :action
-  def initialize  weapon
+  def initialize
     super(IMAGE_PATH)
     @image = Rubygame::Surface.load(IMAGE_PATH)
-    @weapon = weapon
-    @shoot = Timer.new(1) { @weapon.incoming(@rect.centerx,@rect.centery) }
-    @shoot.start()
     @state = true
     newgoal()
   end
@@ -60,6 +57,5 @@ class Enemy < Character
   end
   def act
     move()
-    @shoot.check()
   end
 end
