@@ -24,6 +24,20 @@ class GameSetup
     @data = UiData.new("data/setup.yml")
     @q = Rubygame::EventQueue.new()
     @control = Controller.new(@data)
+    @background = Rubygame::Surface.load("data/startscreen.jpeg")
+    @background.blit(@data.display.screen,[0,0])
+  end
+  def ui
+    @data.declare(:menu)
+    @data.imageui.add("play.png",300,300)
+    @data.imageui.active() {
+      Controller.new(@data)
+    }
+    @data.image.addd("quit.png",300,330)
+    @data.imageui.active() {
+      Rubygame.quit()
+      exit
+    }
   end
   def start
     loop do
