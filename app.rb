@@ -48,6 +48,7 @@
   lib/charexample.rb
   lib/charexample2.rb
   lib/mapterrain.rb
+  lib/player.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
