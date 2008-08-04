@@ -33,10 +33,10 @@ class CharType
       @letter.succ!
       return example2
     when 2
-      example = CharExample.new(@adapter)
-      example.name = "Example"
-      example.sets(x,y)
-      return example
+      player = Player.new(@adapter)
+      player.name = "Player"
+      player.sets(x,y)
+      return player
     end
     return false
   end
