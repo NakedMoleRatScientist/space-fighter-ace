@@ -49,11 +49,12 @@ class Movement
       @x = - @speed
       @y = 0
     end
+    update()
   end
   def increase
     @speedup.check()
   end
-  def diretionchange n
+  def directionchange n
     @direction = n
   end
   def reset
