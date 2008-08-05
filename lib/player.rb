@@ -32,6 +32,7 @@ class Player < Character
       @speed += 1
     }
     @speedup.start()
+    @movement = Movement.new()
   end
   def pos
     @rect.centerx += @x
