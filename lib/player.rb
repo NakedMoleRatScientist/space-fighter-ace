@@ -17,7 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Player < Character
-  attr_accessor :speed , :direction
+  attr_accessor :speed , :direction , :rotate
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
