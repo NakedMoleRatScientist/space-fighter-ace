@@ -21,6 +21,7 @@ class Player < Character
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
+    @orig_image = Surface.load(IMAGE_PATH)
     @speed = 3
     @direction = 0
     @rotate = 10
@@ -59,6 +60,7 @@ class Player < Character
     @speedup.check()
   end
   def rotation
+    @image = @orig_image
     @image = @image.rotozoom(@rotate,[1,1],true)
   end
 end
