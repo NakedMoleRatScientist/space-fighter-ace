@@ -18,5 +18,7 @@
 
 class Rotation
   def initialize
+    @rotatespeed = 0
+    @rotate = 0
   end
 end
