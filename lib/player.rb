@@ -17,23 +17,16 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Player < Character
-  attr_accessor :action
+  attr_accessor :speed
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
-    @action = 0
+    @speed = 0
   end
   def pos
     @rect.centerx += @x
     @rect.centery += @y
     @rect.centerx %= 800
     @rect.centery %= 600
-  end
-  def act
-    @x = @action
-    pos()
-  end
-  def info
-    return @rect.centerx
   end
 end
