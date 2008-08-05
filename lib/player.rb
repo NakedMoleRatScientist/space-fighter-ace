@@ -21,7 +21,8 @@ class Player < Character
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
-    @speed = 0
+    @speed = 3
+    @direction = 0
   end
   def pos
     @rect.centerx += @x
