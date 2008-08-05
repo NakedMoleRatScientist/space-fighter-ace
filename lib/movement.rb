@@ -18,5 +18,11 @@
 
 class Movement
   def initialize
+    @direction = 0
+    @speed = 3
+    @rotate = 0
+    @rotatespeed = 0
+    @x = 0
+    @y = 0
   end
 end
