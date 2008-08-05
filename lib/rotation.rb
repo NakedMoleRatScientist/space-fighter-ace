@@ -30,6 +30,12 @@ class Rotation
     @fighter.image = @orig_image
     @rotate += @rotatespeed
     @fighter.image = @fighter.image.rotozoom(@rotate,[1,1],true)
+    recenter()
+  end
+  def recenter
+    old_center = @fighter.rect.center
+    @fighter.rect.size = @image.size
+    @rect.center = old_center
   end
   def change_rotate_speed n
     @rotatespeed = n
