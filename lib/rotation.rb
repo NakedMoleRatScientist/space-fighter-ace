@@ -34,8 +34,8 @@ class Rotation
   end
   def recenter
     old_center = @fighter.rect.center
-    @fighter.rect.size = @image.size
-    @rect.center = old_center
+    @fighter.rect.size = @fighter.image.size
+    @fighter.rect.center = old_center
   end
   def change_rotate_speed n
     @rotatespeed = n
