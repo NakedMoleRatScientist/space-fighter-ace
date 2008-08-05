@@ -25,6 +25,10 @@ class Player < Character
     @direction = 0
     @x = 0
     @y = 0
+    @speedup = Timer.new(2) {
+      @speed += 1
+    }
+    @speedup.start()
   end
   def pos
     @rect.centerx += @x
