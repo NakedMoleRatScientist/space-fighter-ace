@@ -72,4 +72,16 @@ class Controller
       @data.display.screen.flip()
     end
   end
+  def move ev
+    case ev.key
+    when Rubygame::K_W
+      @player.direction = 1
+    when Rubygame::K_S
+      @player.direction = 2
+    when Rubygame::K_D
+      @player.direction = 3
+    when Rubygame::K_A
+      @player.direction = 4
+    end
+  end
 end
