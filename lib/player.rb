@@ -69,6 +69,6 @@ class Player < Character
     end
     @image = @orig_image
     @rotate += @rotatespeed
-    @image = @image.rotozoom(rotate,[1,1],true)
+    @image = @image.rotozoom(@rotate,[1,1],true)
   end
 end
