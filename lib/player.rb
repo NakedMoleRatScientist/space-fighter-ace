@@ -24,7 +24,7 @@ class Player < Character
     @orig_image = Surface.load(IMAGE_PATH)
     @speed = 3
     @direction = 0
-    @rotate = 10
+    @rotate = 0
     @x = 0
     @y = 0
     @speedup = Timer.new(2) {
