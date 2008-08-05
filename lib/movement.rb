@@ -34,7 +34,7 @@ class Movement
     @fighter.rect.centerx += @x
     @fighter.rect.centery += @y
   end
-  def directionchange
+  def directionmove
     case @direction
     when 1
       @x = 0
@@ -52,5 +52,8 @@ class Movement
   end
   def increase
     @speedup.check()
+  end
+  def diretionchange n
+    @direction = n
   end
 end
