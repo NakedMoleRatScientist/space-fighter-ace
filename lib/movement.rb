@@ -25,6 +25,10 @@ class Movement
     @rotatespeed = 0
     @x = 0
     @y = 0
+    @speedup = Timer.new(2) {
+      @speed += 1
+    }
+    @speedup.start()
   end
   def update
     @fighter.rect.centerx += @x
