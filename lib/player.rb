@@ -22,48 +22,14 @@ class Player < Character
   def initialize engine
     super(IMAGE_PATH,engine)
     @orig_image = Surface.load(IMAGE_PATH)
-    @speed = 3
-    @direction = 0
     @rotate = 0
     @rotatespeed = 0
-    @x = 0
-    @y = 0
-    @speedup = Timer.new(2) {
-      @speed += 1
-    }
-    @speedup.start()
     @movement = Movement.new(self)
-  end
-  def pos
-    @rect.centerx += @x
-    @rect.centery += @y
   end
   def act
     directionchange()
     rotation()
     pos()
-  end
-  def directionchange
-    case @direction
-    when 1
-      @x = 0
-      @y = - @speed
-    when 2
-      @x = 0
-      @y = @speed
-    when 3
-      @x = @speed
-      @y = 0
-    when 4
-      @x = - @speed
-      @y = 0
-    end
-  end
-  def change
-    @speed = 3
-  end
-  def increase
-    @speedup.check()
   end
   def rotation
     if @rotatespeed == 0
