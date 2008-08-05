@@ -21,22 +21,11 @@ class Player < Character
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
-    @orig_image = Surface.load(IMAGE_PATH)
-    @rotate = 0
-    @rotatespeed = 0
     @movement = Movement.new(self)
     @rotation = Rotation.new(self, IMAGE_PATH)
   end
   def act
     @movement.directionmove()
     rotational()
-  end
-  def rotational
-    if @rotatespeed == 0
-      return
-    end
-    @image = @orig_image
-    @rotate += @rotatespeed
-    @image = @image.rotozoom(@rotate,[1,1],true)
   end
 end
