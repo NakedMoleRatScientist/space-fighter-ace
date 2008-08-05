@@ -51,6 +51,9 @@ class Player < Character
     end
     pos()
   end
+  def change
+    @speed = 3
+  end
   def increase
     @speedup.check()
   end
