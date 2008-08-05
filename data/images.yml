@@ -4,13 +4,13 @@ map:
   1: data/wall1.png
   2: data/wall2.png
 terrain:
-  0: data/terrain1.png
-  1: data/terrain2.png
-  2: data/terrain3.png
-  3: data/terrain4.png
-  4: data/terrain5.png
-  5: data/terrain6.png
-  6: data/terrain7.png
-  7: data/terrain8.png
-  8: data/terrain9.png
+  0: data/nebula1.png
+  1: data/nebula2.png
+  2: data/nebula3.png
+  3: data/nebula4.png
+  4: data/nebula5.png
+  5: data/nebula6.png
+  6: data/nebula7.png
+  7: data/nebula8.png
+  8: data/nebula9.png
 background: data/background.jpeg
