@@ -60,6 +60,8 @@ class Controller
             @player.direction = 1
           when Rubygame::K_S
             @player.direction = 2
+          when Rubygame::K_D
+            @player.direction = 3
           end
 		    end
       end
