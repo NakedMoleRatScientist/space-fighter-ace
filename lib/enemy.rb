@@ -20,8 +20,8 @@
 class Enemy < Character
   IMAGE_PATH = "data/game/enemy.png"
   attr_accessor :action
-  def initialize
-    super(IMAGE_PATH)
+  def initialize engine
+    super(IMAGE_PATH,engine)
     @image = Rubygame::Surface.load(IMAGE_PATH)
     @state = true
     newgoal()
