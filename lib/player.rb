@@ -17,7 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Player < Character
-  attr_accessor :speed , :direction , :rotate
+  attr_accessor :speed , :direction , :rotatespeed
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
@@ -25,6 +25,7 @@ class Player < Character
     @speed = 3
     @direction = 0
     @rotate = 0
+    @rotatespeed = 0
     @x = 0
     @y = 0
     @speedup = Timer.new(2) {
