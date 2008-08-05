@@ -39,6 +39,7 @@ class Player < Character
   end
   def act
     directionchange()
+    rotation()
     pos()
   end
   def directionchange
