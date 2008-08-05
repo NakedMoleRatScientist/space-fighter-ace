@@ -57,15 +57,8 @@ class Controller
           when Rubygame::K_ESCAPE
             Rubygame.quit()
             exit
-          when Rubygame::K_W
-            @player.direction = 1
-          when Rubygame::K_S
-            @player.direction = 2
-          when Rubygame::K_D
-            @player.direction = 3
-          when Rubygame::K_A
-            @player.direction = 4
           end
+          move(ev)
 		    end
       end
       action()
