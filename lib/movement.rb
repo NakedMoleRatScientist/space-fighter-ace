@@ -30,4 +30,20 @@ class Movement
     @fighter.rect.centerx += @x
     @fighter.rect.centery += @y
   end
+  def directionchange
+    case @direction
+    when 1
+      @x = 0
+      @y = - @speed
+    when 2
+      @x = 0
+      @y = @speed
+    when 3
+      @x = @speed
+      @y = 0
+    when 4
+      @x = - @speed
+      @y = 0
+    end
+  end
 end
