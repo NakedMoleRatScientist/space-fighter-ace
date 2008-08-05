@@ -37,6 +37,10 @@ class Player < Character
     @rect.centery += @y
   end
   def act
+    directionchange()
+    pos()
+  end
+  def directionchange
     case @direction
     when 1
       @x = 0
@@ -51,7 +55,6 @@ class Player < Character
       @x = - @speed
       @y = 0
     end
-    pos()
   end
   def change
     @speed = 3
