@@ -25,7 +25,7 @@ class Player < Character
     @rotate = 0
     @rotatespeed = 0
     @movement = Movement.new(self)
-    @rotation = Rotation.new()
+    @rotation = Rotation.new(self)
   end
   def act
     @movement.directionmove()

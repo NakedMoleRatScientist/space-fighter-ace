@@ -17,7 +17,8 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Rotation
-  def initialize
+  def initialize fighter
+    @figther = fighter
     @rotatespeed = 0
     @rotate = 0
   end
