@@ -34,7 +34,7 @@ class Player < Character
     case @direction
     when 1
       @x = 0
-      @y = @speed
+      @y = - @speed
     end
     pos()
   end
