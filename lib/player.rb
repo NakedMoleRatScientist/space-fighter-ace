@@ -25,6 +25,7 @@ class Player < Character
   end
   def pos
     @rect.centerx += @x
+    @rect.centery += @y
     @rect.centerx %= 800
     @rect.centery %= 600
   end
