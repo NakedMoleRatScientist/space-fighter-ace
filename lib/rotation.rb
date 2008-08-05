@@ -23,4 +23,12 @@ class Rotation
     @rotatespeed = 0
     @rotate = 0
   end
+  def rotation
+    if @rotatespeed == 0
+      return
+    end
+    @fighter.image = @orig_image
+    @rotate += @rotatespeed
+    @image = @image.rotozoom(@rotate,[1,1],true)
+  end
 end
