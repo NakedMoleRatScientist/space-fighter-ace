@@ -41,6 +41,9 @@ class Player < Character
     when 3
       @x = @speed
       @y = 0
+    when 4
+      @x = - @speed
+      @y = 0
     end
     pos()
   end
