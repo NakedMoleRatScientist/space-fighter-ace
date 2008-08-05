@@ -38,6 +38,11 @@ class Controller
     @engine.compute()
     @engine.draw(@data.display.screen)
   end
+  # NOTE: For the attribute direction of player:
+  # 1. Up
+  # 2. Down
+  # 3. Right
+  # 4. Left
   def mode
     loop do
       @engine.prevposition()
@@ -51,6 +56,8 @@ class Controller
           when Rubygame::K_ESCAPE
             Rubygame.quit()
             exit
+          when Rubygame::K_W
+            @player.direction = 1
           end
 		    end
       end
