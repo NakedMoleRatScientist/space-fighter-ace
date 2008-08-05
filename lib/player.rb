@@ -58,4 +58,7 @@ class Player < Character
   def increase
     @speedup.check()
   end
+  def rotation
+    rotozoom(@rotate,0)
+  end
 end
