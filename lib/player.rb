@@ -23,6 +23,7 @@ class Player < Character
     super(IMAGE_PATH,engine)
     @speed = 3
     @direction = 0
+    @rotate = 10
     @x = 0
     @y = 0
     @speedup = Timer.new(2) {
