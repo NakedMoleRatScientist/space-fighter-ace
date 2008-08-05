@@ -55,6 +55,7 @@
   lib/mapterrain.rb
   lib/player.rb
   lib/enemy.rb
+  lib/movement.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
