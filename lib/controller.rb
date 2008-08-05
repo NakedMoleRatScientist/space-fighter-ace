@@ -85,7 +85,7 @@ class Controller
   def rotate ev
     case ev.key
     when Rubygame::K_RIGHT
-      @player.rotate = 10
+      @player.rotatespeed = 10
     end
   end
 end
