@@ -81,4 +81,10 @@ class Controller
       @player.change()
     end
   end
+  def rotate ev
+    case ev
+    when Rubygame::K_RIGHT
+      @player.rotation()
+    end
+  end
 end
