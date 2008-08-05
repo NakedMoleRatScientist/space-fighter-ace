@@ -23,15 +23,17 @@ class Player < Character
     super(IMAGE_PATH,engine)
     @speed = 3
     @direction = 0
+    @x = 0
+    @y = 0
   end
   def pos
     @rect.centerx += @x
     @rect.centery += @y
   end
   def act
-    case direction
+    case @direction
     when 1
-      @x = 3
+      @x = @speed
       @y = 0
     end
     pos()
