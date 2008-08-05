@@ -56,4 +56,7 @@ class Movement
   def diretionchange n
     @direction = n
   end
+  def reset
+    @speed = 3
+  end
 end
