@@ -69,12 +69,16 @@ class Controller
     case ev.key
     when Rubygame::K_W
       @player.direction = 1
+      @player.change()
     when Rubygame::K_S
       @player.direction = 2
+      @player.change()
     when Rubygame::K_D
       @player.direction = 3
+      @player.change()
     when Rubygame::K_A
       @player.direction = 4
+      @player.change()
     end
   end
 end
