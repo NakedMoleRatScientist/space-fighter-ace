@@ -60,7 +60,11 @@ class Player < Character
     @speedup.check()
   end
   def rotation
+    if @rotate == 0
+      return
+    end
     @image = @orig_image
+    @rotate += 10
     @image = @image.rotozoom(@rotate,[1,1],true)
   end
 end
