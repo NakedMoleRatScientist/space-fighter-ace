@@ -52,7 +52,7 @@ class Controller
           Rubygame.quit()
           exit
         when Rubygame::KeyDownEvent
-          @player.increase()
+          @player.movement.increase()
           case ev.key
           when Rubygame::K_ESCAPE
             Rubygame.quit()
@@ -69,17 +69,17 @@ class Controller
   def move ev
     case ev.key
     when Rubygame::K_W
-      @player.direction = 1
-      @player.change()
+      @player.movement.directionchange(1)
+      @player.movement.reset()
     when Rubygame::K_S
-      @player.direction = 2
-      @player.change()
+      @player.movement.directionchange(2)
+      @player.movement.reset()
     when Rubygame::K_D
-      @player.direction = 3
-      @player.change()
+      @player.movement.directionchange(3)
+      @player.movement.reset()
     when Rubygame::K_A
-      @player.direction = 4
-      @player.change()
+      @player.movement.directionchange(4)
+      @player.movement.reset()
     end
   end
   def rotate ev
