@@ -17,7 +17,8 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Movement
-  def initialize
+  def initialize fighter
+    @fighter = fighter
     @direction = 0
     @speed = 3
     @rotate = 0
