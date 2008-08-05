@@ -28,4 +28,6 @@ class Player < Character
     @rect.centerx += @x
     @rect.centery += @y
   end
+  def act
+  end
 end
