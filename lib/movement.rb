@@ -27,7 +27,7 @@ class Movement
     @y = 0
   end
   def update
-    @rect.centerx += @x
-    @rect.centery += @y
+    @fighter.rect.centerx += @x
+    @fighter.rect.centery += @y
   end
 end
