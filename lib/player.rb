@@ -29,5 +29,11 @@ class Player < Character
     @rect.centery += @y
   end
   def act
+    case direction
+    when 1
+      @x = 3
+      @y = 0
+    end
+    pos()
   end
 end
