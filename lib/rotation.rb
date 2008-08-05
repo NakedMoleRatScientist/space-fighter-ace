@@ -17,8 +17,9 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Rotation
-  def initialize fighter
-    @figther = fighter
+  def initialize fighter , image
+    @fighter = fighter
+    @orig_image = Surface.load(image)
     @rotatespeed = 0
     @rotate = 0
   end
