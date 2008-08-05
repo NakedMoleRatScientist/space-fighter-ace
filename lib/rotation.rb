@@ -31,4 +31,7 @@ class Rotation
     @rotate += @rotatespeed
     @image = @image.rotozoom(@rotate,[1,1],true)
   end
+  def change_rotate_speed n
+    @rotatespeed = n
+  end
 end
