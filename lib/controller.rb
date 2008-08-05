@@ -58,6 +58,8 @@ class Controller
             exit
           when Rubygame::K_W
             @player.direction = 1
+          when Rubygame::K_S
+            @player.direction = 2
           end
 		    end
       end
