@@ -50,4 +50,7 @@ class Movement
       @y = 0
     end
   end
+  def increase
+    @speedup.check()
+  end
 end
