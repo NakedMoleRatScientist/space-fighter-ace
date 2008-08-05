@@ -88,6 +88,8 @@ class Controller
       @player.rotation.change_rotate_speed(10)
     when Rubygame::K_LEFT
       @player.rotation.change_rotate_speed(-10)
+    when Rubygame::K_DOWN
+      @player.rotation.change_rotate_speed(0)
     end
   end
 end
