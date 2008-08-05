@@ -27,11 +27,11 @@ class CharType
   def options opt , x , y
     case opt
     when 1
-      @enemy = Enemy.new(@engine)
-      @enemy.sets(x,y)
-      @enemy.name = "Enemy Fighter " + @letter
+      enemy = Enemy.new(@engine)
+      enemy.sets(x,y)
+      enemy.name = "Enemy Fighter " + @letter
       @letter.succ!
-      return example2
+      return enemy
     when 2
       player = Player.new(@engine)
       player.name = "Player"
