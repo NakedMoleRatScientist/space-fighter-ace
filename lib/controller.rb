@@ -52,6 +52,7 @@ class Controller
           Rubygame.quit()
           exit
         when Rubygame::KeyDownEvent
+          @player.increase()
           case ev.key
           when Rubygame::K_ESCAPE
             Rubygame.quit()
