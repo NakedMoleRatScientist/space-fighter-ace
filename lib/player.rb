@@ -64,7 +64,7 @@ class Player < Character
       return
     end
     @image = @orig_image
-    @rotate += 10
-    @image = @image.rotozoom(@rotate,[1,1],true)
+    rotate += @rotate
+    @image = @image.rotozoom(rotate,[1,1],true)
   end
 end
