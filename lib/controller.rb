@@ -59,6 +59,7 @@ class Controller
             exit
           end
           move(ev)
+          rotate(ev)
 		    end
       end
       action()
@@ -82,8 +83,9 @@ class Controller
     end
   end
   def rotate ev
-    case ev
+    case ev.key
     when Rubygame::K_RIGHT
+      puts"hello"
       @player.rotation()
     end
   end
