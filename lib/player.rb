@@ -17,7 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Player < Character
-  attr_accessor :movement , :rotatespeed
+  attr_accessor :movement , :rotation
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
@@ -26,6 +26,6 @@ class Player < Character
   end
   def act
     @movement.directionmove()
-    rotational()
+    @rotation.rotation()
   end
 end

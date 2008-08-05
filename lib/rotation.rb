@@ -29,7 +29,7 @@ class Rotation
     end
     @fighter.image = @orig_image
     @rotate += @rotatespeed
-    @image = @image.rotozoom(@rotate,[1,1],true)
+    @fighter.image = @fighter.image.rotozoom(@rotate,[1,1],true)
   end
   def change_rotate_speed n
     @rotatespeed = n
