@@ -31,6 +31,7 @@ class Controller
     @engine.setfollow("Player")
     @engine.setup()
     @engine.ruleset(GameLaw.new(@engine))
+    @player = @engine.following
     @q = Rubygame::EventQueue.new()
   end
   def action
