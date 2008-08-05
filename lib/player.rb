@@ -33,8 +33,8 @@ class Player < Character
   def act
     case @direction
     when 1
-      @x = @speed
-      @y = 0
+      @x = 0
+      @y = @speed
     end
     pos()
   end
