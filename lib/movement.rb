@@ -25,6 +25,7 @@ class Movement
     @rotatespeed = 0
     @x = 0
     @y = 0
+    @mode = false
     @speedup = Timer.new(2) {
       @speed += 1
     }
@@ -37,22 +38,25 @@ class Movement
   def directionmove
     case @direction
     when 1
-      @x = 0
       @y = - @speed
     when 2
-      @x = 0
       @y = @speed
     when 3
       @x = @speed
-      @y = 0
     when 4
       @x = - @speed
-      @y = 0
     when 0
       @x = 0
       @y = 0
     end
     update()
+  end
+  def change_brust
+    if @mode == false
+      @mode = true
+    else
+      @mode = false
+    end
   end
   def increase
     @speedup.check()
