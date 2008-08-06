@@ -39,8 +39,10 @@ class Movement
     case @direction
     when 1
       @y = - @speed
+      xbrust()
     when 2
       @y = @speed
+      xbrust()
     when 3
       @x = @speed
       ybrust()
@@ -52,6 +54,11 @@ class Movement
       @y = 0
     end
     update()
+  end
+  def xbrust
+    if @mode == true
+      @x = 0
+    end
   end
   def ybrust
     if @mode == true
