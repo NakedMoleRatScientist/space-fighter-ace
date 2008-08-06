@@ -76,19 +76,14 @@ class Controller
     case ev.key
     when Rubygame::K_W
       @player.movement.directionchange(1)
-      @player.movement.reset()
     when Rubygame::K_S
       @player.movement.directionchange(2)
-      @player.movement.reset()
     when Rubygame::K_D
       @player.movement.directionchange(3)
-      @player.movement.reset()
     when Rubygame::K_A
       @player.movement.directionchange(4)
-      @player.movement.reset()
     when Rubygame::K_Q
       @player.movement.directionchange(0)
-      @player.movement.reset()
     when Rubygame::K_E
       @player.movement.change_brust()
     end
