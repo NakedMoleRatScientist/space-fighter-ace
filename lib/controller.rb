@@ -33,8 +33,12 @@ class Controller
     @engine.ruleset(GameLaw.new(@engine))
     @player = @engine.following
     @q = Rubygame::EventQueue.new()
+    @active = false
   end
   def action
+    if @active == true
+      @player.movement.increase()
+    end
     @engine.compute()
     @engine.draw(@data.display.screen)
   end
@@ -52,7 +56,7 @@ class Controller
           Rubygame.quit()
           exit
         when Rubygame::KeyDownEvent
-          @player.movement.increase()
+          @active = true
           case ev.key
           when Rubygame::K_ESCAPE
             Rubygame.quit()
@@ -60,6 +64,8 @@ class Controller
           end
           move(ev)
           rotate(ev)
+        when Rubygame::KeyUpEvent
+          @active = false
 		    end
       end
       action()
