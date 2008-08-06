@@ -26,16 +26,17 @@ class Movement
     @x = 0
     @y = 0
     @mode = false
-    @speedup = Timer.new(2) {
-      @speed += 1
+    @speedup = Timer.new(1) {
+      @speed += 5
+      puts @speed
     }
     @speedup.start()
   end
   def update
-     movex = 10.0 * Math.cos(@fighter.angle)
-     movey = 10.0 * Math.sin(@fighter.angle)
-     @fighter.rect.centerx += movex
-     @fighter.rect.centery += movey
+    movex = @y * Math.cos(@fighter.angle)
+    movey = @y * Math.sin(@fighter.angle)
+    @fighter.rect.centerx += movex
+    @fighter.rect.centery += movey
   end
   def directionmove
     case @direction
