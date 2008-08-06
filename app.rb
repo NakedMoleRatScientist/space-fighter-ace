@@ -52,6 +52,7 @@
   lib/enemy.rb
   lib/movement.rb
   lib/rotation.rb
+  lib/hud.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
