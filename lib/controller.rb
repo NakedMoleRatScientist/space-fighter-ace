@@ -83,6 +83,8 @@ class Controller
     when Rubygame::K_Q
       @player.movement.directionchange(0)
       @player.movement.reset()
+    when Rubygame::K_E
+      @player.movement.change_brust()
     end
   end
   def rotate ev
