@@ -78,6 +78,9 @@ class Movement
     @speedup.check()
   end
   def directionchange n
+    if n == @direction
+      return
+    end
     @direction = n
     reset()
   end
