@@ -43,13 +43,20 @@ class Movement
       @y = @speed
     when 3
       @x = @speed
+      ybrust()
     when 4
       @x = - @speed
+      ybrust()
     when 0
       @x = 0
       @y = 0
     end
     update()
+  end
+  def ybrust
+    if @mode == true
+      @y = 0
+    end
   end
   def change_brust
     if @mode == false
