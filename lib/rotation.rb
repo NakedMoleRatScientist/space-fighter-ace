@@ -20,7 +20,7 @@ class Rotation
   def initialize fighter , image
     @fighter = fighter
     @orig_image = Surface.load(image)
-    @rotatespeed = 0
+    @rotatespeed = 0.0
     @rotate = 0
   end
   def rotation
@@ -29,6 +29,7 @@ class Rotation
     end
     @fighter.image = @orig_image
     @rotate += @rotatespeed
+    @fighter.angle += @rotate
     @fighter.image = @fighter.image.rotozoom(@rotate,[1,1],true)
     recenter()
   end
