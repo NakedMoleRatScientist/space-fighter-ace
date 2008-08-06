@@ -43,6 +43,9 @@ class Controller
     @engine.compute()
     @engine.draw(@data.display.screen)
   end
+  def draw
+    @hud.text()
+  end
   # NOTE: For the attribute direction of player:
   # 1. Up
   # 2. Down
@@ -70,6 +73,7 @@ class Controller
 		    end
       end
       action()
+      draw()
       @data.display.screen.flip()
     end
   end
