@@ -20,7 +20,8 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Hud
-  def initialize data
+  def initialize data , engine
     @data = data
+    @engine = engine
   end
 end
