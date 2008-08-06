@@ -28,7 +28,6 @@ class Movement
     @mode = false
     @speedup = Timer.new(1) {
       @speed += 5
-      puts @speed
     }
     @speedup.start()
   end
@@ -80,6 +79,7 @@ class Movement
   end
   def directionchange n
     @direction = n
+    reset()
   end
   def reset
     @speed = 3
