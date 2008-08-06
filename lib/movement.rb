@@ -23,8 +23,7 @@ class Movement
     @speed = 3
     @rotate = 0
     @rotatespeed = 0
-    @x = 0
-    @y = 0
+    @angle = 0
     @mode = false
     @speedup = Timer.new(1) {
       @speed += 5
@@ -32,7 +31,7 @@ class Movement
     @speedup.start()
   end
   def update
-    @fighter.angle = @x
+    @fighter.angle = @angle
     movex = @speed * Math.cos(@fighter.angle)
     movey = @speed * Math.sin(@fighter.angle)
     @fighter.rect.centerx += movex
@@ -41,11 +40,11 @@ class Movement
   def directionmove
     case @direction
     when 1
-      @y = @speed
+      @angle = 90
     when 2
-      @y = - @speed
+      @angle = 270
     when 3
-      @x = @speed
+      @angle = 180
     end
     update()
   end
