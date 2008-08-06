@@ -41,7 +41,7 @@ class Movement
   def directionmove
     case @direction
     when 1
-      @angle = 0
+      @angle = - Math::PI / 2
     end
     update()
   end
