@@ -21,13 +21,13 @@ class Movement
   def initialize fighter
     @fighter = fighter
     @direction = 0
-    @speed = 3
+    @speed = 0
     @rotate = 0
     @rotatespeed = 0
     @angle = 0
     @mode = false
     @speedup = Timer.new(1) {
-      @speed += 5
+      @speed += 2
     }
     @speedup.start()
   end
@@ -41,11 +41,7 @@ class Movement
   def directionmove
     case @direction
     when 1
-      @angle = 90
-    when 2
-      @angle = 270
-    when 3
-      @angle = 180
+      @angle = 0
     end
     update()
   end
