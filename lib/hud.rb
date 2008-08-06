@@ -25,7 +25,8 @@ class Hud
     @engine = engine
   end
   def text
+    @data.clear()
     @data.declare(:Speed)
-    @data.text.add("Speed: " + @engine.following.movement.speed)
+    @data.text.add("Speed: #{@engine.following.movement.speed}",800,0)
   end
 end
