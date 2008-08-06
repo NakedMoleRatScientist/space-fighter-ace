@@ -37,36 +37,6 @@ class Movement
     @fighter.rect.centerx += movex
     @fighter.rect.centery += movey
   end
-  def directionmove
-    case @direction
-    when 1
-      @y = - @speed
-      xbrust()
-    when 2
-      @y = @speed
-      xbrust()
-    when 3
-      @x = @speed
-      ybrust()
-    when 4
-      @x = - @speed
-      ybrust()
-    when 0
-      @x = 0
-      @y = 0
-    end
-    update()
-  end
-  def xbrust
-    if @mode == true
-      @x = 0
-    end
-  end
-  def ybrust
-    if @mode == true
-      @y = 0
-    end
-  end
   def change_brust
     if @mode == false
       @mode = true
