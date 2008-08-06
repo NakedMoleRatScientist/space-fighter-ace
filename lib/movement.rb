@@ -33,8 +33,8 @@ class Movement
   end
   def update
     @fighter.angle = @x
-    movex = @y * Math.cos(@fighter.angle)
-    movey = @y * Math.sin(@fighter.angle)
+    movex = @speed * Math.cos(@fighter.angle)
+    movey = @speed * Math.sin(@fighter.angle)
     @fighter.rect.centerx += movex
     @fighter.rect.centery += movey
   end
