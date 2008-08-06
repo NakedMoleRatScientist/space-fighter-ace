@@ -48,6 +48,9 @@ class Movement
     when 4
       @x = - @speed
       @y = 0
+    when 0
+      @x = 0
+      @y = 0
     end
     update()
   end
