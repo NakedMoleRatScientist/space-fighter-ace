@@ -32,8 +32,10 @@ class Movement
     @speedup.start()
   end
   def update
-    @fighter.rect.centerx += @x
-    @fighter.rect.centery += @y
+     movex = 10.0 * Math.cos(@fighter.angle)
+     movey = 10.0 * Math.sin(@fighter.angle)
+     @fighter.rect.centerx += movex
+     @fighter.rect.centery += movey
   end
   def directionmove
     case @direction
