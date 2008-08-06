@@ -17,6 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Movement
+  attr_reader :speed
   def initialize fighter
     @fighter = fighter
     @direction = 0
