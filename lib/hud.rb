@@ -20,6 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Hud
-  def initialize
+  def initialize data
+    @data = data
   end
 end
