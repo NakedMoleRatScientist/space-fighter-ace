@@ -32,10 +32,22 @@ class Movement
     @speedup.start()
   end
   def update
+    @fighter.angle = @x
     movex = @y * Math.cos(@fighter.angle)
     movey = @y * Math.sin(@fighter.angle)
     @fighter.rect.centerx += movex
     @fighter.rect.centery += movey
+  end
+  def directionmove
+    case @direction
+    when 1
+      @y = @speed
+    when 2
+      @y = - @speed
+    when 3
+      @x = @speed
+    end
+    update()
   end
   def change_brust
     if @mode == false
