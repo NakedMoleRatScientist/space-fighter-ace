@@ -34,6 +34,7 @@ class Controller
     @player = @engine.following
     @q = Rubygame::EventQueue.new()
     @active = false
+    @hud = Hud.new()
   end
   def action
     if @active == true
