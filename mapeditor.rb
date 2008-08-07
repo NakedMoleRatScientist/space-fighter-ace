@@ -42,8 +42,6 @@
   lib/itemstracker.rb
   lib/chartype.rb
   lib/character.rb
-  lib/charexample.rb
-  lib/charexample2.rb
   lib/characterstracker.rb
   lib/editengine.rb
   lib/editui.rb
