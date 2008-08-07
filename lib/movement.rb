@@ -44,6 +44,8 @@ class Movement
       @angle = - Math::PI / 2
     when 2
       @angle = Math::PI / 2
+    when 3
+      @angle = 0
     end
     update()
   end
