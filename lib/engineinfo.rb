@@ -73,4 +73,12 @@ class EngineInfo
   def set_cam_mode
     @cam_mode = true
   end
+  def camera_set
+    if @cam_mode == true
+      @mapengine.camera.adjustdown = @adjustdown
+      @mapengine.camera.adjustup = @adjustup
+      @mapengine.camera.adjustbackward = @adjustbackward
+      @mapengine.camera.adjustforward = @adjustforward
+    end
+  end
 end

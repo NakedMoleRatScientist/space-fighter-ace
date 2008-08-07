@@ -62,12 +62,4 @@ class GameEngine < EngineInfo
   def undraw screen
     @mapengine.undraw(screen)
   end
-  def camera_set
-    if @cam_mode == true
-      @mapengine.camera.adjustdown = @adjustdown
-      @mapengine.camera.adjustup = @adjustup
-      @mapengine.camera.adjustbackward = @adjustbackward
-      @mapengine.camera.adjustforward = @adjustforward
-    end
-  end
 end
