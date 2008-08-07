@@ -20,5 +20,6 @@ class Projectile
   include Rubygame::Sprites::Sprite
   attr_accessor :rect
   def initialize
+    @state = true
   end
 end
