@@ -16,12 +16,13 @@
 #
 #You can contact the author at wikipediankiba@gmail.com
 
-class Projectile
-  include Rubygame::Sprites::Sprite
-  attr_accessor :rect
+class Projectile < Character
   ENEMY_PATH = "data/game/enemytracer.png"
   PLAYER_PATH = "data/game/playertracer.png"
-  def initialize
+  def initialize engine
+    super(ENEMY_PATH,engine)
     @state = true
+  end
+  def act
   end
 end
