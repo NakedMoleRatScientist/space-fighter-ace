@@ -23,6 +23,7 @@
   yaml
   pathname
   lib/engineinfo.rb
+  lib/timer.rb
   lib/mapfiles.rb
   lib/mapfilesmenu.rb
   lib/mapfilesmenuui.rb
@@ -53,6 +54,7 @@
   lib/mapterrain.rb
   lib/player.rb
   lib/enemy.rb
+  lib/projectile.rb
   lib/movement.rb
   lib/rotation.rb
 }.each{|lib| require lib}
