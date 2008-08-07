@@ -39,8 +39,8 @@ class GameEngine < EngineInfo
     selectfollowing()
     @itemstrack = ItemsTracker.new(self)
     @itemstrack.datacompute()
-    camera_set()
     @mapengine.cam()
+    camera_set()
   end
   # NOTE: Compute everything.
   def compute
