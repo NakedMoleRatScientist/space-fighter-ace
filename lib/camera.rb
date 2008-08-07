@@ -37,6 +37,7 @@ class Camera
     @adjustback = 250
     @adjustforward = 350
     @adjustdown = 530
+    @upadjust = 60
   end
   def compute
     backwardcompute()
@@ -47,7 +48,7 @@ class Camera
   def backwardcompute
     # NOTE: If the followed's horizontal position defined by the x in followed's rect is  is less than 250, the map will move backward.
     if @follow.rect.x < @adjustback
-	    length = 250 - @follow.rect.x
+	    length = @adjustback - @follow.rect.x
 	    @engine.length += length
 	    if leftlimit() == true
         return
@@ -58,7 +59,7 @@ class Camera
   def forwardcompute
     # NOTE: If the followed's horizontal position defined by the x in player's rect is greater than 350, than the map will move forward.
     if @follow.rect.x > @adjustforward
-	    length = @follow.rect.x - 350
+	    length = @follow.rect.x - @adjustforward
 	    @engine.length -= length
 	    if rightlimit() == true
         return
@@ -70,7 +71,7 @@ class Camera
   def downcompute
     # NOTE: If the followed's vertical position defined by the y in player's rect is greater than 530, than the map will move down.
     if @follow.rect.y > @adjustdown
-	    length = @follow.rect.y - 530
+	    length = @follow.rect.y - @adjustdown
 	    @engine.height -= length
 	    if downlimit() == true
         return
@@ -81,8 +82,8 @@ class Camera
   end
   def upcompute
     # NOTE: If the followed's vertical position defined by the y in player's rect is lower than 60, than the map will move up.
-    if @follow.rect.y < 60
-	    length = 60 - @follow.rect.y
+    if @follow.rect.y < @upadjust
+	    length = @upadjust - @follow.rect.y
 	    @engine.height += length
 	    if uplimit() == true
         return
