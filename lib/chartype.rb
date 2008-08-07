@@ -30,8 +30,8 @@ class CharType
     when 1
       enemy = Enemy.new(@engine)
       enemy.sets(x,y)
-      enemy.name = "Enemy Fighter " + @letter
-      @letter.succ!
+      enemy.name = "Enemy Fighter " + @enemyletter
+      @enemyletter.succ!
       return enemy
     when 2
       player = Player.new(@engine)
@@ -42,6 +42,7 @@ class CharType
       projectile = Projectile.new(@engine)
       projectile.name = "Projectile " + @projecletter
       projectile.sets(x,y)
+      @projecletter.succ!
       return projectile
     end
     return false
