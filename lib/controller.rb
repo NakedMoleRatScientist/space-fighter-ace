@@ -32,7 +32,7 @@ class Controller
     @engine.setadjustbackward(350)
     @engine.setadjustdown(350)
     @engine.setadjustup(250)
-    @engine.set_camera_set()
+    @engine.set_cam_mode()
     @engine.setfollow("Player")
     @engine.setup()
     @engine.ruleset(GameLaw.new(@engine))
