@@ -21,6 +21,7 @@ class Player < Character
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
+    @engine = engine
     @movement = Movement.new(self)
     @rotation = Rotation.new(self, IMAGE_PATH)
     @angle = Math::PI / 2
