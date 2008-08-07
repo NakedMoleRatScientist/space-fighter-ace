@@ -23,6 +23,14 @@ class Projectile < Character
     super(ENEMY_PATH,engine)
     @state = true
   end
+  def sets x , y
+    super(x,y)
+    if @state == true
+      @image = Rubygame::Surface.load(ENEMY_PATH)
+    elsif @state == false
+      @image = Rubygame::Surface.load(PLAYER_PATH)
+    end
+  end
   def act
   end
 end
