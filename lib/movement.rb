@@ -24,7 +24,7 @@ class Movement
     @speed = 0
     @rotate = 0
     @rotatespeed = 0
-    @angle = Math::PI/2
+    @angle = - Math::PI / 2
     @mode = false
     @speedup = Timer.new(1) {
       @speed += 2
@@ -42,6 +42,8 @@ class Movement
     case @direction
     when 1
       @angle = - Math::PI / 2
+    when 2
+      @angle = Math::PI / 2
     end
     update()
   end
