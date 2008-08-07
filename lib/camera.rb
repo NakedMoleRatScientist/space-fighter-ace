@@ -35,6 +35,7 @@ class Camera
     @terrain = @engine.terrain
     @follow =  @engine.engine.following
     @adjustback = 250
+    @adjustforward = 350
   end
   def compute
     backwardcompute()
@@ -55,7 +56,7 @@ class Camera
   end
   def forwardcompute
     # NOTE: If the followed's horizontal position defined by the x in player's rect is greater than 350, than the map will move forward.
-    if @follow.rect.x > 350
+    if @follow.rect.x > @adjustforward
 	    length = @follow.rect.x - 350
 	    @engine.length -= length
 	    if rightlimit() == true
