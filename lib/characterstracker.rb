@@ -33,11 +33,7 @@ class CharactersTracker
   # NOTE: Generate all characters.
   def datacompute
     @calculator.rectlocation(@mapengine.mapfiles.characters) {
-      char = @chartype.options(@calculator.o,@calculator.x,@calculator.y)
-      if char != false
-        @characters << char
-        @sprites << char
-      end
+      addchar(@calculator.o,@calculator.x,@calculator.y)
     }
   end
   # NOTE: Collect positions to revert back to.
