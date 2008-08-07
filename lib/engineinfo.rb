@@ -70,4 +70,7 @@ class EngineInfo
   def setadjustdown n
     @adjustudown = n
   end
+  def set_cam_mode
+    @cam_mode = true
+  end
 end
