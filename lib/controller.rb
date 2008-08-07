@@ -60,13 +60,14 @@ class Controller
           Rubygame.quit()
           exit
         when Rubygame::KeyDownEvent
-          @active = true
           case ev.key
           when Rubygame::K_ESCAPE
             Rubygame.quit()
             exit
           end
-          move(ev)
+          if move(ev) == true
+            @active = true
+          end
           rotate(ev)
         when Rubygame::KeyUpEvent
           @active = false
@@ -92,6 +93,7 @@ class Controller
     when Rubygame::K_E
       @player.movement.change_brust()
     end
+    return false
   end
   def rotate ev
     case ev.key
