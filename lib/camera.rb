@@ -34,6 +34,7 @@ class Camera
     @c = @engine.engine.charstrack.characters
     @terrain = @engine.terrain
     @follow =  @engine.engine.following
+    @adjustback = 250
   end
   def compute
     backwardcompute()
@@ -43,7 +44,7 @@ class Camera
   end
   def backwardcompute
     # NOTE: If the followed's horizontal position defined by the x in followed's rect is  is less than 250, the map will move backward.
-    if @follow.rect.x < 250
+    if @follow.rect.x < @adjustback
 	    length = 250 - @follow.rect.x
 	    @engine.length += length
 	    if leftlimit() == true
