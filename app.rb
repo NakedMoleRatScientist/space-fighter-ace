@@ -45,8 +45,6 @@
   lib/characterstracker.rb
   lib/chartype.rb
   lib/itemtype.rb
-  lib/charexample.rb
-  lib/charexample2.rb
   lib/mapterrain.rb
   lib/player.rb
   lib/enemy.rb
