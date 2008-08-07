@@ -80,4 +80,12 @@ class CharactersTracker
     @characters = []
     @sprites = Rubygame::Sprites::Group.new()
   end
+  # NOTE: Add a character to the mix.
+  def addchar o , x , y
+    char = @chartype.options(o,x,y)
+    if char != false
+      @characters << char
+      @sprites << char
+    end
+  end
 end
