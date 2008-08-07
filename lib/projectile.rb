@@ -19,6 +19,8 @@
 class Projectile
   include Rubygame::Sprites::Sprite
   attr_accessor :rect
+  ENEMY_PATH = "data/game/enemytracer.png"
+  PLAYER_PATH = "data/game/playertracer.png"
   def initialize
     @state = true
   end
