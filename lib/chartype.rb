@@ -22,7 +22,8 @@
 class CharType
   def initialize engine
     @engine = engine
-    @letter = 'A'
+    @enemyletter = 'A'
+    @projecletter = 'A'
   end
   def options opt , x , y
     case opt
@@ -37,6 +38,11 @@ class CharType
       player.name = "Player"
       player.sets(x,y)
       return player
+    when 3
+      projectile = Projectile.new(@engine)
+      projectile.name = "Projectile " + @projecletter
+      projectile.sets(x,y)
+      return projectile
     end
     return false
   end
