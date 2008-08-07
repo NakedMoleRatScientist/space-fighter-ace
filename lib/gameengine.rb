@@ -39,6 +39,7 @@ class GameEngine < EngineInfo
     selectfollowing()
     @itemstrack = ItemsTracker.new(self)
     @itemstrack.datacompute()
+    camera_set()
     @mapengine.cam()
   end
   # NOTE: Compute everything.
@@ -60,5 +61,13 @@ class GameEngine < EngineInfo
   # NOTE: Draw the map background
   def undraw screen
     @mapengine.undraw(screen)
+  end
+  def camera_set
+    if @cam_mode == true
+      @mapengine.camera.adjustdown = @adjustdown
+      @mapengine.camera.adjustup = @adjustup
+      @mapengine.camera.adjustbackward = @adjustbackward
+      @mapengine.camera.adjustforward = @adjustforward
+    end
   end
 end
