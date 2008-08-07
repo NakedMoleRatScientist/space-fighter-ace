@@ -27,6 +27,7 @@
 #Consequently, the lower your vertical position is, the greater your height.
 
 class Camera
+  attr_accessor :adjustback , :adjustforward, :adjustdown, :adjustup
   def initialize engine
     @engine = engine
     @mapobj = @engine.mapobj
@@ -37,7 +38,7 @@ class Camera
     @adjustback = 250
     @adjustforward = 350
     @adjustdown = 530
-    @upadjust = 60
+    @adjustup = 60
   end
   def compute
     backwardcompute()
@@ -82,8 +83,8 @@ class Camera
   end
   def upcompute
     # NOTE: If the followed's vertical position defined by the y in player's rect is lower than @upadjust, than the map will move up.
-    if @follow.rect.y < @upadjust
-	    length = @upadjust - @follow.rect.y
+    if @follow.rect.y < @adjustup
+	    length = @adjustup - @follow.rect.y
 	    @engine.height += length
 	    if uplimit() == true
         return
