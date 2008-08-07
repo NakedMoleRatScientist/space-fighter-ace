@@ -58,4 +58,16 @@ class EngineInfo
   def setmapsurface size
     @mapsurface = Surface.new(size)
   end
+  def setadjustforward n
+    @adjustforward = n
+  end
+  def setadjustbackward n
+    @adjustbackward = n
+  end
+  def setadjustup n
+    @adjustup = n
+  end
+  def setadjustdown n
+    @adjustudown = n
+  end
 end
