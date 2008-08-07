@@ -32,9 +32,9 @@ class Controller
     @engine.setadjustbackward(350)
     @engine.setadjustdown(350)
     @engine.setadjustup(250)
-    @engine.set_cam_mode()
     @engine.setfollow("Player")
     @engine.setup()
+    @engine.set_cam_mode()
     @engine.ruleset(GameLaw.new(@engine))
     @player = @engine.following
     @q = Rubygame::EventQueue.new()
