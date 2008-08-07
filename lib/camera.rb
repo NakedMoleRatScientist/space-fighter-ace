@@ -27,7 +27,7 @@
 #Consequently, the lower your vertical position is, the greater your height.
 
 class Camera
-  attr_accessor :adjustback , :adjustforward, :adjustdown, :adjustup
+  attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
   def initialize engine
     @engine = engine
     @mapobj = @engine.mapobj
@@ -35,7 +35,7 @@ class Camera
     @c = @engine.engine.charstrack.characters
     @terrain = @engine.terrain
     @follow =  @engine.engine.following
-    @adjustback = 250
+    @adjustbackward = 250
     @adjustforward = 350
     @adjustdown = 530
     @adjustup = 60
@@ -48,8 +48,8 @@ class Camera
   end
   def backwardcompute
     # NOTE: If the followed's horizontal position defined by the x in followed's rect is  is less than @adjustback, the map will move backward.
-    if @follow.rect.x < @adjustback
-	    length = @adjustback - @follow.rect.x
+    if @follow.rect.x < @adjustbackward
+	    length = @adjustbackward - @follow.rect.x
 	    @engine.length += length
 	    if leftlimit() == true
         return
