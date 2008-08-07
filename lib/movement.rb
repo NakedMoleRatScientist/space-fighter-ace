@@ -24,7 +24,7 @@ class Movement
     @speed = 0
     @rotate = 0
     @rotatespeed = 0
-    @angle = 0
+    @angle = Math::PI/2
     @mode = false
     @speedup = Timer.new(1) {
       @speed += 2
