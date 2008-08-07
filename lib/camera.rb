@@ -36,6 +36,7 @@ class Camera
     @follow =  @engine.engine.following
     @adjustback = 250
     @adjustforward = 350
+    @adjustdown = 530
   end
   def compute
     backwardcompute()
@@ -68,7 +69,7 @@ class Camera
   end
   def downcompute
     # NOTE: If the followed's vertical position defined by the y in player's rect is greater than 530, than the map will move down.
-    if @follow.rect.y > 530
+    if @follow.rect.y > @adjustdown
 	    length = @follow.rect.y - 530
 	    @engine.height -= length
 	    if downlimit() == true
