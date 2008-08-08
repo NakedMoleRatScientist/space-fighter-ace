@@ -29,6 +29,7 @@ class CharactersTracker
     @calculator = MapCalculator.new(@engine.mapengine)
     @characters = []
     @sprites = Rubygame::Sprites::Group.new()
+    @control = nil
   end
   # NOTE: Generate all characters.
   def datacompute
