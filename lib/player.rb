@@ -16,18 +16,13 @@
 #
 #You can contact the author at wikipediankiba@gmail.com
 
-class Player < Character
-  attr_accessor :movement , :rotation , :angle
+class Player < SpaceObject
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
-    @movement = Movement.new(self)
-    @rotation = Rotation.new(self, IMAGE_PATH)
-    @angle = Math::PI / 2
   end
   def act
-    @movement.directionmove()
-    @rotation.rotation()
+    super
   end
   def shoot
     @engine.charstrack.addchar(3,@rect.x,@rect.y - 25)
