@@ -22,8 +22,7 @@ class Projectile < SpaceObject
   def initialize engine
     super(ENEMY_PATH,engine)
     @state = true
-    @timer = Timer.new(10) 
-    {
+    @timer = Timer.new(10) {
       death_switch()
     }
     @timer.start()
