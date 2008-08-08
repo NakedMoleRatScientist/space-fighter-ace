@@ -21,4 +21,7 @@ class GameLaw < CharactersLaw
   def initialize engine
     super engine
   end
+  def compute
+    super
+  end
 end
