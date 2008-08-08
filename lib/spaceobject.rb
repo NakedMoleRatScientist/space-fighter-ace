@@ -16,7 +16,16 @@
 #
 #You can contact the author at wikipediankiba@gmail.com
 
-class SpaceObject
-  def initialize
+class SpaceObject < Character
+  attr_accessor :movement , :rotation , :angle
+  def initialize image, engine
+    super(image,engine)
+    @movement = Movement.new(self)
+    @rotation = Rotation.new(self,image)
+    @angle = Math::PI / 2
+  end
+  def act
+    @movement.directionmove()
+    @rotation.rotation()
   end
 end
