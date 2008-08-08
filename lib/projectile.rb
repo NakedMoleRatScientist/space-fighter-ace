@@ -23,7 +23,7 @@ class Projectile < SpaceObject
     super(ENEMY_PATH,engine)
     @state = true
     @timer = Timer.new(10) {
-      death_switch()
+      kill()
     }
     @timer.start()
   end
