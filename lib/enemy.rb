@@ -17,13 +17,13 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 
-class Enemy < Character
+class Enemy < SpaceObject
   IMAGE_PATH = "data/game/enemy.png"
-  attr_accessor :action
   def initialize engine
     super(IMAGE_PATH,engine)
     @image = Rubygame::Surface.load(IMAGE_PATH)
   end
   def act
+    super
   end
 end
