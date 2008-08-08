@@ -24,4 +24,7 @@ class GameLaw < CharactersLaw
   def compute
     super
   end
+  def death_from_projectile
+    add_to_avoid_list(Projectile)
+  end
 end
