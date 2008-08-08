@@ -34,12 +34,4 @@ class Character
     @rect.y = y - 50
     @retainer = [@rect.x,@rect.y]
   end
-  # NOTE: Update the location of the Character.
-  def update move , dir
-    if dir == 0
-	    @rect.x += move
-    elsif dir == 1
-	    @rect.y += move
-    end
-  end
 end
