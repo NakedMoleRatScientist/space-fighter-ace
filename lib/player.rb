@@ -30,4 +30,7 @@ class Player < Character
     @movement.directionmove()
     @rotation.rotation()
   end
+  def shoot
+    @engine.charstrack.addchar(3,@rect.x,@rect.y)
+  end
 end
