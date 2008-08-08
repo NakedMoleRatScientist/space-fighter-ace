@@ -30,6 +30,7 @@
   lib/mapcalculator.rb
   lib/mapfiles.rb
   lib/character.rb
+  lib/spaceobject.rb
   lib/setup.rb
   lib/controller.rb
   lib/mapdata.rb
