@@ -16,7 +16,7 @@
 #
 #You can contact the author at wikipediankiba@gmail.com
 
-class Projectile < Character
+class Projectile < SpaceObject
   ENEMY_PATH = "data/game/enemytracer.png"
   PLAYER_PATH = "data/game/playertracer.png"
   def initialize engine
@@ -32,5 +32,6 @@ class Projectile < Character
     end
   end
   def act
+    super
   end
 end
