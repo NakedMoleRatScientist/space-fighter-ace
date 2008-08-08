@@ -32,6 +32,5 @@ class Character
   def sets x , y
     @rect.x = x
     @rect.y = y
-    @retainer = [x,y]
   end
 end
