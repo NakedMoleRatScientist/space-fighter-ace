@@ -23,39 +23,5 @@ class Enemy < Character
   def initialize engine
     super(IMAGE_PATH,engine)
     @image = Rubygame::Surface.load(IMAGE_PATH)
-    @state = true
-    newgoal()
-  end
-  def newgoal
-    @x = rand(801)
-    @y = rand(541)
-  end
-  def move
-    if @rect.centery < @y
-      @rect.centery += 10
-    elsif @rect.centery > @y
-      @rect.centery -= 10
-    end
-    if @rect.centerx < @x
-      @rect.centerx += 10
-    elsif @rect.centerx > @x
-      @rect.centerx -= 10
-    end
-    if @rect.centery - @y <= 10
-      if @rect.centery - @y >= -10
-        @rect.centery = @y
-      end
-    end
-    if @rect.centerx - @x <= 10
-      if @rect.centerx - @x >= -10
-        @rect.centerx = @x
-      end
-    end
-    if @rect.centerx == @x && @rect.centery == @y
-      newgoal()
-    end
-  end
-  def act
-    move()
   end
 end
