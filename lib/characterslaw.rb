@@ -44,7 +44,7 @@ class CharactersLaw < ItemsLaw
       return false
     end
     @avoid.each do |avoid|
-      if avoid == target
+      if avoid.class == target.class
         return false
       end
     end
