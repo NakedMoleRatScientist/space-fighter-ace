@@ -91,4 +91,8 @@ class CharactersTracker
       @sprites << char
     end
   end
+  # NOTE: Set the @control to the last added.
+  def set_control
+    @control = @characters.last
+  end
 end
