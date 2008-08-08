@@ -23,13 +23,14 @@ class GameLaw < CharactersLaw
   end
   def compute
     super
+    death_from_projectile()
   end
   def death_from_projectile
     add_to_avoid_list(Projectile)
     @c.each do |c|
-      if c.class != Projectile
+      if c.class == Projectile
         if characterscollide(c)
-          puts"DEATH"
+          puts "death!"
         end
       end
     end
