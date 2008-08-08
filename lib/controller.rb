@@ -74,6 +74,7 @@ class Controller
             @active = true
           end
           rotate(ev)
+          shoot(ev)
         when Rubygame::KeyUpEvent
           @active = false
 		    end
@@ -108,6 +109,12 @@ class Controller
       @player.rotation.change_rotate_speed(-10)
     when Rubygame::K_DOWN
       @player.rotation.change_rotate_speed(0)
+    end
+  end
+  def shoot ev
+    case ev.key
+    when Rubygame::K_SPACE
+      @player.shoot()
     end
   end
 end
