@@ -24,4 +24,6 @@ class Enemy < Character
     super(IMAGE_PATH,engine)
     @image = Rubygame::Surface.load(IMAGE_PATH)
   end
+  def act
+  end
 end
