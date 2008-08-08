@@ -32,6 +32,7 @@ class Character
   def sets x , y
     @rect.x = x
     @rect.y = y
+    @retainer = [x,y]
   end
   # NOTE: Update the location of the Character.
   def update move , dir
