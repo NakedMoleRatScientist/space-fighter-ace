@@ -32,8 +32,6 @@ class CharactersLaw < ItemsLaw
     @c.each do |c|
 	    if target != c
         if c.rect.collide_rect?(target)
-          puts target
-          puts c
           return 1
         end
 	    end
