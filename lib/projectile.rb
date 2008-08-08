@@ -22,6 +22,11 @@ class Projectile < SpaceObject
   def initialize engine
     super(ENEMY_PATH,engine)
     @state = true
+    @timer = Timer.new(10) 
+    {
+      death_switch()
+    }
+    @timer.start()
   end
   def sets x , y
     super(x,y)
@@ -36,5 +41,6 @@ class Projectile < SpaceObject
   end
   def act
     super
+    @timer.check()
   end
 end
