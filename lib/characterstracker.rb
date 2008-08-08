@@ -44,8 +44,14 @@ class CharactersTracker
   end
   # NOTE: Compute actions.
   def act
+    n = 0
     @characters.each do |c|
+      if c.death == true
+        @characters.delete_at(n)
+        @sprites.delete(c)
+      end
       c.act()
+      n += 1
     end
   end
   # NOTE: Look up a specific character.
