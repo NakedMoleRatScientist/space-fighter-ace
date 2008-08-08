@@ -34,4 +34,7 @@ class Character
     @rect.x = x
     @rect.y = y
   end
+  def kill
+    @death = true
+  end
 end
