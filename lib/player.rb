@@ -29,5 +29,6 @@ class Player < SpaceObject
     @engine.charstrack.set_control()
     @engine.charstrack.control.state = false
     @engine.charstrack.control.image_set()
+    @engine.charstrack.control.movement.directionchange(1)
   end
 end
