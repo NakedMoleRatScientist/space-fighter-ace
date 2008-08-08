@@ -23,7 +23,7 @@ class Character
   def initialize image , adapter
     super()
     @image = Rubygame::Surface.load(image)
-    @rect = Rubygame::Rect.new(0,0,50,50)
+    @rect = Rubygame::Rect.new(0,0, *@image.size)
     @health = 30
     @name = "unspecified"
     @adapter = adapter
