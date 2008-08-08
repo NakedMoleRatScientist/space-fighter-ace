@@ -21,7 +21,7 @@
 
 
 class CharactersTracker
-  attr_accessor :characters , :sprites
+  attr_accessor :characters , :sprites , :control
   def initialize engine
     @engine = engine
     @mapengine = @engine.mapengine
