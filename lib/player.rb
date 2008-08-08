@@ -31,6 +31,6 @@ class Player < Character
     @rotation.rotation()
   end
   def shoot
-    @engine.charstrack.addchar(3,@rect.x,@rect.y)
+    @engine.charstrack.addchar(3,@rect.x,@rect.y - 25)
   end
 end
