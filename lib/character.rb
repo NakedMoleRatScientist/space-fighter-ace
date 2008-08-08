@@ -31,8 +31,8 @@ class Character
   # NOTE: Set the location of the Character on the map.
   def sets x , y
     @rect.x = x
-    @rect.y = y
-    @retainer = [x,y]
+    @rect.y = y - 50
+    @retainer = [@rect.x,@rect.y]
   end
   # NOTE: Update the location of the Character.
   def update move , dir
