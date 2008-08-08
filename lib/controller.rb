@@ -88,16 +88,22 @@ class Controller
     case ev.key
     when Rubygame::K_W
       @player.movement.directionchange(1)
+      return true
     when Rubygame::K_S
       @player.movement.directionchange(2)
+      return true
     when Rubygame::K_D
       @player.movement.directionchange(3)
+      return true
     when Rubygame::K_A
       @player.movement.directionchange(4)
+      return true
     when Rubygame::K_Q
       @player.movement.directionchange(0)
+      return true
     when Rubygame::K_E
       @player.movement.change_brust()
+      return true
     end
     return false
   end
