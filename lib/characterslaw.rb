@@ -27,11 +27,13 @@ class CharactersLaw < ItemsLaw
   # char represent an object in the character array.
   # When char does equal the object being compared, it mean that the char and the object being compared are one and the same.
   # So it doesn't check for collision for that one.
-  def characterscollide t , n
+  def characterscollide target
     char = 0
     @c.each do |c|
-	    if n != char
-        if c.rect.collide_rect?(t)
+	    if target != c
+        if c.rect.collide_rect?(target)
+          puts target
+          puts c
           return 1
         end
 	    end
@@ -39,24 +41,24 @@ class CharactersLaw < ItemsLaw
     end
   end
   def compute
-    n = 0
     @c.each do |c|
 	    t = maprevert(c)
 	    c = t
-	    t = charactersrevert(c,n)
-	    n += 1
+	    t = charactersrevert(c)
     end
   end
-  def charactersrevert t , n
-    c = characterscollide(t,n)
+  def charactersrevert t
+    c = characterscollide(t)
     if c == 1
 	    change(t)
     end
     return t
   end
   def change t
-    t.rect.x = t.retainer[0]
-    t.rect.y = t.retainer[1]
-    return t
+    if t.retainer != nil
+      t.rect.x = t.retainer[0]
+      t.rect.y = t.retainer[1]
+      return t
+    end
   end
 end
