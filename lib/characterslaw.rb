@@ -22,6 +22,7 @@
 class CharactersLaw < ItemsLaw
   def initialize engine
     super(engine)
+    @avoid = []
   end
    # NOTE: Check if a character collide with any of the other character.
   # char represent an object in the character array.
