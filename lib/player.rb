@@ -27,5 +27,7 @@ class Player < SpaceObject
   def shoot
     @engine.charstrack.addchar(3,@rect.x,@rect.y - 25)
     @engine.charstrack.set_control()
+    @engine.charstrack.control.state = false
+    @engine.charstrack.control.image_set()
   end
 end
