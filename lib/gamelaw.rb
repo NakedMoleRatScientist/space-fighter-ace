@@ -30,7 +30,7 @@ class GameLaw < CharactersLaw
     @c.each do |c|
       if c.class == Projectile
         if characterscollide(c)
-          puts "death!"
+          c.kill()   
         end
       end
     end
