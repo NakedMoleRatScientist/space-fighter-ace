@@ -31,13 +31,24 @@ class CharactersLaw < ItemsLaw
   def characterscollide target
     char = 0
     @c.each do |c|
-	    if target != c
+	    if eligible?(target,c)
         if c.rect.collide_rect?(target)
           return 1
         end
-	    end
-	    char += 1
+	      char += 1
+      end
     end
+  end
+  def eligible? target , c 
+    if target == c
+      return false
+    end
+    @avoid.each do |avoid|
+      if avoid == target
+        return false
+      end
+    end
+    return true
   end
   def compute
     @c.each do |c|
