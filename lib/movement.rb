@@ -17,7 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Movement
-  attr_reader :speed
+  attr_accessor :speed
   def initialize object
     @object = object
     @direction = 0
