@@ -25,6 +25,9 @@ class Projectile < SpaceObject
   end
   def sets x , y
     super(x,y)
+    image_set()
+  end
+  def image_set
     if @state == true
       @image = Rubygame::Surface.load(ENEMY_PATH)
     elsif @state == false
