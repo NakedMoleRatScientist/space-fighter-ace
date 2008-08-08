@@ -60,4 +60,8 @@ class CharactersLaw < ItemsLaw
       return t
     end
   end
+  # NOTE: Add a list of class to avoid.
+  def add_to_avoid_list class_name
+    @avoid << class_name
+  end
 end
