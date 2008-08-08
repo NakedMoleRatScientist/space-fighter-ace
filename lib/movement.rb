@@ -18,8 +18,8 @@
 
 class Movement
   attr_reader :speed
-  def initialize fighter
-    @fighter = fighter
+  def initialize object
+    @object = object
     @direction = 0
     @speed = 0
     @rotate = 0
@@ -32,11 +32,11 @@ class Movement
     @speedup.start()
   end
   def update
-    @fighter.angle = @angle
-    movex = @speed * Math.cos(@fighter.angle)
-    movey = @speed * Math.sin(@fighter.angle)
-    @fighter.rect.centerx += movex
-    @fighter.rect.centery += movey
+    @object.angle = @angle
+    movex = @speed * Math.cos(@object.angle)
+    movey = @speed * Math.sin(@object.angle)
+    @object.rect.centerx += movex
+    @object.rect.centery += movey
   end
   def directionmove
     case @direction
