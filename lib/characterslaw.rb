@@ -28,13 +28,11 @@ class CharactersLaw < ItemsLaw
   # When char does equal the object being compared, it mean that the char and the object being compared are one and the same.
   # So it doesn't check for collision for that one.
   def characterscollide target
-    char = 0
     @c.each do |c|
 	    if eligible?(target,c) == true
         if c.rect.collide_rect?(target)
           return 1
         end
-	      char += 1
       end
     end
   end
