@@ -23,6 +23,8 @@ class Hud
   def initialize data , engine
     @data = data
     @engine = engine
+    @clock = Rubygame::Clock.new()
+    @clock,target_framerate = 30
   end
   def text
     @data.clear()
