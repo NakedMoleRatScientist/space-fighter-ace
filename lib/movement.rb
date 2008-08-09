@@ -32,11 +32,13 @@ class Movement
     @speedup.start()
   end
   def update
-    @object.angle = @angle
+    orig_angle = @object.angle
+    @object.angle += @angle
     movex = @speed * Math.cos(@object.angle)
     movey = @speed * Math.sin(@object.angle)
     @object.rect.centerx += movex
     @object.rect.centery += movey
+    @object.angle = orig_angle
   end
   def directionmove
     case @direction
