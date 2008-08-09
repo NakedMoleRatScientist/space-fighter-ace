@@ -29,10 +29,11 @@ class GameLaw < CharactersLaw
     add_to_avoid_list(Projectile)
     @c.each do |c|
       if c.class == Projectile
-        if characterscollide(c)
+        if characterscollide(c) == 1
           c.kill()   
         end
       end
     end
+    clear_list()
   end
 end
