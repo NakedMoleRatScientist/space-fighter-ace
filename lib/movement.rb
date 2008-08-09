@@ -48,6 +48,8 @@ class Movement
       @angle = 0
     when 4
       @angle = Math::PI
+    when 0
+      @speed = 0
     end
     update()
   end
