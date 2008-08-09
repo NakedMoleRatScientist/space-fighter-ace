@@ -44,6 +44,7 @@ class EditEngine < EngineInfo
     @mapengine.draw(screen)
     @charstrack.sprites.draw(screen)
     @itemstrack.sprites.draw(screen)
+    @mapsurface.blit(screen,[0,0])
     @editui.draw()
   end
   def compute
