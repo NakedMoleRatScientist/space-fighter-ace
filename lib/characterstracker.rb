@@ -91,8 +91,12 @@ class CharactersTracker
       @sprites << char
     end
   end
-  # NOTE: Set the @control to the last added.
+  # NOTE: Set the @control to last
   def set_control_last
     @control = @characters.last
+  end
+  # NOTE: Set the @control at specific value in @characters array.
+  def set_control_at n
+    @control = @characters[n]
   end
 end
