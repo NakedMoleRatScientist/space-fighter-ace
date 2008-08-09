@@ -51,8 +51,7 @@ class MapEngine
   # NOTE: Draw the background, the terrain and then the map.
   def draw screen
     @terrainsprites.draw(@mapsurface)
-    @mapsurface.blit(screen,[0,0])
-    drawmaps(screen)
+    drawmaps(@mapsurface)
   end
   def drawmaps screen
      if @engine.screenlimit == nil
