@@ -22,7 +22,7 @@ class SpaceObject < Character
     super(image,engine)
     @movement = Movement.new(self)
     @rotation = Rotation.new(self,image)
-    @angle = Math::PI / 2
+    @angle = 0
   end
   def act
     @movement.directionmove()
