@@ -27,8 +27,13 @@ class GameLaw < CharactersLaw
   end
   def death_from_projectile
     @c.each do |c|
-       if characterscollide(c) == 1
-         c.kill()   
+       item = characterscollide(c,true)
+       if item != false
+        @charstrack.set_control_at(item)
+        if item.kind_of?(Projectile) || c.kind_of?(Projectile)
+          c.kill()
+          @charstrack.control.kill()
+        end
        end
     end
   end
