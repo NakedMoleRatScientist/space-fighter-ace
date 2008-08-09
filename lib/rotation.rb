@@ -17,8 +17,8 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Rotation
-  def initialize fighter , image
-    @fighter = fighter
+  def initialize object , image
+    @object = object
     @orig_image = Surface.load(image)
     @rotatespeed = 0.0
     @rotate = 0
@@ -27,16 +27,16 @@ class Rotation
     if @rotatespeed == 0
       return
     end
-    @fighter.image = @orig_image
+    @object.image = @orig_image
     @rotate += @rotatespeed
-    @fighter.angle += @rotate
-    @fighter.image = @fighter.image.rotozoom(@rotate,[1,1],true)
+    @object.angle += @rotate
+    @object.image = @object.image.rotozoom(@rotate,[1,1],true)
     recenter()
   end
   def recenter
-    old_center = @fighter.rect.center
-    @fighter.rect.size = @fighter.image.size
-    @fighter.rect.center = old_center
+    old_center = @object.rect.center
+    @object.rect.size = @object.image.size
+    @object.rect.center = old_center
   end
   def change_rotate_speed n
     @rotatespeed = n
