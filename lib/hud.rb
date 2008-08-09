@@ -23,13 +23,15 @@ class Hud
   def initialize data , engine
     @data = data
     @engine = engine
-    @clock = Rubygame::Clock.new()
-    @clock,target_framerate = 30
+    @clock = Rubygame::Clock.new
+    @clock.target_framerate = 30
   end
   def text
+    @clock.tick()
     @data.clear()
     @data.declare(:Info)
     @data.text.add("Speed: #{@engine.following.movement.speed}",800,0)
     @data.text.add("Angle: #{@engine.following.angle}",800,0)
+    @data.text.add("FPS: #{@clock.framerate()}",800,0)
   end
 end
