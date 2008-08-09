@@ -49,6 +49,7 @@ class Controller
     @engine.draw(@data.display.screen)
   end
   def draw
+    @data.display.screen.fill([0,0,0])
     @hud.text()
   end
   # NOTE: For the attribute direction of player:
@@ -79,8 +80,8 @@ class Controller
           @active = false
 		    end
       end
-      action()
       draw()
+      action()
       @data.display.screen.flip()
     end
   end
