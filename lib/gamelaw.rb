@@ -26,14 +26,10 @@ class GameLaw < CharactersLaw
     death_from_projectile()
   end
   def death_from_projectile
-    add_to_avoid_list(Projectile)
     @c.each do |c|
-      if c.class == Projectile
-        if characterscollide(c) == 1
-          c.kill()   
-        end
-      end
+       if characterscollide(c) == 1
+         c.kill()   
+       end
     end
-    clear_list()
   end
 end
