@@ -23,6 +23,7 @@ class SpaceObject < Character
     @movement = Movement.new(self)
     @rotation = Rotation.new(self,image)
     @angle = 0
+    @orig_angle = 0
   end
   def act
     @movement.directionmove()
