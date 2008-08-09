@@ -22,7 +22,6 @@
 class CharactersLaw < ItemsLaw
   def initialize engine
     super(engine)
-    @avoid = []
   end
    # NOTE: Check if a character collide with any of the other character.
   # char represent an object in the character array.
@@ -65,12 +64,5 @@ class CharactersLaw < ItemsLaw
       t.rect.y = t.retainer[1]
       return t
     end
-  end
-  # NOTE: Add a list of class to avoid.
-  def add_to_avoid_list class_name
-    @avoid << class_name
-  end
-  def clear_list
-    @avoid = []
   end
 end
