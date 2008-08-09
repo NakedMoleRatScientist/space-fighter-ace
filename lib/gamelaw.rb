@@ -22,8 +22,8 @@ class GameLaw < CharactersLaw
     super engine
   end
   def compute
+    death_from_projectile
     super
-    death_from_projectile()
   end
   def death_from_projectile
     @c.each do |c|
