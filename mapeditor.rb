@@ -43,6 +43,7 @@
   lib/itemstracker.rb
   lib/chartype.rb
   lib/character.rb
+  lib/spaceobject.rb
   lib/characterstracker.rb
   lib/editengine.rb
   lib/editui.rb
