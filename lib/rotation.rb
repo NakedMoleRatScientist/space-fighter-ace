@@ -29,7 +29,7 @@ class Rotation
     end
     @object.image = @orig_image
     @rotate += @rotatespeed
-    @object.angle += @rotate
+    @object.angle += @rotate * 180.0/Math::PI
     @object.image = @object.image.rotozoom(@rotate,[1,1],true)
     recenter()
   end
