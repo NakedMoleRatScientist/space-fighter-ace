@@ -25,6 +25,7 @@ class MapLaw
     @engine = engine
     @m = @engine.mapengine.mapobj
     @c = @engine.charstrack.characters
+    @charstrack = @engine.charstrack
     @items = @engine.itemstrack.items
     @itemtrack = @engine.itemstrack
   end
