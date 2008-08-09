@@ -17,7 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class SpaceObject < Character
-  attr_accessor :movement , :rotation , :angle
+  attr_accessor :movement , :rotation , :angle , :orig_angle
   def initialize image, engine
     super(image,engine)
     @movement = Movement.new(self)
