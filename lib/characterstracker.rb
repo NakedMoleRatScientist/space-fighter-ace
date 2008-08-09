@@ -92,7 +92,7 @@ class CharactersTracker
     end
   end
   # NOTE: Set the @control to the last added.
-  def set_control
+  def set_control_last
     @control = @characters.last
   end
 end
