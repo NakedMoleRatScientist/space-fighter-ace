@@ -51,8 +51,9 @@ class GameEngine < EngineInfo
   # NOTE: Draw everything
   def draw screen
     @mapengine.draw(screen)
-    @charstrack.sprites.draw(screen)
-    @itemstrack.sprites.draw(screen)
+    @charstrack.sprites.draw(@mapsurface)
+    @itemstrack.sprites.draw(@mapsurface)
+    @mapsurface.blit(screen,[0,0])
   end
   # NOTE: Retrive all previous positions of characters.
   def prevposition
