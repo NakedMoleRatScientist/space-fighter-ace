@@ -31,7 +31,7 @@ class CharactersLaw < ItemsLaw
   def characterscollide target
     char = 0
     @c.each do |c|
-	    if eligible?(target,c)
+	    if eligible? (target,c)
         if c.rect.collide_rect?(target)
           return 1
         end
@@ -44,7 +44,7 @@ class CharactersLaw < ItemsLaw
       return false
     end
     @avoid.each do |avoid|
-      if avoid.class == target.class
+      if target.kind_of? avoid
         return false
       end
     end
@@ -74,5 +74,8 @@ class CharactersLaw < ItemsLaw
   # NOTE: Add a list of class to avoid.
   def add_to_avoid_list class_name
     @avoid << class_name
+  end
+  def clear_list
+    @avoid = []
   end
 end
