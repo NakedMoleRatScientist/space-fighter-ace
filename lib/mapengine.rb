@@ -50,7 +50,6 @@ class MapEngine
   end
   # NOTE: Draw the background, the terrain and then the map.
   def draw screen
-    @background.blit(screen,[0,0])
     @terrainsprites.draw(@mapsurface)
     @mapsurface.blit(screen,[0,0])
     drawmaps(screen)
