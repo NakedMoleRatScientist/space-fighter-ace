@@ -50,12 +50,11 @@ class MapEngine
   end
   # NOTE: Draw the terrain and then the map.
   def draw screen
-    @terrainsprites.draw(@mapsurface)
-    drawmaps(@mapsurface)
-  end
-  def drawmaps screen
     @mapobj.each do |map|
-      map.draw(screen)
+      map.draw(@mapsurface)
+    end
+    @terrain.each do |terrain|
+      terrain.draw(@mapsurface)
     end
   end 
   # NOTE: Clean out the mapobj array.
