@@ -48,13 +48,12 @@ class MapEngine
   def compute
     @camera.compute()
   end
-  # NOTE: Draw the background, the terrain and then the map.
+  # NOTE: Draw the terrain and then the map.
   def draw screen
     @terrainsprites.draw(@mapsurface)
     drawmaps(@mapsurface)
   end
   def drawmaps screen
-    n = 0
     @mapobj.each do |map|
       map.draw(screen)
     end
