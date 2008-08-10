@@ -41,7 +41,15 @@ class MapData
 	    when 7
         obj.property = 3
 	    end
-	    @engine.mapobj << obj
+      if n == 0
+        if obj.property == false
+          @engine.mapobj << obj
+        end
+      else
+        if obj.property != false
+	        @engine.mapobj << obj
+        end
+      end
 	    n = n + 1
     }
   end
