@@ -54,18 +54,9 @@ class MapEngine
     drawmaps(@mapsurface)
   end
   def drawmaps screen
-     if @engine.screenlimit == nil
-      @mapobj.each do |map|
-        map.draw(screen)
-      end
-      return
-    end
+    n = 0
     @mapobj.each do |map|
-      if map.rect.collide_rect?(@engine.screenlimit)
-        if map.rect.x != @engine.screenlimit.width && map.rect.y != @engine.screenlimit.height
-          map.draw(screen)
-        end
-      end
+      map.draw(screen)
     end
   end 
   # NOTE: Clean out the mapobj array.
