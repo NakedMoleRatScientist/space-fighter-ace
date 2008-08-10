@@ -20,7 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EngineInfo
-  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype, :screenlimit , :surface , :mapengine, :charstrack, :itemstrack, :mapsurface
+  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :charstrack, :itemstrack, :mapsurface
   def initialize
     @file = FileSys.new()
   end
@@ -31,10 +31,6 @@ class EngineInfo
   # NOTE: Load images.
   def setimages name
     @images = @file.yaml_read(name)
-  end
-  # NOTE: Set the limit for which map objects can be drawn.
-  def setscreenlimit limit
-    @screenlimit = limit
   end
   # NOTE: Set mapfile
   def setmapfile name
