@@ -20,23 +20,6 @@ class Rotation
   def initialize object , image
     @object = object
     @orig_image = Surface.load(image)
-    @rotatespeed = 0.0
-    @rotate = 0
-  end
-  def rotation
-    if @rotatespeed == 0
-      return
-    end
-    @object.image = @orig_image
-    @rotate += @rotatespeed
-    @object.angle += @rotate * 180.0/Math::PI
-    @object.image = @object.image.rotozoom(@rotate,[1,1],true)
-    recenter()
-  end
-  def recenter
-    old_center = @object.rect.center
-    @object.rect.size = @object.image.size
-    @object.rect.center = old_center
   end
   def change_rotate_speed n
     @rotatespeed = n
