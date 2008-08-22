@@ -31,7 +31,7 @@
   lib/mapfiles.rb
   lib/character.rb
   lib/spaceobject.rb
-  lib/setup.rb
+  lib/clientsetup.rb
   lib/controller.rb
   lib/mapdata.rb
   lib/maptile.rb
