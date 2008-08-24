@@ -1,4 +1,4 @@
-#YourGameHere
+#Your game here
 #Copyright (C) 2008 YourNameHere
 
 #Kiba Role Playing Game Engine(KRPGE)
@@ -16,16 +16,19 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+#
 #You can contact the author at wikipediankiba@gmail.com
 
-%w{
-  rubygems
-  eventmachine
-  yaml
-  lib/serversetup.rb
-  lib/commbridge.rb
-}.each{|lib| require lib}
-
-server = ServerSetup.new()
-server.run()
+class CommBridge
+  def initialize
+  end
+  def run data
+    message(data)
+  end
+  def message data
+    case data
+    when 0
+      puts"Roger that! Connection confirmed!"
+    end
+  end
+end
