@@ -20,11 +20,9 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class ServerSetup
-  def initialize
-  end
   def run
     EventMachine::run {
-      EventMachine::start_server("127.0.0.1", 8601)
+      EventMachine::start_server("127.0.0.1", 8000,CommBridge)
     }
   end
 end

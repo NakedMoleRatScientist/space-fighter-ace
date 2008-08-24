@@ -19,15 +19,12 @@
 #
 #You can contact the author at wikipediankiba@gmail.com
 
-class CommBridge
+module CommBridge
   def initialize
   end
-  def run data
-    message(data)
-  end
-  def message data
+  def recevie_data data
     case data
-    when 0
+    when "0"
       puts"Roger that! Connection confirmed!"
     end
   end

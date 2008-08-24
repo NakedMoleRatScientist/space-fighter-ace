@@ -21,13 +21,14 @@
 
 %w{
   rubygems
+  eventmachine
   rubygame
   rbgooey
   lib/clientsetup.rb
+  lib/controller.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
 
-game = GameSetup.new()
-game.ui()
+game = ClientSetup.new()
 game.start()
