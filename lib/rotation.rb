@@ -24,4 +24,6 @@ class Rotation
   def change_rotate_speed n
     @rotatespeed = n
   end
+  def rotation
+  end
 end
