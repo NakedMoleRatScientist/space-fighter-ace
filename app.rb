@@ -25,17 +25,19 @@
   rbgooey
   yaml
   engine.rb
-  lib/spaceobject.rb
-  lib/setup.rb
-  lib/itemexample.rb
-  lib/itemtype.rb
-  lib/player.rb
-  lib/enemy.rb
-  lib/movement.rb
-  lib/rotation.rb
-  lib/hud.rb
-  lib/projectile.rb
-  lib/controller.rb
+}.each{|lib| require lib}
+
+%w{
+ lib/spaceobject.rb
+ lib/setup.rb
+ lib/itemexample.rb
+ lib/player.rb
+ lib/enemy.rb
+ lib/movement.rb
+ lib/rotation.rb
+ lib/hud.rb
+ lib/projectile.rb
+ lib/controller.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
