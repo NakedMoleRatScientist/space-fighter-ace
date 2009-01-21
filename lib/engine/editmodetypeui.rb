@@ -1,5 +1,5 @@
-#Space Fighter Ace is a space invader clone
-#Copyright (C) 2006-2007  Han Dao
+#Mapeditor program
+#Copyright (C) 2008 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -16,33 +16,22 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-class EnemyTracker
-  attr_accessor :target
-  def initialize weapon , data
-    @weapon = weapon
-    @data = data
-    @target = []
+class EditModeTypeUi
+  def initialize ui
+    @ui = ui
+    @data = @ui.data
+    @engine = @ui.engine
   end
-  def generate
-    if @target.size != 10
-      @target << (Enemy.new(@weapon))
-    end
+  def text
+    @data.declare(:input)
+    @data.type.position(0,750)
   end
-  def draw
-    @target.each do |en|
-      en.draw(@data.display.screen)
-    end
-  end
-  def action
-    c = 0
-    @target.each do |en|
-      if en.state != false
-        en.act()
-        en.draw(@data.display.screen)
-      else 
-        @target.delete_at(c)
+  def inputmatch
+    if @data.type.state == false
+      string = @data.string.last
+      if string == "save"
+        @engine.save()
       end
-      c += 1
     end
   end
 end
