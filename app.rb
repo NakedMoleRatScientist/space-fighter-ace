@@ -24,35 +24,18 @@
   rubygame
   rbgooey
   yaml
-  lib/engineinfo.rb
-  lib/mapengine.rb
-  lib/gameengine.rb
-  lib/mapcalculator.rb
-  lib/mapfiles.rb
-  lib/character.rb
+  engine.rb
   lib/spaceobject.rb
   lib/setup.rb
-  lib/controller.rb
-  lib/mapdata.rb
-  lib/maptile.rb
-  lib/camera.rb
-  lib/timer.rb
-  lib/maplaw.rb
-  lib/itemslaw.rb
-  lib/characterslaw.rb
-  lib/itemstracker.rb
   lib/itemexample.rb
-  lib/gamelaw.rb
-  lib/characterstracker.rb
-  lib/chartype.rb
   lib/itemtype.rb
-  lib/mapterrain.rb
   lib/player.rb
   lib/enemy.rb
   lib/movement.rb
   lib/rotation.rb
   lib/hud.rb
   lib/projectile.rb
+  lib/controller.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
