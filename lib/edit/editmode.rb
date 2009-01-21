@@ -29,7 +29,6 @@ class EditMode
     @engine.setchar(CharType.new(@engine))
     @engine.setitem(ItemType.new())
     @engine.setmapsurface([800,600])
-    @engine.setscreenlimit(Rect.new([0,0,800,600]))
     @engine.setimages("data/images.yml") 
     @mode = true
   end

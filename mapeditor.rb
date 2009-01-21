@@ -22,42 +22,24 @@
   rbgooey
   yaml
   pathname
-  lib/engineinfo.rb
-  lib/timer.rb
-  lib/mapfiles.rb
-  lib/mapfilesmenu.rb
-  lib/mapfilesmenuui.rb
-  lib/filesscrollerui.rb
-  lib/loggerui.rb
-  lib/mapfilestypeui.rb
-  lib/editmode.rb
-  lib/mapengine.rb
-  lib/mapdata.rb
-  lib/maptile.rb
-  lib/mapcalculator.rb
-  lib/editcursor.rb
-  lib/camera.rb
-  lib/itemexample.rb
-  lib/itemexample2.rb
-  lib/itemtype.rb
-  lib/itemstracker.rb
-  lib/chartype.rb
-  lib/character.rb
-  lib/spaceobject.rb
-  lib/characterstracker.rb
-  lib/editengine.rb
-  lib/editui.rb
-  lib/editmodetypeui.rb
-  lib/editinfoui.rb
-  lib/editmap.rb
-  lib/editscrollerui.rb
-  lib/editscrollerdata.rb
-  lib/mapterrain.rb
-  lib/player.rb
-  lib/enemy.rb
-  lib/projectile.rb
-  lib/movement.rb
-  lib/rotation.rb
+  engine.rb
+}.each{|lib| require lib}
+
+%w{
+  lib/edit/editcursor.rb
+  lib/edit/editinfoui.rb
+  lib/edit/editmodetypeui.rb
+  lib/edit/editscrollerui.rb
+  lib/edit/filesscrollerui.rb
+  lib/edit/mapfilesmenu.rb
+  lib/edit/mapfilestypeui.rb
+  lib/edit/editmap.rb
+  lib/edit/editengine.rb
+  lib/edit/editscroller.rb
+  lib/edit/editui.rb
+  lib/edit/loggerui.rb
+  lib/edit/editmode.rb
+  lib/edit/mapfilesmenuui.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
