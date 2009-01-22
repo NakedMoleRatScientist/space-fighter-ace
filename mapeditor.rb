@@ -46,7 +46,7 @@
   lib/edit/mapfilestypeui.rb
   lib/edit/editmap.rb
   lib/edit/editengine.rb
-  lib/edit/editscroller.rb
+  lib/edit/editscrollerdata.rb
   lib/edit/editui.rb
   lib/edit/loggerui.rb
   lib/edit/editmode.rb

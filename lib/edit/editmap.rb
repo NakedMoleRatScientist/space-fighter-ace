@@ -47,6 +47,7 @@ class EditMap
       end
       n += 1
     end
+    return 0
   end
   def delete n
     clean()
