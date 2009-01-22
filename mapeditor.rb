@@ -26,6 +26,17 @@
 }.each{|lib| require lib}
 
 %w{
+  lib/itemexample.rb
+  lib/itemexample2.rb
+  lib/spaceobject.rb
+  lib/projectile.rb
+  lib/rotation.rb
+  lib/movement.rb
+  lib/player.rb
+  lib/enemy.rb
+}.each{|lib| require lib}
+
+%w{
   lib/edit/editcursor.rb
   lib/edit/editinfoui.rb
   lib/edit/editmodetypeui.rb

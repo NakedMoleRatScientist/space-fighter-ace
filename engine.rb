@@ -4,6 +4,7 @@
  lib/config/itemslaw.rb
  lib/config/characterslaw.rb
  lib/config/gamelaw.rb
+ lib/config/chartype.rb
 }.each{|lib| require lib}
 
 %w{
@@ -24,6 +25,5 @@
   lib/engine/character.rb
   lib/engine/itemstracker.rb
   lib/engine/characterstracker.rb
-  lib/engine/chartype.rb 
 }.each{|lib| require lib}
 
