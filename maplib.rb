@@ -14,19 +14,33 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#You can contact the author at wikipediankiba@gmail.com
-
+#You can contact the author at wikipediankiba@gmail
 %w{
-  rubygems
-  rubygame
-  rbgooey
-  yaml
-  pathname
-  maplib.rb
+  engine.rb
+  lib/itemexample.rb
+  lib/itemexample2.rb
+  lib/spaceobject.rb
+  lib/projectile.rb
+  lib/rotation.rb
+  lib/movement.rb
+  lib/player.rb
+  lib/enemy.rb
 }.each{|lib| require lib}
 
-include Rubygame
-TTF.setup
+%w{
+  lib/edit/editcursor.rb
+  lib/edit/editinfoui.rb
+  lib/edit/editmodetypeui.rb
+  lib/edit/editscrollerui.rb
+  lib/edit/filesscrollerui.rb
+  lib/edit/mapfilesmenu.rb
+  lib/edit/mapfilestypeui.rb
+  lib/edit/editmap.rb
+  lib/edit/editengine.rb
+  lib/edit/editscrollerdata.rb
+  lib/edit/editui.rb
+  lib/edit/loggerui.rb
+  lib/edit/editmode.rb
+  lib/edit/mapfilesmenuui.rb
+}.each{|lib| require lib}
 
-menu = MapFilesMenu.new()
-menu.menu()
