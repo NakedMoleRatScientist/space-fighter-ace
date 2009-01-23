@@ -13,3 +13,4 @@ require"test/unit"
 }.each{|lib| require lib}
 
 #Test code
+require"test/test_modify_map.rb"
