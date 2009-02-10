@@ -9,4 +9,9 @@ class Test_Modify_Map < Test::Unit::TestCase
     @editmap.edit()
     assert @mapfiles.map[0] == 0
   end
+  def test_edit_change_button
+    @editmap.change()
+    @editmap.edit()
+    assert @mapfiles.map[0] == 1
+  end
 end
