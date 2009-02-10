@@ -17,13 +17,8 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EditMap
-  attr_accessor :mapfiles
-  def initialize engine
-    @engine = engine
-    @charstrack = engine.charstrack
-    @itemstrack = engine.itemstrack
-    @mapengine = engine.mapengine
-    @mapfiles = engine.mapengine.mapfiles
+  def initialize mapfiles
+    @mapfiles = mapfiles
   end
   def setup scrollerui
     @scrollerui = scrollerui
@@ -32,21 +27,6 @@ class EditMap
     @mapfiles.save()
   end
   def edit
-    n = retrievelocation()
-    if @engine.following.state == false
-      modify(n)
-    elsif @engine.following.state == true
-      delete(n)
-    end
-  end
-  def retrievelocation
-    n = 0
-    @mapengine.mapobj.each do |map|
-      if map.rect.x == @engine.following.rect.x && map.rect.y == @engine.following.rect.y
-        return n
-      end
-      n += 1
-    end
     return 0
   end
   def delete n

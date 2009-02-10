@@ -1,19 +1,12 @@
 
 class Test_Modify_Map < Test::Unit::TestCase
   def setup
-    @engine = EditEngine.new()
-    @engine.setchar(CharType.new(@engine))
-    @engine.setitem(ItemType.new())
-    @engine.setimages("data/images.yml")
+    @mapfiles = MapFiles.new()
+    @mapfiles.read("data/maps/blank.map")
+    @editmap = EditMap.new(@mapfiles)
   end
   def test_edit_map_get_empty
-    @engine.edit()
-    state = true
-    @engine.mapfiles.map.each do |map|
-      if map != 0
-	state = false
-      end
-    end
-    assert state == true
+    @editmap.edit()
+    assert @mapfiles.map[0] == 0
   end
 end

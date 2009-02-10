@@ -9,8 +9,10 @@ require"test/unit"
 
 #Application code
 %w{
-  mapeditor.rb
+  maplib.rb
 }.each{|lib| require lib}
 
+include Rubygame
+TTF.setup
 #Test code
 require"test/test_modify_map.rb"
