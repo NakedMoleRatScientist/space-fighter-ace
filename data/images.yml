@@ -14,3 +14,6 @@ terrain:
   7: data/nebula8.png
   8: data/nebula9.png
 background: data/background.jpeg
+character:
+  0: data/player.png
+  1: data/enemy.png
