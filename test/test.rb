@@ -17,3 +17,4 @@ TTF.setup
 #Test code
 require"test/test_modify_map.rb"
 require"test/test_move_cursor.rb"
+require"test/test_changer.rb"
