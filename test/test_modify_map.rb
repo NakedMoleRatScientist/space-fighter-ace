@@ -34,6 +34,11 @@ class Test_Modify_Map < Test::Unit::TestCase
     @editmap.edit()
     assert @mapfiles.characters[0] == 2
   end
+  def test_edit_change_to_items
+    change(6)
+    @editmap.edit()
+    assert @mapfiles.items[0] == 0
+  end
   def change t
     t.times do
       @editmap.change()
