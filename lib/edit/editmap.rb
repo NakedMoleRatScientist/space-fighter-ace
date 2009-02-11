@@ -21,12 +21,16 @@ class EditMap
     @mapfiles = mapfiles
     @n = 0
     @state = 0
+    @location = 0
   end
   def setup scrollerui
     @scrollerui = scrollerui
   end
   def save
     @mapfiles.save()
+  end
+  def move_right
+    @location += 1
   end
   def change
     @n += 1
@@ -44,11 +48,11 @@ class EditMap
   end
   def edit
     if @state == 0
-      @mapfiles.map[0] = @n
+      @mapfiles.map[@location] = @n
     elsif @state == 1
-      @mapfiles.characters[0] = @n
+      @mapfiles.characters[@location] = @n
     elsif @state == 2
-      @mapfiles.items[0] = @n
+      @mapfiles.items[@location] = @n
     end
   end
   def delete n
