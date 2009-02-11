@@ -31,8 +31,11 @@ class EditMap
   def save
     @mapfiles.save()
   end
+  def move_left
+    move_by(-1)
+  end
   def move_right
-    @location += 1
+    move_by(1)
   end
   def move_down
     move_by(30)
