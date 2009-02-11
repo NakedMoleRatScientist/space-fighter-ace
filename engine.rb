@@ -5,6 +5,7 @@
  lib/config/characterslaw.rb
  lib/config/gamelaw.rb
  lib/config/chartype.rb
+ lib/config/itemtype.rb
 }.each{|lib| require lib}
 
 %w{
@@ -19,7 +20,6 @@
 
 %w{
   lib/engine/timer.rb
-  lib/engine/itemtype.rb
   lib/engine/engineinfo.rb
   lib/engine/gameengine.rb
   lib/engine/character.rb
