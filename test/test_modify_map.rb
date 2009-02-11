@@ -27,7 +27,7 @@ class Test_Modify_Map < Test::Unit::TestCase
     @editmap.edit()
     assert @mapfiles.characters[0] == 0
   end
-  def test_edit_change_type
+  def test_edit_change_character
     @editmap.change()
     @editmap.change()
     @editmap.change()
