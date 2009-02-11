@@ -36,9 +36,7 @@ class Test_Modify_Map < Test::Unit::TestCase
     assert @mapfiles.characters[0] == 1
   end
   def test_edit_change_character_twice
-    5.times do
-      @editmap.change()
-    end
+    change(5)
     @editmap.edit()
     assert @mapfiles.characters[0] == 2
   end
