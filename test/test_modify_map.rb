@@ -10,28 +10,22 @@ class Test_Modify_Map < Test::Unit::TestCase
     assert @mapfiles.map[0] == 0
   end
   def test_edit_change_button
-    @editmap.change()
+    change(1)
     @editmap.edit()
     assert @mapfiles.map[0] == 1
   end
   def test_edit_change_button_twice
-    @editmap.change()
-    @editmap.change()
+    change(2)
     @editmap.edit()
     assert @mapfiles.map[0] == 2
   end
   def test_edit_change_type
-    @editmap.change()
-    @editmap.change()
-    @editmap.change()
+    change(3)
     @editmap.edit()
     assert @mapfiles.characters[0] == 0
   end
-  def test_edit_change_character
-    @editmap.change()
-    @editmap.change()
-    @editmap.change()
-    @editmap.change()
+  def test_edit_change_character 
+    change(4)
     @editmap.edit()
     assert @mapfiles.characters[0] == 1
   end
