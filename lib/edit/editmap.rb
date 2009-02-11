@@ -30,9 +30,16 @@ class EditMap
   end
   def change
     @n += 1
-    if @n == 3
-      @state += 1
-      @n = 0
+    if @state == 0
+      if @n == 3
+	@state += 1
+	@n = 0
+      end
+    elsif @state == 1
+      if @n == 3
+	@state += 1
+	@n = 0
+      end
     end
   end
   def edit
@@ -40,6 +47,8 @@ class EditMap
       @mapfiles.map[0] = @n
     elsif @state == 1
       @mapfiles.characters[0] = @n
+    elsif @state == 2
+      @mapfiles.items[0] = @n
     end
   end
   def delete n
