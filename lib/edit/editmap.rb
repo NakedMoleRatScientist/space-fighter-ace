@@ -23,8 +23,10 @@ class EditMap
     @state = 0
     @location = 0
   end
-  def setup scrollerui
-    @scrollerui = scrollerui
+  def move_by n
+    if @location + n > 0 && @location + n < 900
+      @location += n
+    end
   end
   def save
     @mapfiles.save()
@@ -33,7 +35,10 @@ class EditMap
     @location += 1
   end
   def move_down
-    @location += 30
+    move_by(30)
+  end
+  def move_up
+    move_by(-30)
   end
   def change
     @n += 1
