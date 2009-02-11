@@ -20,6 +20,7 @@ class EditMap
   def initialize mapfiles
     @mapfiles = mapfiles
     @n = 0
+    @state = 0
   end
   def setup scrollerui
     @scrollerui = scrollerui
@@ -29,9 +30,17 @@ class EditMap
   end
   def change
     @n += 1
+    if @n == 3
+      @state += 1
+      @n = 0
+    end
   end
   def edit
-    @mapfiles.map[0] = @n
+    if @state == 0
+      @mapfiles.map[0] = @n
+    elsif @state == 1
+      @mapfiles.characters[0] = @n
+    end
   end
   def delete n
     clean()
