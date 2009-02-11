@@ -32,6 +32,9 @@ class EditMap
   def move_right
     @location += 1
   end
+  def move_down
+    @location += 30
+  end
   def change
     @n += 1
     if @state == 0

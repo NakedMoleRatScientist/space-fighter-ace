@@ -16,4 +16,9 @@ class Test_Move_Cursor < Test::Unit::TestCase
     @editmap.edit()
     assert @mapfiles.map[1] == 1
   end
+  def test_move_down
+    @editmap.move_down()
+    @editmap.edit()
+    assert @mapfiles.map[30] == 1
+  end
 end
