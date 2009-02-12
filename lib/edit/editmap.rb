@@ -48,13 +48,18 @@ class EditMap
     if @state == 0
       if @n == 3
 	@state += 1
-	@n = 0
+	@n = 1
       end
     elsif @state == 1
       if @n == 3
 	@state += 1
-	@n = 0
+	@n = 1
       end
+    elsif @state == 2
+       if @n == 3
+        @state = 0
+        @n = 0
+       end
     end
   end
   def edit
