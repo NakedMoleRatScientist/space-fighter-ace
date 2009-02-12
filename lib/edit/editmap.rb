@@ -71,45 +71,4 @@ class EditMap
       @mapfiles.items[@location] = @n
     end
   end
-  def delete n
-    clean()
-    zeroall(n)
-    datacompute()
-  end
-  def modify n
-    state , choice = @scrollerui.retrievestamp()
-    case state
-    when 0
-      clean()
-      zeroall(n)
-      @mapfiles.map[n] = choice
-      datacompute()
-    when 1
-      clean()
-      zeroall(n)
-      @mapfiles.characters[n] = choice
-      datacompute()
-    when 2
-      clean()
-      zeroall(n)
-      @mapfiles.items[n] = choice
-      datacompute()
-    end
-  end
-  def zeroall n
-    @mapfiles.map[n] = 0
-    @mapfiles.characters[n] = 0
-    @mapfiles.items[n] = 0
-  end
-  def clean
-    @itemstrack.clean()
-    @charstrack.clean()
-    @mapengine.clean()
-  end
-  def datacompute
-    @mapengine.mapdata.datacompute()
-    @charstrack.datacompute()
-    @itemstrack.datacompute()
-    @mapengine.cam()
-  end
 end
