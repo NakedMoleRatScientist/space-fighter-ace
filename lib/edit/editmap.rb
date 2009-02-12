@@ -62,12 +62,24 @@ class EditMap
        end
     end
   end
+  def not_delete?
+    if @n == 7
+      @mapfiles.map[@location] = 0
+      @mapfiles.items[@location] = 0
+      @mapfiles.characters[@location] = 0
+      return false
+    end
+    return true
+  end
   def edit
     if @state == 0
+      not_delete? if
       @mapfiles.map[@location] = @n
     elsif @state == 1
+      not_delete? if
       @mapfiles.characters[@location] = @n
     elsif @state == 2
+      not_delete? if
       @mapfiles.items[@location] = @n
     end
   end
