@@ -20,7 +20,7 @@ class EditMap
   def initialize mapfiles
     @mapfiles = mapfiles
     @n = 0
-    @state = 0
+    @state = 3
     @location = 0
   end
   def move_by n
@@ -59,6 +59,10 @@ class EditMap
        if @n == 3
         @state = 3
         @n = 0
+       end
+    elsif @state == 3
+       if @n == 1
+	 @state = 0
        end
     end
   end
