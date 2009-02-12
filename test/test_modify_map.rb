@@ -55,6 +55,25 @@ class Test_Modify_Map < Test::Unit::TestCase
     assert @mapfiles.characters[0] == 0
     assert @mapfiles.items[0] == 0
   end
+  def test_edit_recycle
+    change(1)
+    @editmap.edit()
+    assert @mapfiles.map[0] == 1
+    change(2)
+    @editmap.edit()
+    assert @mapfiles.characters[0] == 1
+    change(2)
+    @editmap.edit()
+    assert @mapfiles.items[0] == 1
+    change(2)
+    @editmap.edit()
+    assert @mapfiles.map[0] == 0
+    assert @mapfiles.characters[0] == 0
+    assert @mapfiles.items[0] == 0
+    change(1)
+    @editmap.edit()
+    assert @mapfiles.map[0] == 1
+  end
   def change t
     t.times do
       @editmap.change()
