@@ -17,3 +17,4 @@ background: data/background.jpeg
 character:
   1: data/player.png
   2: data/enemy.png
+  3: test/testing.png
