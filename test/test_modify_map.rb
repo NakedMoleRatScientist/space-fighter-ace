@@ -39,10 +39,13 @@ class Test_Modify_Map < Test::Unit::TestCase
     @editmap.edit()
     assert @mapfiles.items[0] == 2
   end
-  def test_edit_change_back_into_empty
-    change(7)
+  def test_edit_change_delete
+    change(1)
     @editmap.edit()
-    assert @mapfiles.items[0] == 0
+    assert @mapfiles.map[0] == 1
+    change(6)
+    @editmap.edit()
+    assert @mapfiles.map[0] == 0
   end
   def change t
     t.times do
