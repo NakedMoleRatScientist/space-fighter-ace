@@ -22,27 +22,27 @@ class Test_Modify_Map < Test::Unit::TestCase
   def test_edit_change_type
     change(3)
     @editmap.edit()
-    assert @mapfiles.characters[0] == 0
+    assert @mapfiles.characters[0] == 1
   end
   def test_edit_change_character 
     change(4)
     @editmap.edit()
-    assert @mapfiles.characters[0] == 1
-  end
-  def test_edit_change_character_twice
-    change(5)
-    @editmap.edit()
     assert @mapfiles.characters[0] == 2
   end
-  def test_edit_change_to_items_mode
-    change(6)
-    @editmap.edit()
-    assert @mapfiles.items[0] == 0
-  end
-  def test_edit_change_items
-    change(7)
+  def test_edit_change_to_items
+    change(5)
     @editmap.edit()
     assert @mapfiles.items[0] == 1
+  end
+  def test_edit_change_change_items
+    change(6)
+    @editmap.edit()
+    assert @mapfiles.items[0] == 2
+  end
+  def test_edit_change_back_into_empty
+    change(7)
+    @editmap.edit()
+    assert @mapfiles.items[0] == 0
   end
   def change t
     t.times do
