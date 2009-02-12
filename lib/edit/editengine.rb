@@ -29,9 +29,10 @@ class EditEngine < EngineInfo
     @itemstrack = ItemsTracker.new(self)
     @itemstrack.datacompute()
     @mapengine.cam()
-    @editmap = EditMap.new(self)
+    mapfiles = MapFiles.new()
+    mapfiles.read(@mapfiles)
+    @editmap = EditMap.new(mapfiles)
     @editui = EditUi.new(loggerui,data,self)
-    @editmap.setup(@editui.scrollerui)
   end
   def save
     @editmap.save()
