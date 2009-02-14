@@ -83,13 +83,13 @@ class EditMode
     if @mode == true
       case ev.key
       when Rubygame::K_UP
-        @cursor.rect.y -= 60
+        @engine.editmap.move_up()
       when Rubygame::K_DOWN
-        @cursor.rect.y += 60
+        @engine.editmap.move_down()
       when Rubygame::K_RIGHT
-        @cursor.rect.x += 80
+        @engine.editmap.move_right()
       when Rubygame::K_LEFT
-        @cursor.rect.x -= 80
+        @engine.editmap.move_left()
       when Rubygame::K_RETURN
         @engine.cycle()
       when Rubygame::K_J

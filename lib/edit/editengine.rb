@@ -17,7 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EditEngine < EngineInfo
-  attr_accessor :editui
+  attr_accessor :editui , :editmap
   def initialize
     super()
   end
