@@ -54,8 +54,26 @@ class MapCalculator
     end
     reset()
   end
+  def calculate_pos times
+    rows = 0
+    columns = 0
+    times.each do |t|
+      a = columns * @defaultx + @engine.length
+      b = rows * @defaulty + @engine.height
+      @x = a
+      @y = b
+      columns += 1
+      if columns == @defaultcolumns
+	rows += 1
+	columns = 0
+      end
+      if rows == @defaultrows
+        return @x , @y
+      end
+    end
+  end
   def reset
-    @defaultx = 80
+    @defaultx = 80 
     @defaulty = 60
     @defaultrows = 30
     @defaultcolumns = 30
