@@ -54,10 +54,10 @@ class MapCalculator
     end
     reset()
   end
-  def calculate_pos times
+  def calculate_pos pos
     rows = 0
     columns = 0
-    times.each do |t|
+    pos.times do |t|
       a = columns * @defaultx + @engine.length
       b = rows * @defaulty + @engine.height
       @x = a
