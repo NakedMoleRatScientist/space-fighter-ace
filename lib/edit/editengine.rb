@@ -33,6 +33,7 @@ class EditEngine < EngineInfo
     mapfiles.read(@mapfiles)
     @editmap = EditMap.new(mapfiles)
     @editui = EditUi.new(loggerui,data,self)
+    @calculate = MapCalculator.new(self)
   end
   def save
     @editmap.save()
@@ -53,5 +54,9 @@ class EditEngine < EngineInfo
   end
   def cycle
     @editui.cycle()
+  end
+  def return_xy_pos
+    x , y = @calculate.calculate_pos(@editmap.location)
+    return x , y
   end
 end

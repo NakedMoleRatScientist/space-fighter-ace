@@ -36,6 +36,7 @@ class EditMode
     @engine.setmapfile(name)
   end
   def draw
+    x , y = @engine.return_xy_pos()
     @engine.compute()
     @background.blit(@data.display.screen,[0,0])
     @engine.draw(@data.display.screen)

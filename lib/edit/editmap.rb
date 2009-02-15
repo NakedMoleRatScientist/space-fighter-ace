@@ -17,7 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EditMap
-  attr_reader :n , :state
+  attr_reader :n , :state , :location
   def initialize mapfiles
     @mapfiles = mapfiles
     @n = 0
