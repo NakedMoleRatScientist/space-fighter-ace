@@ -33,7 +33,7 @@ class EditEngine < EngineInfo
     mapfiles.read(@mapfiles)
     @editmap = EditMap.new(mapfiles)
     @editui = EditUi.new(loggerui,data,self)
-    @calculate = MapCalculator.new(self)
+    @calculate = MapCalculator.new(@mapengine)
   end
   def save
     @editmap.save()
