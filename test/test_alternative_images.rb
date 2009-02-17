@@ -12,7 +12,7 @@ class Test_Alternative_Images < Test::Unit::TestCase
     assert @mapfiles.map[0] == 1
   end
   def test_end_of_list
-    change(7)
+    change(5)
     @editmap.edit()
     assert @mapfiles.map[0] == 0
     assert @mapfiles.characters[0] == 3
