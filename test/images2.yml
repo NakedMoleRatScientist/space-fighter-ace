@@ -1,0 +1,23 @@
+---
+map:
+  0: data/blank.png
+  1: data/wall1.png
+  2: data/wall2.png
+terrain:
+  0: data/nebula1.png
+  1: data/nebula2.png
+  2: data/nebula3.png
+  3: data/nebula4.png
+  4: data/nebula5.png
+  5: data/nebula6.png
+  6: data/nebula7.png
+  7: data/nebula8.png
+  8: data/nebula9.png
+background: data/background.jpeg
+item:
+  1: data/itemexample.png
+  2: data/itemexample.png
+  3: test/testing.png
+character:
+  1: data/player.png
+  2: data/enemy.png
