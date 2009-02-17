@@ -57,20 +57,21 @@ class MapCalculator
   def calculate_pos pos
     rows = 0
     columns = 0
+    x = 0
+    y = 0
     pos.times do |t|
-      a = columns * @defaultx + @engine.length
-      b = rows * @defaulty + @engine.height
-      @x = a
-      @y = b
+      x = columns * @defaultx + @engine.length
+      y = rows * @defaulty + @engine.height
       columns += 1
       if columns == @defaultcolumns
 	rows += 1
 	columns = 0
       end
       if rows == @defaultrows
-        return @x , @y
+        break
       end
     end
+    return x , y
   end
   def reset
     @defaultx = 80 

@@ -37,6 +37,7 @@ class EditMode
   end
   def draw
     x , y = @engine.return_xy_pos()
+    @cursor.set_xy(x,y)
     @engine.compute()
     @background.blit(@data.display.screen,[0,0])
     @engine.draw(@data.display.screen)
