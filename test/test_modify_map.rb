@@ -3,7 +3,9 @@ class Test_Modify_Map < Test::Unit::TestCase
   def setup
     @mapfiles = MapFiles.new()
     @mapfiles.read("data/maps/blank.map")
-    @editmap = EditMap.new(@mapfiles)
+    @file = FileSys.new()
+    @images = @file.yaml_read("data/images.yml")
+    @editmap = EditMap.new(@mapfiles,@images)
   end
   def test_edit_map_get_empty
     @editmap.edit()

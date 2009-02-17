@@ -4,7 +4,9 @@ class Test_Changer < Test::Unit::TestCase
   def setup
     @mapfiles = MapFiles.new()
     @mapfiles.read("data/maps/blank.map")
-    @editmap = EditMap.new(@mapfiles)
+    files = FileSys.new()
+    @images = files.yaml_read("data/images.yml")
+    @editmap = EditMap.new(@mapfiles,@images)
   end
   def test_initial
     @editmap.change()

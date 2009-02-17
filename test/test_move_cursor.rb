@@ -4,7 +4,9 @@ class Test_Move_Cursor < Test::Unit::TestCase
   def setup
     @mapfiles = MapFiles.new()
     @mapfiles.read("data/maps/blank.map")
-    @editmap = EditMap.new(@mapfiles)
+    files = FileSys.new()
+    @images = files.yaml_read("data/images.yml")
+    @editmap = EditMap.new(@mapfiles,@images)
     @editmap.change()
   end
   def test_inital_location

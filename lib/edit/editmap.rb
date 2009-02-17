@@ -18,8 +18,9 @@
 
 class EditMap
   attr_reader :n , :state , :location
-  def initialize mapfiles
+  def initialize mapfiles , images
     @mapfiles = mapfiles
+    @images = images
     @n = 0
     @state = 3
     @location = 0
