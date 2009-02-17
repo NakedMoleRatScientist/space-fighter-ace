@@ -28,6 +28,7 @@ class EditMap
   end
   def compute_limit
     @char =  @images['character'].length()
+    @item = @images['item'].length()
   end
   def move_by n
     if @location + n > 0 && @location + n < 900
@@ -62,7 +63,7 @@ class EditMap
 	@n = 1
       end
     elsif @state == 2
-       if @n == 3
+       if @n == (@item + 1)
         @state = 3
         @n = 0
        end
