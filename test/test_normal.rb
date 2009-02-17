@@ -1,6 +1,6 @@
 
 
-class Test_Changer < Test::Unit::TestCase
+class Test_Normal < Test::Unit::TestCase
   def setup
     @mapfiles = MapFiles.new()
     @mapfiles.read("data/maps/blank.map")
