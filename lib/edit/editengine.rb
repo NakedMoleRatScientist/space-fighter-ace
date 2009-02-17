@@ -31,7 +31,7 @@ class EditEngine < EngineInfo
     @mapengine.cam()
     mapfiles = MapFiles.new()
     mapfiles.read(@mapfiles)
-    @editmap = EditMap.new(mapfiles)
+    @editmap = EditMap.new(mapfiles,@images)
     @editui = EditUi.new(loggerui,data,self)
     @calculate = MapCalculator.new(@mapengine)
   end
