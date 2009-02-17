@@ -45,4 +45,8 @@ class EditCursor
       @image = Rubygame::Surface.load(DELETE)
     end
   end
+  def set_xy x , y
+    @rect.x = x
+    @rect.y = y
+  end
 end
