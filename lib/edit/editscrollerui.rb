@@ -26,5 +26,6 @@ class EditScrollerUi
     @data.declare(:Options)
     @data.text.add("Current stamping",800,50)
     @data.text.add("choice:",800,75)
+    @scroll_data.draw(@data.display.screen)
   end
 end
