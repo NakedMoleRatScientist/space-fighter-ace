@@ -27,4 +27,7 @@ class EditScrollerData
     image = Surface.load(name)
     @object.imageload(image)
   end
+  def draw screen
+    @object.draw(screen)
+  end
 end
