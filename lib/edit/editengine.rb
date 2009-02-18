@@ -54,7 +54,7 @@ class EditEngine < EngineInfo
     @mapengine.compute()
   end
   def cycle
-    @editui.cycle()
+    @editmap.change()
   end
   def return_xy_pos
     x , y = @calculate.calculate_pos(@editmap.location)
