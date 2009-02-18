@@ -17,8 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EditScrollerData
-  def initialize images
-    @images = images
+  def initialize
     @object = MapTile.new()
     @object.sets(850,100)
     image = Surface.load("data/nothing.png")

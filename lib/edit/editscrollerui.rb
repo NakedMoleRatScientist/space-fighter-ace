@@ -19,9 +19,8 @@
 class EditScrollerUi
   attr_accessor :scroll_data
   def initialize images , data
-    @images = images
     @data = data
-    @scroll_data = EditScrollerData.new(@images)
+    @scroll_data = EditScrollerData.new()
   end
   def text
     @data.declare(:Options)
