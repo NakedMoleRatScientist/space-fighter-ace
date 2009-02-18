@@ -21,16 +21,10 @@ class EditScrollerUi
   def initialize ui
     @ui = ui
     @data = @ui.data
-    @scrollerdata = EditScrollerData.new(@ui.engine)
-    @scrollerdata.extract()
   end
   def text
     @data.declare(:Options)
     @data.text.add("Current stamping",800,50)
     @data.text.add("choice:",800,75)
-    @scrollerdata.object.draw(@data.display.screen)
-  end
-  def retrievestamp
-    return @scrollerdata.state , @scrollerdata.n
   end
 end
