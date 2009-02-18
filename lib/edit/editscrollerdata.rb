@@ -24,7 +24,11 @@ class EditScrollerData
     @object.imageload(image)
   end
   def load_new name
-    image = Surface.load(name)
+    if name == false
+      image = Surface.load("data/nothing.png")
+    else
+      image = Surface.load(name)
+    end
     @object.imageload(image)
   end
   def draw screen
