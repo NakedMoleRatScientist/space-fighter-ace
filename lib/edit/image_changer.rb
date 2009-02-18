@@ -17,6 +17,39 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Image_Changer
+  attr_reader :n , :state , :location
   def initialize
+    @n = 0
+    @state = 3
+    @location = 0
+    compute_limit()
+  end
+  def compute_limit
+    @char = @images['character'].length()
+    @item = @images['item'].length()
+    @map = @images['map'].length()
+  end
+  def change
+    @n += 1
+    if @state == 0
+      if @n == @map
+	@state += 1
+	@n = 1
+      end
+    elsif @state == 1
+      if @n == (@char + 1)
+        @state += 1
+	@n = 1
+      end
+    elsif @state == 2
+      if @n == (@item + 1)
+        @state = 3
+	@n = 0
+      end
+    elsif @state == 3
+      if @n == 1
+        @state = 0
+      end
+    end
   end
 end
