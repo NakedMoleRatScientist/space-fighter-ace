@@ -30,11 +30,11 @@ class Image_Changer
     @map = @images['map'].length()
   end
   def return_name_of_current_selection
-    if @state == 1
+    if @state == 0
       string = @images['map'][@n]
-    elsif @state == 2
+    elsif @state == 1
       string = @images['character'][@n]
-    elsif @state == 3
+    elsif @state == 2
       string = @images['item'][@n]
     else
       string = false
