@@ -18,9 +18,8 @@
 
 class EditScrollerData
   attr_accessor :object , :n , :state
-  def initialize engine
-    @engine = engine
-    @images = @engine.images
+  def initialize images
+    @images = images
     @object = MapTile.new()
     @object.sets(850,100)
     image = Surface.load("data/nothing.png")

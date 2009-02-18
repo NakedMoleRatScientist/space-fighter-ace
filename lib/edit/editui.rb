@@ -24,7 +24,7 @@ class EditUi
     @loggerui = loggerui
     @typeui = EditModeTypeUi.new(self)
     @info = EditInfoUi.new(@data)
-    @scrollerui = EditScrollerUi.new(self)
+    @scrollerui = EditScrollerUi.new(@engine.images,@data)
   end
   def draw
     @data.clear()

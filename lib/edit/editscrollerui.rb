@@ -17,10 +17,11 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EditScrollerUi
-  attr_accessor :scrollerdata
-  def initialize ui
-    @ui = ui
-    @data = @ui.data
+  attr_accessor :scroll_data
+  def initialize images , data
+    @images = images
+    @data = data
+    @scroll_data = EditScrollerData.new(@images)
   end
   def text
     @data.declare(:Options)
