@@ -17,7 +17,6 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EditScrollerData
-  attr_accessor :object , :n , :state
   def initialize images
     @images = images
     @object = MapTile.new()
