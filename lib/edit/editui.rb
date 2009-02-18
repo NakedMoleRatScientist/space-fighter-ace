@@ -36,7 +36,4 @@ class EditUi
   def change_choice name
     @scrollerui.scroll_data.load_new(name)
   end
-  def cycle
-    @scrollerui.scrollerdata.cycle()
-  end
 end
