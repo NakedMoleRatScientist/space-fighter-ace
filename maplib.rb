@@ -27,7 +27,9 @@
   lib/enemy.rb
 }.each{|lib| require lib}
 
+#Editing part
 %w{
+  lib/edit/image_changer.rb
   lib/edit/editcursor.rb
   lib/edit/editinfoui.rb
   lib/edit/editmodetypeui.rb
