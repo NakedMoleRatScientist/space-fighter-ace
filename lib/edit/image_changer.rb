@@ -17,11 +17,11 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Image_Changer
-  attr_reader :n , :state , :location
-  def initialize
+  attr_reader :n , :state
+  def initialize images
+    @images = images
     @n = 0
     @state = 3
-    @location = 0
     compute_limit()
   end
   def compute_limit

@@ -16,20 +16,12 @@
 
 #You can contact the author at wikipediankiba@gmail.com
 
-class EditMap
-  attr_reader :n , :state , :location
+class EditMap < Image_Changer
+  attr_reader :location
   def initialize mapfiles , images
+    super(images)
     @mapfiles = mapfiles
-    @images = images
-    @n = 0
-    @state = 3
     @location = 0
-    compute_limit()
-  end
-  def compute_limit
-    @char =  @images['character'].length()
-    @item = @images['item'].length()
-    @map = @images['map'].length()
   end
   def move_by n
     if @location + n > 0 && @location + n < 900
@@ -50,29 +42,6 @@ class EditMap
   end
   def move_up
     move_by(-30)
-  end
-  def change
-    @n += 1
-    if @state == 0
-      if @n == @map
-	@state += 1
-	@n = 1
-      end
-    elsif @state == 1
-      if @n == (@char + 1)
-	@state += 1
-	@n = 1
-      end
-    elsif @state == 2
-       if @n == (@item + 1)
-        @state = 3
-        @n = 0
-       end
-    elsif @state == 3
-       if @n == 1
-	 @state = 0
-       end
-    end
   end
   def delete
     @mapfiles.map[@location] = 0
