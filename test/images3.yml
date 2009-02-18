@@ -19,5 +19,5 @@ item:
   1: data/itemexample.png
   2: data/itemexample.png
 character:
-  1: data/player.png
-  2: data/enemy.png
+  1: data/image/player.png
+  2: data/image/enemy.png
