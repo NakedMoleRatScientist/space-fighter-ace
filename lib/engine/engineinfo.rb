@@ -23,6 +23,7 @@ class EngineInfo
   attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :charstrack, :itemstrack, :mapsurface
   def initialize
     @file = FileSys.new()
+    @mapfiles = MapFiles.new()
   end
   # NOTE: MapEngine's Camera object will follow this object.
   def setfollow follow
@@ -34,7 +35,7 @@ class EngineInfo
   end
   # NOTE: Set mapfile
   def setmapfile name
-    @mapfiles = name
+    @mapfiles.read(name)
   end
   # NOTE: Select characters to follow from the CharacterTracker object.
   def selectfollowing

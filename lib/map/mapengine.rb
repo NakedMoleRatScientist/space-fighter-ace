@@ -25,7 +25,7 @@ class MapEngine
   def initialize engine
     @engine = engine
     @mapsurface = engine.mapsurface
-    @mapfiles = MapFiles.new()
+    @mapfiles = engine.mapfiles
     @mapobj  = []
     @length  = 0
     @height  = 0
@@ -35,7 +35,6 @@ class MapEngine
   # NOTE: Setup everything
   def setup
     @mapdata = MapData.new(self)
-    @mapfiles.read(@engine.mapfiles)
     @background = Rubygame::Surface.load(@engine.images['background'])
     @mapdata.datacompute()
     @mapdata.terraincompute()

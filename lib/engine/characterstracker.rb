@@ -24,7 +24,6 @@ class CharactersTracker
   attr_accessor :characters , :sprites , :control
   def initialize engine
     @engine = engine
-    @mapengine = @engine.mapengine
     @chartype = @engine.chartype
     @calculator = MapCalculator.new(@engine.mapengine)
     @characters = []
@@ -33,7 +32,7 @@ class CharactersTracker
   end
   # NOTE: Generate all characters.
   def datacompute
-    @calculator.rectlocation(@mapengine.mapfiles.characters) {
+    @calculator.rectlocation(@engine.mapfiles.characters) {
       addchar(@calculator.o,@calculator.x,@calculator.y)
     }
   end
