@@ -36,6 +36,12 @@ class EditMode
     @engine.setmapfile(name)
   end
   def draw
+    state = @engine.editmap.return_name_of_current_selection()
+    if state != false
+      @cursor.change_to_true()
+    else
+      @cursor.change_to_false()
+    end
     x , y = @engine.return_xy_pos()
     @cursor.set_xy(x,y)
     @engine.compute()

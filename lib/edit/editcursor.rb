@@ -28,15 +28,13 @@ class EditCursor
     @rect = Rubygame::Rect.new(0,0,80,60)
     @state = false
   end
-  def change
-    if @state == false
+  def change_to_false
+    @state = false
+    @loggerui.deletemode()
+  end
+  def change_to_true
       @state = true
-      @loggerui.deletemode()
-    else
-      @state = false
       @loggerui.stampmode()
-    end
-    imageload()
   end
   def imageload
     if @state == false
