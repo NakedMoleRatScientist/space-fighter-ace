@@ -35,13 +35,15 @@ class EditMode
   def setfiles name
     @engine.setmapfile(name)
   end
-  def draw
+  def change
     state = @engine.editmap.return_name_of_current_selection()
     if state != false
       @cursor.change_to_true()
     else
       @cursor.change_to_false()
     end
+  end
+  def draw
     x , y = @engine.return_xy_pos()
     @cursor.set_xy(x,y)
     @engine.compute()
@@ -100,6 +102,7 @@ class EditMode
         @engine.editmap.move_left()
       when Rubygame::K_RETURN
         @engine.cycle()
+	change()
       when Rubygame::K_J
         @cursor.change()
       when Rubygame::K_SPACE
