@@ -16,6 +16,8 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     assert @game.mapengine.mapobj[0].identifer == 0
     assert @game.mapengine.mapobj[1].identifer == 1
     assert @game.mapengine.mapobj[2].identifer == 2
+    assert @game.mapengine.mapobj[2].name = "data/blank.png"
+    assert @game.mapengine.terrain[1].name = "data/placeholder.png"
   end
   def test_setup_images
     @game.setmapfile("test/blank.map")
