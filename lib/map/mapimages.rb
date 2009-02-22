@@ -21,6 +21,7 @@
 
 
 class MapImages
-  def initialize
+  def initialize images
+    @images = images
   end
 end
