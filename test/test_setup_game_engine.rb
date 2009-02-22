@@ -6,6 +6,7 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
   def test_inital
     assert @game.mapfiles.name == nil
     assert @game.mapengine == nil
+    assert @game.images == nil
   end
   def test_setup_mapfiles
     @game.setmapfile("test/blank.map")
@@ -34,5 +35,11 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     @game.setimages("test/images.yml")
     @game.setmapfile("test/blank.map")
     load_images?
+  end
+  def test_setup_characters
+    assert @game.characters_tracker == nil
+    assert @game.chartype == nil
+    @game.setchar(CharType.new(@game))
+    assert @game.characters_tracker.class == Characters_Tracker
   end
 end
