@@ -32,7 +32,7 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
   end
   def test_setup_images_before_mapfiles
     @game.setimages("test/images.yml")
-    @game.setmapfiles("test/blank.map")
+    @game.setmapfile("test/blank.map")
     load_images?
   end
 end
