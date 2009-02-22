@@ -21,13 +21,13 @@
 
 class MapTile
   include Rubygame::Sprites::Sprite
-  attr_accessor :rect , :image , :property
-
+  attr_accessor :rect , :image , :property , :name , :identifer
   def initialize
     super
+    @name = "data/blank.png"
+    @identifer = 0
     @image = Rubygame::Surface.load("data/blank.png")
     @rect = Rubygame::Rect.new(0,0,*@image.size)
-    @name = "blank"
     @property = true
   end
 
