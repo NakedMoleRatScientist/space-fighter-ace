@@ -57,6 +57,7 @@ class MapData
     @calculator.defaultrows = 3
     @calculator.rectlocation(@engine.mapfiles.terrain) {
       obj = MapTerrain.new()
+      obj.identifer = @calculator.o
       obj.sets(@calculator.x,@calculator.y)
       @engine.terrain << obj
       @engine.terrainsprites << obj
