@@ -41,6 +41,9 @@ class EngineInfo
     @mapfiles.read(name)
     @mapengine = MapEngine.new(self)
     @mapengine.setup()
+    if @images != nil
+      @mapengine.mapimages.load_all_images(@images)
+    end
   end
   # NOTE: Select characters to follow from the CharacterTracker object.
   def selectfollowing
