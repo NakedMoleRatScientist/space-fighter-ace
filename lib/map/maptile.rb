@@ -26,7 +26,7 @@ class MapTile
     super
     @name = "data/blank.png"
     @identifer = 0
-    @image = Rubygame::Surface.load("data/blank.png")
+    @image = Rubygame::Surface.load(@name)
     @rect = Rubygame::Rect.new(0,0,*@image.size)
     @property = true
   end
@@ -36,7 +36,7 @@ class MapTile
     @rect.y = y
   end
 
-  def imageload image
-    @image = image
+  def imageload
+    @image = Rubygame::Surface.load(@name)
   end
 end
