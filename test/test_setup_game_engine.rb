@@ -8,8 +8,8 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     assert @game.mapengine == nil
   end
   def test_setup_mapfiles
-    @game.setmapfile("data/maps/blank.map")
-    assert @game.mapfiles.name == "data/maps/blank.map"
+    @game.setmapfile("test/blank.map")
+    assert @game.mapfiles.name == "test/blank.map"
     assert @game.mapengine.class == MapEngine
     assert @game.mapengine.terrain[0].identifer == 0
     assert @game.mapengine.terrain[1].identifer == 1
@@ -18,9 +18,9 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     assert @game.mapengine.mapobj[2].identifer == 2
   end
   def test_setup_images
-    @game.setmapfile("data/maps/blank.map")
+    @game.setmapfile("test/blank.map")
     assert @game.mapengine.terrain[0].name == "data/placeholder.png"
-    @game.setimages("data/images.yml")
+    @game.setimages("test/images.yml")
     assert @game.mapengine.terrain[0].name == "data/nebula1.png"
   end
 end
