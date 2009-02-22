@@ -36,6 +36,8 @@ class EngineInfo
   # NOTE: Set mapfile
   def setmapfile name
     @mapfiles.read(name)
+    @mapengine = MapEngine.new(self)
+    @mapengine.setup()
   end
   # NOTE: Select characters to follow from the CharacterTracker object.
   def selectfollowing
