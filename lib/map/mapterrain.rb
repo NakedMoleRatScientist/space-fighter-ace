@@ -21,10 +21,11 @@
 
 class MapTerrain
   include Rubygame::Sprites::Sprite
-  attr_accessor :rect , :image , :name
+  attr_accessor :rect , :image , :name , :identifer
   def initialize
     super
     @name = "data/placeholder.png"
+    @identifer = 0
     @image = Rubygame::Surface.load(@name)
     @rect = Rubygame::Rect.new(0,0,*image.size)
   end
