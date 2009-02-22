@@ -9,6 +9,7 @@
 }.each{|lib| require lib}
 
 %w{
+  lib/map/mapimages.rb
   lib/map/mapdata.rb
   lib/map/mapfiles.rb
   lib/map/maptile.rb
