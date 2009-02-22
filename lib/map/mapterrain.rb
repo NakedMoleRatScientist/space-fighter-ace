@@ -30,7 +30,6 @@ class MapTerrain
     @rect = Rubygame::Rect.new(0,0,*image.size)
   end
   def set_terrain
-    @name = name
     @image = Rubygame::Surface.load(@name)
   end
   def sets x , y

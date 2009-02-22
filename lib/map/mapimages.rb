@@ -28,7 +28,7 @@ class MapImages
   def load_all_images images
     @terrain.each do |terrain|
       terrain.name = images["terrain"][terrain.identifer]
+      terrain.set_terrain()
     end
-
   end
 end
