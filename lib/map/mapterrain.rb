@@ -25,11 +25,12 @@ class MapTerrain
   def initialize
     super
     @name = "data/playholder.png"
-    @image = Rubygame::Surface.load(name)
+    @image = Rubygame::Surface.load(@name)
     @rect = Rubygame::Rect.new(0,0,*image.size)
   end
-  def imageload image
-    @image = image
+  def set_terrain
+    @name = name
+    @image = Rubygame::Surface.load(@name)
   end
   def sets x , y
     @rect.x = x
