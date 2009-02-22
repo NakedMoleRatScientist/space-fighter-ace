@@ -32,4 +32,16 @@ class Player < SpaceObject
     @engine.charstrack.control.movement.directionchange(1)
     @engine.charstrack.control.movement.speed = @movement.speed + 5
   end
+  def right
+    @rect.x += 50
+  end
+  def left
+    @rect.x -= 50
+  end
+  def up
+    @rect.y -= 50
+  end
+  def down
+    @rect.y += 50
+  end
 end
