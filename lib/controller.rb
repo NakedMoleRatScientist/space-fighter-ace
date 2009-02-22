@@ -88,16 +88,16 @@ class Controller
   def move ev
     case ev.key
     when Rubygame::K_W
-      @player.movement.directionchange(1)
+      @player.up()
       return true
     when Rubygame::K_S
-      @player.movement.directionchange(2)
+      @player.down()
       return true
     when Rubygame::K_D
-      @player.movement.directionchange(3)
+      @player.right()
       return true
     when Rubygame::K_A
-      @player.movement.directionchange(4)
+      @player.left()
       return true
     when Rubygame::K_Q
       @player.movement.directionchange(0)
