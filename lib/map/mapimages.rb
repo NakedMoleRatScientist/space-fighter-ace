@@ -21,7 +21,9 @@
 
 
 class MapImages
-  def initialize images
+  def initialize images , terrain , map
     @images = images
+    @map = map
+    @terrain = terrain
   end
 end
