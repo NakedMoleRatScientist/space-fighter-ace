@@ -24,7 +24,8 @@ class MapTerrain
   attr_accessor :rect , :image
   def initialize
     super
-    @image = Rubygame::Surface.load("data/placeholder.png")
+    @name = "data/playholder.png"
+    @image = Rubygame::Surface.load(name)
     @rect = Rubygame::Rect.new(0,0,*image.size)
   end
   def imageload image
