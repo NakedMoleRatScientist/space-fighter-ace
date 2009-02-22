@@ -35,7 +35,6 @@ class MapEngine
   # NOTE: Setup everything
   def setup
     @mapdata = MapData.new(self)
-    @background = Rubygame::Surface.load(@engine.images['background'])
     @mapdata.datacompute()
     @mapdata.terraincompute()
   end

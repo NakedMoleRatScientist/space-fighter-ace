@@ -31,16 +31,14 @@ class MapData
   def datacompute
     n = 0
     @calculator.rectlocation(@engine.mapfiles.map) {
-      image = Rubygame::Surface.load(@engine.engine.images['map'][@calculator.o])
-	    obj = MapTile.new()
-	    obj.imageload(image)
-	    obj.sets(@calculator.x,@calculator.y)
+      obj = MapTile.new()
+      obj.sets(@calculator.x,@calculator.y)
       case @calculator.o
-	    when 0
+      when 0
         obj.property = false
-	    when 7
+      when 7
         obj.property = 3
-	    end
+      end
       if n == 0
         if obj.property == false
           @engine.mapobj << obj
@@ -50,7 +48,7 @@ class MapData
 	        @engine.mapobj << obj
         end
       end
-	    n = n + 1
+      n = n + 1
     }
   end
   def terraincompute
@@ -59,9 +57,7 @@ class MapData
     @calculator.defaultcolumns = 3
     @calculator.defaultrows = 3
     @calculator.rectlocation(@engine.mapfiles.terrain) {
-      image = Rubygame::Surface.load(@engine.engine.images['terrain'][@calculator.o])
       obj = MapTerrain.new()
-      obj.imageload(image)
       obj.sets(@calculator.x,@calculator.y)
       @engine.terrain << obj
       @engine.terrainsprites << obj
