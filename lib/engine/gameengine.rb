@@ -48,7 +48,7 @@ class GameEngine < EngineInfo
   end
   # NOTE: Draw everything
   def draw screen
-    @mapengine.draw(screen)
+    @mapengine.draw()
     @charstrack.sprites.draw(@mapsurface)
     @itemstrack.sprites.draw(@mapsurface)
     @mapsurface.blit(screen,[0,0])

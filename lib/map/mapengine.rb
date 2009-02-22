@@ -2,7 +2,7 @@
 #Copyright (C) 2008 YourNameHere
 
 #Kiba Role Playing Game Engine(KRPGE)
-#Copyright (C) 2008 Han Dao and contributors
+#Copyright (C) 2008-2009 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ class MapEngine
     @camera.compute()
   end
   # NOTE: Draw the terrain and then the map.
-  def draw screen
+  def draw
     @mapobj.each do |map|
       map.draw(@mapsurface)
     end
