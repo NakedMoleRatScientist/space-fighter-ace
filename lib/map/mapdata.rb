@@ -38,6 +38,7 @@ class MapData
       when 7
         obj.property = 3
       end
+      obj.identifer = @calculator.o
       if n == 0
         if obj.property == false
           @engine.mapobj << obj
