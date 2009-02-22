@@ -27,6 +27,7 @@ class MapTile
     super
     @image = Rubygame::Surface.load("data/blank.png")
     @rect = Rubygame::Rect.new(0,0,*@image.size)
+    @name = "blank"
     @property = true
   end
 
