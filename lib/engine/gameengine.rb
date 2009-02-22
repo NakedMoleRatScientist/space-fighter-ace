@@ -32,8 +32,6 @@ class GameEngine < EngineInfo
   end
   # NOTE: Setup the various classes.
   def setup
-    @mapengine = MapEngine.new(self)
-    @mapengine.setup()
     @charstrack = CharactersTracker.new(self)
     @charstrack.datacompute()
     selectfollowing()
