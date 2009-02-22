@@ -48,11 +48,11 @@ class MapEngine
   end
   # NOTE: Draw the terrain and then the map.
   def draw
-    @mapobj.each do |map|
-      map.draw(@mapsurface)
-    end
     @terrain.each do |terrain|
       terrain.draw(@mapsurface)
+    end
+    @mapobj.each do |map|
+      map.draw(@mapsurface)
     end
   end 
   # NOTE: Clean out the mapobj array.
