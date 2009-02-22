@@ -24,7 +24,6 @@
 class MapData
   def initialize engine
     @engine = engine
-    @adapter = @engine.adapter
     @calculator = MapCalculator.new(@engine)
   end
   # NOTE: It use an image yaml file, which list the integer correspondance to image names. It used the integers from the mapobj's map array, which is m to determine what images to load.
@@ -45,7 +44,7 @@ class MapData
         end
       else
         if obj.property != false
-	        @engine.mapobj << obj
+	  @engine.mapobj << obj
         end
       end
       n = n + 1
