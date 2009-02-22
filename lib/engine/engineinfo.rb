@@ -20,7 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EngineInfo
-  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :charstrack, :itemstrack, :mapsurface
+  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :charstrack, :itemstrack, :mapsurface , :characters_tracker
   def initialize
     @file = FileSys.new()
     @mapfiles = MapFiles.new()

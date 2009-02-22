@@ -25,6 +25,6 @@
   lib/engine/gameengine.rb
   lib/engine/character.rb
   lib/engine/itemstracker.rb
-  lib/engine/characterstracker.rb
+  lib/engine/characters_tracker.rb
 }.each{|lib| require lib}
 
