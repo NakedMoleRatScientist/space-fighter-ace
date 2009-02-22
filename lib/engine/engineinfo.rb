@@ -32,6 +32,9 @@ class EngineInfo
   # NOTE: Load images.
   def setimages name
     @images = @file.yaml_read(name)
+    if @mapengine.class == MapEngine
+      @mapengine.mapimages.load_all_images(@images)
+    end
   end
   # NOTE: Set mapfile
   def setmapfile name

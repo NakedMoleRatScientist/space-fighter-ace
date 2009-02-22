@@ -21,14 +21,13 @@
 
 
 class MapImages
-  def initialize images , terrain , map
-    @images = images
+  def initialize map , terrain
     @map = map
     @terrain = terrain
   end
-  def load_all_images
+  def load_all_images images
     @terrain.each do |terrain|
-      @terrain.name = @images.terrain[@terrain.identifer]
+      terrain.name = images["terrain"][terrain.identifer]
     end
 
   end
