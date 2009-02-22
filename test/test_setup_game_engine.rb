@@ -24,7 +24,15 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     assert @game.mapengine.terrain[0].name == "data/placeholder.png"
     assert @game.mapengine.mapobj[1].name == "data/blank.png"
     @game.setimages("test/images.yml")
-    assert @game.mapengine.terrain[0].name == "data/nebula1.png"
+    load_images?
+  end
+  def load_images?
+    assert @game.mapengine.terrain[0].name = "data/nebula1.png"
     assert @game.mapengine.mapobj[1].name == "data/wall1.png"
+  end
+  def test_setup_images_before_mapfiles
+    @game.setimages("test/images.yml")
+    @game.setmapfiles("test/blank.map")
+    load_images?
   end
 end
