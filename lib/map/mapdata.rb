@@ -26,7 +26,7 @@ class MapData
     @engine = engine
     @calculator = MapCalculator.new(@engine)
   end
-  # NOTE: It use an image yaml file, which list the integer correspondance to image names. It used the integers from the mapobj's map array, which is m to determine what images to load.
+  # NOTE: Datacomptue load map objects
   def datacompute
     n = 0
     @calculator.rectlocation(@engine.mapfiles.map) {
