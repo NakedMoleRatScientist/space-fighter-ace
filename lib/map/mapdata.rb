@@ -61,7 +61,6 @@ class MapData
       obj.identifer = @calculator.o
       obj.sets(@calculator.x,@calculator.y)
       @engine.terrain << obj
-      @engine.terrainsprites << obj
     }
   end
 end

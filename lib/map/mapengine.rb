@@ -30,7 +30,6 @@ class MapEngine
     @length  = 0
     @height  = 0
     @terrain = []
-    @terrainsprites = Rubygame::Sprites::Group.new()
     @mapimages = MapImages.new(@mapobj, @terrain)
   end
   # NOTE: Setup everything
