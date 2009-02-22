@@ -11,6 +11,8 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     @game.setmapfile("data/maps/blank.map")
     assert @game.mapfiles.name == "data/maps/blank.map"
     assert @game.mapengine.class == MapEngine
+    assert @game.mapengine.terrain[0].identifer == 0
+    assert @game.mapengine.terrain[1].identifer == 1
   end
   def test_setup_images
     @game.setmapfile("data/maps/blank.map")
