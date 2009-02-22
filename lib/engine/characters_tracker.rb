@@ -20,7 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 
-class CharactersTracker
+class Characters_Tracker
   attr_accessor :characters , :sprites , :control
   def initialize engine
     @engine = engine
