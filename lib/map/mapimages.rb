@@ -26,4 +26,10 @@ class MapImages
     @map = map
     @terrain = terrain
   end
+  def load_all_images
+    @terrain.each do |terrain|
+      @terrain.name = @images.terrain[@terrain.identifer]
+    end
+
+  end
 end
