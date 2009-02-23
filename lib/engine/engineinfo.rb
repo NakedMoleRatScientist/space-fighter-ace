@@ -48,7 +48,7 @@ class EngineInfo
   # NOTE: Select characters to follow from the CharacterTracker object.
   def selectfollowing
     if @following.class == String
-      @following = @charstrack.lookup(@following,true)
+      @following = @characters_tracker.lookup(@following,true)
     end
   end
   # NOTE: Set the class for choosing character types.
