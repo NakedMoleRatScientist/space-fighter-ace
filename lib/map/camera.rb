@@ -32,7 +32,7 @@ class Camera
     @engine = engine
     @mapobj = @engine.mapobj
     @items = @engine.engine.itemstrack.items
-    @c = @engine.engine.charstrack.characters
+    @c = @engine.engine.characters_tracker.characters
     @terrain = @engine.terrain
     @follow =  @engine.engine.following
     @adjustbackward = 250
