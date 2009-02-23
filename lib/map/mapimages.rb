@@ -34,7 +34,7 @@ class MapImages
   end
   def map_task images
     @map.each do |map|
-      map.name = image["map"][map.identifer]
+      map.name = images["map"][map.identifer]
       map.imageload()
     end
   end
