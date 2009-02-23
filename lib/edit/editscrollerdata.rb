@@ -20,16 +20,16 @@ class EditScrollerData
   def initialize
     @object = MapTile.new()
     @object.sets(850,100)
-    image = Surface.load("data/delete.png")
-    @object.imageload(image)
+    @object.name = "data/delete.png"
+    @object.imageload()
   end
   def load_new name
     if name == false
-      image = Surface.load("data/delete.png")
+      @object.name = "data/delete.png"
     else
-      image = Surface.load(name)
+      @object.name = name
     end
-    @object.imageload(image)
+    @object.imageload()
   end
   def draw screen
     @object.draw(screen)
