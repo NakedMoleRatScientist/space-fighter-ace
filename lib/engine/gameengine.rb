@@ -40,14 +40,14 @@ class GameEngine < EngineInfo
   end
   # NOTE: Compute everything.
   def compute
-    @charstrack.act()
+    @characters_tracker.act()
     @law.compute()
     @mapengine.compute()
   end
   # NOTE: Draw everything
   def draw screen
     @mapengine.draw()
-    @charstrack.sprites.draw(@mapsurface)
+    @characters_tracker.sprites.draw(@mapsurface)
     @itemstrack.sprites.draw(@mapsurface)
     @mapsurface.blit(screen,[0,0])
   end
