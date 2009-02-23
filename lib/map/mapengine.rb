@@ -59,4 +59,10 @@ class MapEngine
   def clean
     @mapobj = []
   end
+  # NOTE: Recompute the mapobj array.
+  def restart
+    clean()
+    @mapdata.datacompute()
+    @mapimages.map_task(@engine.images)
+  end
 end
