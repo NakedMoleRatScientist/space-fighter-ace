@@ -55,6 +55,7 @@ class EngineInfo
   def setchar char
     @chartype = char
     @characters_tracker = Characters_Tracker.new(self)
+    @characters_tracker.datacompute()
   end
   # NOTE: Set the class for choosing item types.
   def setitem item
