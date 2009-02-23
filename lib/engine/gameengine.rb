@@ -53,7 +53,7 @@ class GameEngine < EngineInfo
   end
   # NOTE: Retrive all previous positions of characters.
   def prevposition
-    @charstrack.prevposition()
+    @characters_tracker.prevposition()
   end
   # NOTE: Draw the map background
   def undraw screen
