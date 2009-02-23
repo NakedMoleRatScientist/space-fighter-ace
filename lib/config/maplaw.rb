@@ -24,8 +24,8 @@ class MapLaw
   def initialize engine
     @engine = engine
     @m = @engine.mapengine.mapobj
-    @c = @engine.charstrack.characters
-    @charstrack = @engine.charstrack
+    @c = @engine.characters_tracker.characters
+    @characters_tracker = @engine.characters_tracker
     @items = @engine.itemstrack.items
     @itemtrack = @engine.itemstrack
   end
