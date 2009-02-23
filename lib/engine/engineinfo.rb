@@ -20,7 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EngineInfo
-  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :charstrack, :itemstrack, :mapsurface , :characters_tracker
+  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :itemstrack, :mapsurface , :characters_tracker
   def initialize
     @file = FileSys.new()
     @mapfiles = MapFiles.new()
@@ -54,6 +54,7 @@ class EngineInfo
   # NOTE: Set the class for choosing character types.
   def setchar char
     @chartype = char
+    @characters_tracker = Characters_Tracker.new(self)
   end
   # NOTE: Set the class for choosing item types.
   def setitem item

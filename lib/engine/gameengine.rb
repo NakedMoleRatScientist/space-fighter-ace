@@ -32,8 +32,6 @@ class GameEngine < EngineInfo
   end
   # NOTE: Setup the various classes.
   def setup
-    @charstrack = Characters_Tracker.new(self)
-    @charstrack.datacompute()
     selectfollowing()
     @itemstrack = ItemsTracker.new(self)
     @itemstrack.datacompute()
