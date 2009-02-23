@@ -22,15 +22,9 @@ class EditEngine < EngineInfo
     super()
   end
   def setup loggerui , data
-    @mapengine = MapEngine.new(self)
-    @mapengine.setup()
-    @charstrack = CharactersTracker.new(self)
-    @charstrack.datacompute()
     @itemstrack = ItemsTracker.new(self)
     @itemstrack.datacompute()
     @mapengine.cam()
-    mapfiles = MapFiles.new()
-    mapfiles.read(@mapfiles)
     @editmap = EditMap.new(mapfiles,@images)
     @editui = EditUi.new(loggerui,data,self)
     @calculate = MapCalculator.new(@mapengine)
@@ -41,11 +35,12 @@ class EditEngine < EngineInfo
   end
   def edit
     @editmap.edit()
+    @mapengine.restart()
   end
   def draw screen
     @editui.change_choice(@editmap.return_name_of_current_selection())
-    @mapengine.draw(screen)
-    @charstrack.sprites.draw(screen)
+    @mapengine.draw()
+    @characters_tracker.sprites.draw(screen)
     @itemstrack.sprites.draw(screen)
     @mapsurface.blit(screen,[0,0])
     @editui.draw()
