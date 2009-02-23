@@ -30,8 +30,11 @@ class MapImages
       terrain.name = images["terrain"][terrain.identifer]
       terrain.set_terrain()
     end
+    map_task()
+  end
+  def map_task
     @map.each do |map|
-      map.name = images["map"][map.identifer]
+      map.name = image["map"][map.identifer]
       map.imageload()
     end
   end
