@@ -27,10 +27,12 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     @game.setimages("test/images.yml")
     load_images?
   end
+  # NOTE: See if they got the proper names for image loading.
   def load_images?
     assert @game.mapengine.terrain[0].name = "data/nebula1.png"
     assert @game.mapengine.mapobj[1].name == "data/wall1.png"
   end
+  # NOTE: Test the opposite direction
   def test_setup_images_before_mapfiles
     @game.setimages("test/images.yml")
     @game.setmapfile("test/blank.map")
