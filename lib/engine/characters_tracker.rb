@@ -25,7 +25,7 @@ class Characters_Tracker
   def initialize engine
     @engine = engine
     @chartype = @engine.chartype
-    @calculator = MapCalculator.new(@engine.mapengine)
+    @calculator = MapCalculator.new(@engine.length,@engine.height)
     @characters = []
     @sprites = Rubygame::Sprites::Group.new()
     @control = nil

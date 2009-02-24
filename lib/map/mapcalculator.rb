@@ -22,9 +22,9 @@
 
 class MapCalculator
   attr_accessor :x , :y , :o , :defaultx , :defaulty , :defaultcolumns, :defaultrows
-  def initialize length , width
+  def initialize length , height
     @length = length
-    @heigth = height
+    @height = height
     @x = x
     @y = y
     @o = o

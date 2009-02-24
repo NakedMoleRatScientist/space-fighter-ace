@@ -21,14 +21,12 @@
 
 
 class MapEngine
-  attr_accessor :mapobj , :camera , :length , :height , :mapfiles , :background , :engine , :mapdata , :terrain , :mapimages
+  attr_accessor :mapobj , :camera , :mapfiles , :background , :engine , :mapdata , :terrain , :mapimages
   def initialize engine
     @engine = engine
     @mapsurface = engine.mapsurface
     @mapfiles = engine.mapfiles
     @mapobj  = []
-    @length  = 0
-    @height  = 0
     @terrain = []
     @mapimages = MapImages.new(@mapobj, @terrain)
   end
