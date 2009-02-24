@@ -24,7 +24,7 @@
 class MapData
   def initialize engine
     @engine = engine
-    @calculator = MapCalculator.new(@engine)
+    @calculator = MapCalculator.new(@engine.engine.length,@engine.engine.height)
   end
   # NOTE: Datacomptue load map objects
   def datacompute

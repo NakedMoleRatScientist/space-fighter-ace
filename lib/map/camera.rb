@@ -30,6 +30,7 @@ class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
   def initialize engine
     @engine = engine
+    @gameengine = @engine.engine
     @mapobj = @engine.mapobj
     @items = @engine.engine.itemstrack.items
     @c = @engine.engine.characters_tracker.characters
@@ -49,19 +50,19 @@ class Camera
   def backwardcompute
     # NOTE: If the followed's horizontal position defined by the x in followed's rect is  is less than @adjustback, the map will move backward.
     if @follow.rect.x < @adjustbackward
-	    length = @adjustbackward - @follow.rect.x
-	    @engine.length += length
-	    if leftlimit() == true
+      length = @adjustbackward - @follow.rect.x
+      @gameengine.length += length
+      if leftlimit() == true
         return
-	    end
-	    synchronization(length,0)
+      end
+      synchronization(length,0)
     end
   end
   def forwardcompute
     # NOTE: If the followed's horizontal position defined by the x in player's rect is greater than @adjustforward, than the map will move forward.
     if @follow.rect.x > @adjustforward
 	    length = @follow.rect.x - @adjustforward
-	    @engine.length -= length
+	    @gameengine.length -= length
 	    if rightlimit() == true
         return
 	    end
@@ -73,7 +74,7 @@ class Camera
     # NOTE: If the followed's vertical position defined by the y in player's rect is greater than @adjustdown, than the map will move down.
     if @follow.rect.y > @adjustdown
 	    length = @follow.rect.y - @adjustdown
-	    @engine.height -= length
+	    @gameengine.height -= length
 	    if downlimit() == true
         return
 	    end
@@ -85,7 +86,7 @@ class Camera
     # NOTE: If the followed's vertical position defined by the y in player's rect is lower than @upadjust, than the map will move up.
     if @follow.rect.y < @adjustup
 	    length = @adjustup - @follow.rect.y
-	    @engine.height += length
+	    @gameengine.height += length
 	    if uplimit() == true
         return
 	    end
@@ -95,8 +96,8 @@ class Camera
   def rightlimit
     # NOTE: -1600 is the limit of moving to the right by moving the maps further to the left. If camera goes beyond -1600, there will be blank spaces. The horizontal size is said to be 2400.
     # Substract 800 from the mapsize and you get the limit of camera movement. 800 is the horizontal resolution that the map engine is designed for.
-    if @engine.length < -1600
-	    @engine.length = -1600
+    if @gameengine.length < -1600
+	    @gameengine.length = -1600
 	    s = - (@mapobj[0].rect.x + 1600)
 	    synchronization(s,0)
 	    return true
@@ -105,8 +106,8 @@ class Camera
   end
   def leftlimit
     # NOTE: 0 is the beginning of the map, the very left. So the camera's movement stop there.
-    if @engine.length > 0
-	    @engine.length = 0
+    if @gameengine.length > 0
+	    @gameengine.length = 0
 	    s = - @mapobj[0].rect.x
 	    synchronization(s,0)
 	    return true
@@ -116,8 +117,8 @@ class Camera
   def downlimit
     # NOTE: -1200 is the limit of camera movement for moving down the screen. To move beyond there is to see blank spaces. 
     # Take 600, the default vertical resolution that the map engine is designed for and substract from the mapsize of 1800, and you get 1200. That where the camera movement limit come from.
-    if @engine.height < -1200
-	    @engine.height = -1200
+    if @gameengine.height < -1200
+	    @gameengine.height = -1200
 	    s = - (@mapobj[0].rect.y + 1200)
 	    synchronization(0,s)
 	    return true
@@ -126,8 +127,8 @@ class Camera
   end
   def uplimit
     # NOTE: A height of 0 is to mark the beginning of the map, the top corner. Thus it is the camera movement limit for moving up.
-    if @engine.height > 0
-	    @engine.height = 0
+    if @gameengine.height > 0
+	    @gameengine.height = 0
 	    s = - (@mapobj[0].rect.y)
       synchronization(0,s)
 	    return true

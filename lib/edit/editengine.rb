@@ -27,7 +27,7 @@ class EditEngine < EngineInfo
     @mapengine.cam()
     @editmap = EditMap.new(mapfiles,@images)
     @editui = EditUi.new(loggerui,data,self)
-    @calculate = MapCalculator.new(@mapengine)
+    @calculate = MapCalculator.new(@length,@height)
   end
   def save
     @editmap.save()
