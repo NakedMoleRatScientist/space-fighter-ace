@@ -22,8 +22,9 @@
 
 class MapCalculator
   attr_accessor :x , :y , :o , :defaultx , :defaulty , :defaultcolumns, :defaultrows
-  def initialize engine
-    @engine = engine
+  def initialize length , width
+    @length = length
+    @heigth = height
     @x = x
     @y = y
     @o = o
@@ -37,8 +38,8 @@ class MapCalculator
     rows = 0
     columns = 0
     object.each do |o|
-      a = columns * @defaultx + @engine.length
-      b = rows * @defaulty + @engine.height
+      a = columns * @defaultx + @length
+      b = rows * @defaulty + @height
       @x = a
       @y = b
       @o = o
@@ -60,8 +61,8 @@ class MapCalculator
     x = 0
     y = 0
     pos.times do |t|
-      x = columns * @defaultx + @engine.length
-      y = rows * @defaulty + @engine.height
+      x = columns * @defaultx + @length
+      y = rows * @defaulty + @height
       columns += 1
       if columns == @defaultcolumns
 	rows += 1
