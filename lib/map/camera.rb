@@ -30,8 +30,8 @@ class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
   def initialize engine
     @engine = engine
-    @gameengine = @engine.engine
-    @mapobj = @engine.mapobj
+    @width = 0
+    @height = 0
     @adjustbackward = 250
     @adjustforward = 350
     @adjustdown = 530
