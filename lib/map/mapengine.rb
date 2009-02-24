@@ -28,6 +28,7 @@ class MapEngine
     @mapfiles = engine.mapfiles
     @mapobj  = []
     @terrain = []
+    @camera = Camera.new(self)
     @mapimages = MapImages.new(@mapobj, @terrain)
   end
   # NOTE: Setup everything
