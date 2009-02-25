@@ -26,6 +26,9 @@ class EngineInfo
     @mapfiles = MapFiles.new()
     @camera = Camera.new()
   end
+  def set
+    @camera.set(self)
+  end
   # NOTE: MapEngine's Camera object will follow this object.
   def setfollow follow
     @following = follow
@@ -57,6 +60,7 @@ class EngineInfo
     @chartype = char
     @characters_tracker = Characters_Tracker.new(self)
     @characters_tracker.datacompute()
+    set()
   end
   # NOTE: Set the class for choosing item types.
   def setitem item
