@@ -144,26 +144,29 @@ class Camera
   # Y as calculated is for the horonzontal movement.
   # This method will move all the objects on the map by the x or y's value.
   def synchronization x= 0 , y = 0
-    @mapobj.each do |m|
-      m.rect.x += x
-      m.rect.y += y
+    if @characters != nil
+      @characters.move_all_characters(x,y)
     end
-    @c.each do |c|
-      c.rect.x += x
-      c.rect.y += y
-    end
-    @items.each do |i|
-      i.rect.x += x
-      i.rect.y += y
-    end
-    @terrain.each do |t|
-      t.rect.x += x
-      t.rect.y += y
-    end
-    notacharacter = @follow.kind_of?(Character)
-    if notacharacter == false
-      @follow.rect.x += x
-      @follow.rect.y += y
-    end
-  end
+    #@mapobj.each do |m|
+     # m.rect.x += x
+      #m.rect.y += y
+   # end
+    #@c.each do |c|
+     # c.rect.x += x
+      #c.rect.y += y
+    #end
+    #@items.each do |i|
+     # i.rect.x += x
+     # i.rect.y += y
+    #end
+    #@terrain.each do |t|
+     # t.rect.x += x
+     # t.rect.y += y
+    #end
+    #notacharacter = @follow.kind_of?(Character)
+    #if notacharacter == false
+     # @follow.rect.x += x
+      #@follow.rect.y += y
+   # end
+  #end
 end
