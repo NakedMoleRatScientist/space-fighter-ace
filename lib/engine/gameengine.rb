@@ -40,8 +40,12 @@ class GameEngine < EngineInfo
   end
   # NOTE: Compute everything.
   def compute
-    @characters_tracker.act()
-    @law.compute()
+    if @characters_tracker != nil
+      @characters_tracker.act()
+    end
+    if @law != nil
+      @law.compute()
+    end
     @mapengine.compute()
   end
   # NOTE: Draw everything

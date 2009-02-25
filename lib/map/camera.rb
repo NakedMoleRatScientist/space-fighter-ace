@@ -30,6 +30,7 @@ class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
   def initialize engine
     @engine = engine
+    @following = @engine.engine.following
     @width = 0
     @height = 0
     @adjustbackward = 250
@@ -38,10 +39,15 @@ class Camera
     @adjustup = 60
   end
   def compute
+    if @following == nil
+      puts"cannot compute"
+      return false
+    end
     backwardcompute()
     forwardcompute()
     downcompute()
     upcompute()
+    return true
   end
   def backwardcompute
     # NOTE: If the followed's horizontal position defined by the x in followed's rect is  is less than @adjustback, the map will move backward.

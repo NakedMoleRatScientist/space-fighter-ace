@@ -6,5 +6,7 @@ class Test_Map_Camera < Test::Unit::TestCase
   end
   def test_initial
     assert @game.mapengine.camera.class == Camera
+    test = @game.compute()
+    assert test == false
   end
 end
