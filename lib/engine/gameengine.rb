@@ -46,7 +46,10 @@ class GameEngine < EngineInfo
     if @law != nil
       @law.compute()
     end
-    @mapengine.compute()
+    if @mapengine != nil
+      @mapengine.compute()
+    end
+    @camera.compute()
   end
   # NOTE: Draw everything
   def draw screen
