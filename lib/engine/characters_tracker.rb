@@ -98,4 +98,10 @@ class Characters_Tracker
   def set_control_at n
     @control = @characters[n]
   end
+  def move_all_characters x , y
+    @characters.each do |c|
+      c.rect.x += x
+      c.rect.y += y
+    end
+  end
 end
