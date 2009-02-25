@@ -18,7 +18,7 @@
 
 #sync commits to remote repository"
 require "yaml"
-require "lib/mapfiles.rb"
+require "lib/map/mapfiles.rb"
 
 task :sync do
   sh "git push"
@@ -48,5 +48,5 @@ end
 
 task :test do
   sh 'ruby test/testgame.rb'
-  sh 'ruby test/testmap.rb'
+  sh 'ruby test/testmapeditor.rb'
 end
