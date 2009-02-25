@@ -9,9 +9,8 @@ class Test_Map_Camera < Test::Unit::TestCase
     assert test == false
   end
   def test_which_is_computable?
-    assert @game.camera.characters.class == nil
+    assert @game.camera.characters == nil
     @game.setchar(CharType.new(@game))
-    assert @game.camera.characters.class == Character_Trackers
-	
+    assert @game.camera.characters.class == Characters_Tracker
   end
 end
