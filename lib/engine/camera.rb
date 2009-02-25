@@ -37,6 +37,9 @@ class Camera
     @adjustdown = 530
     @adjustup = 60
   end
+  def set engine
+    @characters = engine.characters_tracker
+  end
   def compute
     if @following == nil
       puts"ERROR: Camera object have nothing to follow."
