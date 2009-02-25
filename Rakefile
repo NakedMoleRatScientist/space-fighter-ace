@@ -45,3 +45,8 @@ end
 
 task :package do
 end
+
+task :test do
+  sh 'ruby test/testgame.rb'
+  sh 'ruby test/testmap.rb'
+end
