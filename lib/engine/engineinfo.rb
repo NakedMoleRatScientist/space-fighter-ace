@@ -20,12 +20,11 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EngineInfo
-  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :itemstrack, :mapsurface , :characters_tracker , :length , :height
+  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :itemstrack, :mapsurface , :characters_tracker , :camera
   def initialize
     @file = FileSys.new()
     @mapfiles = MapFiles.new()
-    @length = 0
-    @height = 0
+    @camera = Camera.new(self)
   end
   # NOTE: MapEngine's Camera object will follow this object.
   def setfollow follow
