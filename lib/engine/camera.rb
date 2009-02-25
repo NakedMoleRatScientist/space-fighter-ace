@@ -29,9 +29,7 @@
 class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
   attr_reader :width , :height , :characters
-  def initialize engine
-    @engine = engine
-    @following = @engine.following
+  def initialize
     @width = 0
     @height = 0
     @adjustbackward = 250

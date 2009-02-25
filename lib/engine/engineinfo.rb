@@ -24,7 +24,7 @@ class EngineInfo
   def initialize
     @file = FileSys.new()
     @mapfiles = MapFiles.new()
-    @camera = Camera.new(self)
+    @camera = Camera.new()
   end
   # NOTE: MapEngine's Camera object will follow this object.
   def setfollow follow
