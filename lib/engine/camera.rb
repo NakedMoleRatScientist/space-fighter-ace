@@ -2,7 +2,7 @@
 #Copyright (C) 2008 YourNameHere
 
 #Kiba Role Playing Game Engine(KRPGE)
-#Copyright (C) 2008 Han Dao and contributors
+#Copyright (C) 2008-2009 Han Dao and contributors
 #
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 
 class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
-  attr_reader :width , :height
+  attr_reader :width , :height , :characters
   def initialize engine
     @engine = engine
     @following = @engine.following
