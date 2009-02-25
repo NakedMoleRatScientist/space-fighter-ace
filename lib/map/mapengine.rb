@@ -28,7 +28,6 @@ class MapEngine
     @mapfiles = engine.mapfiles
     @mapobj  = []
     @terrain = []
-    @camera = Camera.new(self)
     @mapimages = MapImages.new(@mapobj, @terrain)
   end
   # NOTE: Setup everything
@@ -36,10 +35,6 @@ class MapEngine
     @mapdata = MapData.new(self)
     @mapdata.datacompute()
     @mapdata.terraincompute()
-  end
-  #NOTE: Setup camera
-  def cam
-    @camera = Camera.new(self)
   end
   # NOTE: Compute Everything
   def compute
