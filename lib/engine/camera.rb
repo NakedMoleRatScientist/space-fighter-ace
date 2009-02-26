@@ -156,7 +156,7 @@ class Camera
     #@items.each do |i|
      # i.rect.x += x
      # i.rect.y += y
-    notacharacter = @follow.kind_of?(Character)
+    notacharacter = @following.kind_of?(Character)
     if notacharacter == false
       @follow.rect.x += x
       @follow.rect.y += y
