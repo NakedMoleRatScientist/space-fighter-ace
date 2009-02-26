@@ -52,6 +52,9 @@ class EngineInfo
     if @images != nil
       @mapengine.mapimages.load_all_images(@images)
     end
+    if @characters_tracker != nil
+      @characters_tracker.datacompute()
+    end
   end
   # NOTE: Set the class for choosing character types.
   def setchar char
