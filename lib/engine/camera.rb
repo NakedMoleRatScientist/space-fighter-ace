@@ -152,26 +152,14 @@ class Camera
     end
     @rect.x += x
     @rect.y += y
-    #@mapobj.each do |m|
-     # m.rect.x += x
-      #m.rect.y += y
-   # end
-    #@c.each do |c|
-     # c.rect.x += x
-      #c.rect.y += y
-    #end
+    @map.move(x,y)
     #@items.each do |i|
      # i.rect.x += x
      # i.rect.y += y
-    #end
-    #@terrain.each do |t|
-     # t.rect.x += x
-     # t.rect.y += y
-    #end
-    #notacharacter = @follow.kind_of?(Character)
-    #if notacharacter == false
-     # @follow.rect.x += x
-      #@follow.rect.y += y
-   # end
+    notacharacter = @follow.kind_of?(Character)
+    if notacharacter == false
+      @follow.rect.x += x
+      @follow.rect.y += y
+    end
   end
 end
