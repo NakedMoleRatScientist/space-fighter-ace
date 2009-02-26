@@ -36,6 +36,7 @@ class Camera
     @adjustforward = 350
     @adjustdown = 530
     @adjustup = 60
+    @rect = Rect.new(50,50,0,0)
   end
   def set engine
     @characters = engine.characters_tracker
