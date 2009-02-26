@@ -55,6 +55,7 @@ class EngineInfo
     if @characters_tracker != nil
       @characters_tracker.datacompute()
     end
+    set()
   end
   # NOTE: Set the class for choosing character types.
   def setchar char
