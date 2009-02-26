@@ -152,7 +152,9 @@ class Camera
     end
     @rect.x += x
     @rect.y += y
-    @map.move(x,y)
+    if @map != nil
+      @map.move(x,y)
+    end
     #@items.each do |i|
      # i.rect.x += x
      # i.rect.y += y
