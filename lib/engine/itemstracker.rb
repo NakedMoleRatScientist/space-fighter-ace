@@ -27,7 +27,7 @@ class ItemsTracker
     @itemtype = @engine.itemtype
     @items = []
     @sprites = Rubygame::Sprites::Group.new()
-    @calculator = MapCalculator.new(@engine.length,@engine.height)
+    @calculator = MapCalculator.new(@engine.camera.width,@engine.camera.height)
   end
   def datacompute
     @calculator.rectlocation(@engine.mapengine.mapfiles.items) {
