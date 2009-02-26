@@ -36,13 +36,13 @@ class Camera
     @adjustforward = 350
     @adjustdown = 530
     @adjustup = 60
-    @rect = Rect.new(50,50,0,0)
+    @rect = Rect.new(80,60,0,0)
   end
   def set engine
     @characters = engine.characters_tracker
   end
   def compute
-    if @following == nil || @mapobj == nil
+    if @following == nil
       puts"ERROR: Camera object have nothing to follow."
       return false
     end
@@ -103,7 +103,7 @@ class Camera
     # Substract 800 from the mapsize and you get the limit of camera movement. 800 is the horizontal resolution that the map engine is designed for.
     if @width < -1600
       @width = -1600
-      s = - (@mapobj[0].rect.x + 1600)
+      s = - (@rect.rect.x + 1600)
       synchronization(s,0)
       return true
     end
@@ -113,7 +113,7 @@ class Camera
     # NOTE: 0 is the beginning of the map, the very left. So the camera's movement stop there.
     if @width > 0
 	@width = 0
-	s = - @mapobj[0].rect.x
+	s = - @rect.rect.x
 	synchronization(s,0)
 	return true
     end
@@ -124,7 +124,7 @@ class Camera
     # Take 600, the default vertical resolution that the map engine is designed for and substract from the mapsize of 1800, and you get 1200. That where the camera movement limit come from.
     if @height < -1200
       @height = -1200
-      s = - (@mapobj[0].rect.y + 1200)
+      s = - (@rect.rect.y + 1200)
       synchronization(0,s)
       return true
     end
@@ -134,7 +134,7 @@ class Camera
     # NOTE: A height of 0 is to mark the beginning of the map, the top corner. Thus it is the camera movement limit for moving up.
     if @height > 0
       @height = 0
-      s = - (@mapobj[0].rect.y)
+      s = - (@rect.rect.y)
       synchronization(0,s)
       return true
     end
@@ -148,6 +148,8 @@ class Camera
     if @characters != nil
       @characters.move_all_characters(x,y)
     end
+    @rect.x += x
+    @rect.y += y
     #@mapobj.each do |m|
      # m.rect.x += x
       #m.rect.y += y
