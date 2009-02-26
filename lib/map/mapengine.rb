@@ -36,10 +36,6 @@ class MapEngine
     @mapdata.datacompute()
     @mapdata.terraincompute()
   end
-  # NOTE: Compute Everything
-  def compute
-    @camera.compute()
-  end
   # NOTE: Draw the terrain and then the map.
   def draw
     @terrain.each do |terrain|
