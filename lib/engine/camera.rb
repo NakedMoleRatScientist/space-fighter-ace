@@ -28,7 +28,7 @@
 
 class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
-  attr_reader :width , :height , :characters
+  attr_reader :width , :height , :characters , :following
   def initialize
     @width = 0
     @height = 0
@@ -41,7 +41,7 @@ class Camera
     @characters = engine.characters_tracker
   end
   def compute
-    if @following == nil
+    if @following == nil || @mapobj == nil
       puts"ERROR: Camera object have nothing to follow."
       return false
     end
@@ -168,5 +168,5 @@ class Camera
      # @follow.rect.x += x
       #@follow.rect.y += y
    # end
-  #end
+  end
 end
