@@ -17,6 +17,7 @@ require"test/unit"
   lib/movement.rb
   lib/spaceobject.rb
   lib/player.rb
+  lib/enemy.rb
 }.each{|lib| require lib}
 include Rubygame
 TTF.setup
