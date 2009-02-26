@@ -13,6 +13,8 @@ require"test/unit"
 
 #Game code
 %w{
+  lib/rotation.rb
+  lib/movement.rb
   lib/spaceobject.rb
   lib/player.rb
 }.each{|lib| require lib}
