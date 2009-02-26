@@ -35,6 +35,7 @@ class EngineInfo
     if @following.class == String
       @following = @characters_tracker.lookup(@following,true)
     end
+    set()
   end
   # NOTE: Load images.
   def setimages name
