@@ -29,10 +29,10 @@ class GameLaw < CharactersLaw
     @c.each do |c|
        item = characterscollide(c,true)
        if item != false
-        @charstrack.set_control_at(item)
+        @characters_tracker.set_control_at(item)
         if item.kind_of?(Projectile) || c.kind_of?(Projectile)
           c.kill()
-          @charstrack.control.kill()
+          @characters_tracker.control.kill()
         end
        end
     end
