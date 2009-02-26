@@ -59,4 +59,8 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     @game.setchar(CharType.new(@game))
     did_it_work_with_characters?
   end
+  def test_will_go_false_without_chartype
+    @game.setmapfile("test/player.map")
+    assert @game.characters_tracker == nil
+  end
 end
