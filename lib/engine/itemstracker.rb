@@ -43,4 +43,10 @@ class ItemsTracker
     @items = []
     @sprites = Rubygame::Sprites::Group.new()
   end
+  def move x , y
+    @items.each do |item|
+      item.rect.x += x
+      item.rect.y += y
+    end
+  end
 end
