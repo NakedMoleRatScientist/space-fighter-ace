@@ -43,9 +43,6 @@ class GameEngine < EngineInfo
     if @law != nil
       @law.compute()
     end
-    if @mapengine != nil
-      @mapengine.compute()
-    end
     @camera.compute()
   end
   # NOTE: Draw everything
