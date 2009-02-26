@@ -49,6 +49,16 @@ class MapEngine
       map.draw(@mapsurface)
     end
   end 
+  def move x , y
+    @terrain.each do |terrain|
+      terrain.rect.x += x
+      terrain.rect.y += y
+    end
+    @mapobj.each do |map|
+      map.rect.x += x
+      map.rect.y += y
+    end
+  end
   # NOTE: Clean out the mapobj array.
   def clean
     @mapobj = []
