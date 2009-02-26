@@ -32,6 +32,9 @@ class EngineInfo
   # NOTE: MapEngine's Camera object will follow this object.
   def setfollow follow
     @following = follow
+    if @following.class == String
+      @following = @characters_tracker.lookup(@following,true)
+    end
   end
   # NOTE: Load images.
   def setimages name
@@ -47,12 +50,6 @@ class EngineInfo
     @mapengine.setup()
     if @images != nil
       @mapengine.mapimages.load_all_images(@images)
-    end
-  end
-  # NOTE: Select characters to follow from the CharacterTracker object.
-  def selectfollowing
-    if @following.class == String
-      @following = @characters_tracker.lookup(@following,true)
     end
   end
   # NOTE: Set the class for choosing character types.
