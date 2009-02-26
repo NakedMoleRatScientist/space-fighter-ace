@@ -44,4 +44,11 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
     @game.setchar(CharType.new(@game))
     assert @game.characters_tracker.class == Characters_Tracker
   end
+  def test_compute_characters_with_mapfiles
+    @game.setchar(CharType.new(@game))
+    @game.setmapfile("test/player.map")
+    assert @game.characters_tracker.characters[0].class == Player
+    assert @game.characters_tracker.characters[0].rect.x = 60
+    assert @game.characters_tracker.characters[0].rect.y = 0
+  end
 end
