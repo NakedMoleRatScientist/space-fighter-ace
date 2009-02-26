@@ -28,7 +28,7 @@
 
 class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
-  attr_reader :width , :height , :characters , :following
+  attr_reader :width , :height , :characters , :following , :map
   def initialize
     @width = 0
     @height = 0
@@ -41,6 +41,7 @@ class Camera
   def set engine
     @characters = engine.characters_tracker
     @following = engine.following
+    @map = engine.mapengine
   end
   def compute
     if @following == nil
