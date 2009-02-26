@@ -32,11 +32,8 @@ class GameEngine < EngineInfo
   end
   # NOTE: Setup the various classes.
   def setup
-    selectfollowing()
     @itemstrack = ItemsTracker.new(self)
     @itemstrack.datacompute()
-    @mapengine.cam()
-    camera_set()
   end
   # NOTE: Compute everything.
   def compute
