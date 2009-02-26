@@ -8,12 +8,13 @@ class Test_Map_Camera < Test::Unit::TestCase
     test = @game.compute()
     assert test == false
   end
-  def test_setup_following_and_still_fail
+  def test_setup_following_activate
     @game.setchar(CharType.new(@game))
+    @game.characters_tracker.addchar(2,100,100)
     @game.setfollow("Player")
     test = @game.compute()
     assert @game.camera.following.class == Player
-    assert test == false
+    assert test == true
   end
   def test_which_is_computable?
     assert @game.camera.characters == nil
