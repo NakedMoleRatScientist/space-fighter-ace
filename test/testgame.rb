@@ -11,6 +11,11 @@ require"test/unit"
   engine.rb
 }.each{|lib| require lib}
 
+#Game code
+%w{
+  lib/spaceobject.rb
+  lib/player.rb
+}.each{|lib| require lib}
 include Rubygame
 TTF.setup
 #test code
