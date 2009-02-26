@@ -47,8 +47,16 @@ class Test_Setup_Game_Engine < Test::Unit::TestCase
   def test_compute_characters_with_mapfiles
     @game.setchar(CharType.new(@game))
     @game.setmapfile("test/player.map")
+    did_it_work_with_characters?
+  end
+  def did_it_work_with_characters?
     assert @game.characters_tracker.characters[0].class == Player
     assert @game.characters_tracker.characters[0].rect.x = 60
     assert @game.characters_tracker.characters[0].rect.y = 0
+  end
+  def test_mapfiles_before_characters_tracker
+    @game.setmapfile("test/player.map")
+    @game.setchar(CharType.new(@game))
+    did_it_work_with_characters?
   end
 end
