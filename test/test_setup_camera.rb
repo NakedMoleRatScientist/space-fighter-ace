@@ -21,9 +21,14 @@ class Test_Map_Camera < Test::Unit::TestCase
     test = @game.camera.compute()
     assert test == false
   end
-  def test_which_is_computable?
+  def test_set_characters_computable?
     assert @game.camera.characters == nil
     @game.setchar(CharType.new(@game))
     assert @game.camera.characters.class == Characters_Tracker
+  end
+  def test_set_map_computable?
+    assert @game.camera.map == nil
+    @game.setmapfile("test/blank.map")
+    assert @game.camera.map.class == MapEngine
   end
 end
