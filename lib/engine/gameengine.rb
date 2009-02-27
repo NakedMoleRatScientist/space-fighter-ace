@@ -30,11 +30,6 @@ class GameEngine < EngineInfo
   def ruleset law
     @law = law
   end
-  # NOTE: Setup the various classes.
-  def setup
-    @itemstrack = ItemsTracker.new(self)
-    @itemstrack.datacompute()
-  end
   # NOTE: Compute everything.
   def compute
     if @characters_tracker != nil
