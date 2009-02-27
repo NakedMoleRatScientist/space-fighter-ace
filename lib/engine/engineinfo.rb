@@ -20,7 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class EngineInfo
-  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :itemstrack, :mapsurface , :characters_tracker , :camera
+  attr_accessor :images, :following, :chartype, :mapfiles, :itemtype , :surface , :mapengine, :itemstracker, :mapsurface , :characters_tracker , :camera
   def initialize
     @file = FileSys.new()
     @mapfiles = MapFiles.new()
@@ -67,6 +67,8 @@ class EngineInfo
   # NOTE: Set the class for choosing item types.
   def setitem item
     @itemtype = item
+    @itemstracker = ItemsTracker.new(self)
+    set()
   end
   # NOTE: Set the mapsurface size
   def setmapsurface size
