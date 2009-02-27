@@ -26,8 +26,8 @@ class MapLaw
     @m = @engine.mapengine.mapobj
     @c = @engine.characters_tracker.characters
     @characters_tracker = @engine.characters_tracker
-    @items = @engine.itemstrack.items
-    @itemtrack = @engine.itemstrack
+    @items = @engine.itemstracker.items
+    @itemtrack = @engine.itemstracker
   end
   # NOTE:Check if map collide with the object in question.
   def mapcollide t

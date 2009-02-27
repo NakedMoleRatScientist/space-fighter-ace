@@ -44,7 +44,7 @@ class GameEngine < EngineInfo
   def draw screen
     @mapengine.draw()
     @characters_tracker.sprites.draw(@mapsurface)
-    @itemstrack.sprites.draw(@mapsurface)
+    @itemstracker.sprites.draw(@mapsurface)
     @mapsurface.blit(screen,[0,0])
   end
   # NOTE: Retrive all previous positions of characters.
