@@ -33,7 +33,6 @@ class Controller
     @engine.setadjustdown(300)
     @engine.setadjustup(250)
     @engine.setfollow("Player")
-    @engine.set_cam_mode()
     @engine.setup()
     @engine.ruleset(GameLaw.new(@engine))
     @player = @engine.following
