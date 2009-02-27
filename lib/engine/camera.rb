@@ -42,6 +42,7 @@ class Camera
     @characters = engine.characters_tracker
     @following = engine.following
     @map = engine.mapengine
+    @items = engine.itemstracker
   end
   def compute
     if @following == nil
