@@ -33,7 +33,7 @@ class Test_Map_Camera < Test::Unit::TestCase
   end
   def test_set_items_computable?
     assert @game.camera.items == nil
-    @game.setitem(ItemType.new(@game))
+    @game.setitem(ItemType.new())
     assert @game.camera.items.class == ItemsTracker
   end
 end
