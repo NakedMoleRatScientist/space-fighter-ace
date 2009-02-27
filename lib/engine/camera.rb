@@ -28,7 +28,7 @@
 
 class Camera
   attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
-  attr_reader :width , :height , :characters , :following , :map
+  attr_reader :width , :height , :characters , :following , :map , :items
   def initialize
     @width = 0
     @height = 0
