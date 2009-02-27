@@ -31,4 +31,9 @@ class Test_Map_Camera < Test::Unit::TestCase
     @game.setmapfile("test/blank.map")
     assert @game.camera.map.class == MapEngine
   end
+  def test_set_items_computable?
+    assert @game.camera.items == nil
+    @game.setitem(ItemType.new(@game))
+    assert @game.camera.items.class == ItemsTracker
+  end
 end
