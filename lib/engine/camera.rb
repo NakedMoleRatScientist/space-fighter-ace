@@ -27,7 +27,7 @@
 #Consequently, the lower your vertical position is, the greater your height.
 
 class Camera
-  attr_accessor :adjustbackward , :adjustforward, :adjustdown, :adjustup
+  attr_writer :adjustbackward , :adjustforward, :adjustdown, :adjustup
   attr_reader :width , :height , :characters , :following , :map , :items
   def initialize
     @width = 0
