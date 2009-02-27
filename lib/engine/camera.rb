@@ -156,9 +156,9 @@ class Camera
     if @map != nil
       @map.move(x,y)
     end
-    #@items.each do |i|
-     # i.rect.x += x
-     # i.rect.y += y
+    if @items != nil
+      @items.move(x,y)
+    end
     notacharacter = @following.kind_of?(Character)
     if notacharacter == false
       @follow.rect.x += x
