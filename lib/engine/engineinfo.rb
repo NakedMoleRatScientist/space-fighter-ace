@@ -73,16 +73,16 @@ class EngineInfo
     @mapsurface = Surface.new(size)
   end
   def setadjustforward n
-    @adjustforward = n
+    @camera.adjustfoward = n
   end
   def setadjustbackward n
-    @adjustbackward = n
+    @camera.adjustbackward = n
   end
   def setadjustup n
-    @adjustup = n
+    @camera.adjustup = n
   end
   def setadjustdown n
-    @adjustdown = n
+    @camera.adjustdown = n
   end
   def camera_set
     if @cam_mode == true
