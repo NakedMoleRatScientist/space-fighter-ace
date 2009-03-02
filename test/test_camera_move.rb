@@ -11,6 +11,7 @@ class Test_Camera_Move < Test::Unit::TestCase
     @game.following.right()
     @game.compute()
     assert @game.following.rect.x == 350
+    assert @game.mapengine.mapobj[0].rect.x == 0
     assert @game.camera.width == 0
     assert @game.camera.height == 0
   end
