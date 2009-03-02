@@ -1,5 +1,5 @@
 
-class Test_Camera_Move
+class Test_Camera_Move < Test::Unit::TestCase
   def setup
     @camera = Camera.new()
     @game.setchar(CharType.new(@game))
