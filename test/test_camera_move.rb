@@ -3,6 +3,7 @@ class Test_Camera_Move < Test::Unit::TestCase
   def setup
     @game = GameEngine.new()
     @game.setchar(CharType.new(@game))
+    @game.setmapfile("test/blank.map")
     @game.characters_tracker.addchar(2,100,100)
     @game.setfollow("Player")
   end
