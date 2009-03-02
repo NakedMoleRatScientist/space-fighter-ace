@@ -24,3 +24,4 @@ TTF.setup
 #test code
 require"test/test_setup_game_engine.rb"
 require"test/test_setup_camera.rb"
+require"test/test_camera_move.rb"
