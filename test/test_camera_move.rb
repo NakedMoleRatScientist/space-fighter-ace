@@ -9,6 +9,6 @@ class Test_Camera_Move < Test::Unit::TestCase
   def test_move_once_only
     @game.following.rect.x = 100
     @game.following.right()
-    assert @game.following.rect.x == 100
+    assert @game.following.rect.x == 150
   end
 end
