@@ -22,12 +22,9 @@ class EditEngine < EngineInfo
     super()
   end
   def setup loggerui , data
-    @itemstrack = ItemsTracker.new(self)
-    @itemstrack.datacompute()
-    @mapengine.cam()
     @editmap = EditMap.new(mapfiles,@images)
     @editui = EditUi.new(loggerui,data,self)
-    @calculate = MapCalculator.new(@length,@height)
+    @calculate = MapCalculator.new(@camera.length,@camera.height)
   end
   def save
     @editmap.save()
