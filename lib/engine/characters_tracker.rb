@@ -26,8 +26,7 @@ class Characters_Tracker
     @engine = engine
     @chartype = @engine.chartype
     @calculator = MapCalculator.new(@engine.camera.width,@engine.camera.height)
-    @characters = []
-    @sprites = Rubygame::Sprites::Group.new()
+    @characters =  Rubygame::Sprites::Group.new()
     @control = nil
   end
   # NOTE: Generate all characters.
@@ -47,10 +46,10 @@ class Characters_Tracker
     n = 0
     @characters.each do |c|
       if c.death == true
-        @characters.delete_at(n)
-        @sprites.delete(c)
+        @characters.delete(c)
+      else
+        c.act()
       end
-      c.act()
       n += 1
     end
   end
@@ -79,15 +78,13 @@ class Characters_Tracker
   end
   # NOTE: Clear out the characters and sprites array.
   def clean
-    @characters = []
-    @sprites = Rubygame::Sprites::Group.new()
+    @characters = Rubygame::Sprites::Group.new()
   end
   # NOTE: Add a character to the mix.
   def addchar o , x , y
     char = @chartype.options(o,x,y)
     if char != false
       @characters << char
-      @sprites << char
     end
   end
   # NOTE: Set the @control to last
@@ -105,8 +102,6 @@ class Characters_Tracker
     end
   end
   def draw screen
-    @characters.each do |c|
-      c.draw(screen)
-    end
+    @characters.draw(screen)
   end
 end
