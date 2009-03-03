@@ -161,8 +161,8 @@ class Camera
     end
     notacharacter = @following.kind_of?(Character)
     if notacharacter == false
-      @follow.rect.x += x
-      @follow.rect.y += y
+      @following.rect.x += x
+      @following.rect.y += y
     end
   end
 end
