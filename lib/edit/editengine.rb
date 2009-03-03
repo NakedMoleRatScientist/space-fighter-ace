@@ -24,7 +24,7 @@ class EditEngine < EngineInfo
   def setup loggerui , data
     @editmap = EditMap.new(mapfiles,@images)
     @editui = EditUi.new(loggerui,data,self)
-    @calculate = MapCalculator.new(@camera.length,@camera.height)
+    @calculate = MapCalculator.new(@camera.width,@camera.height)
   end
   def save
     @editmap.save()
@@ -43,7 +43,7 @@ class EditEngine < EngineInfo
     @editui.draw()
   end
   def compute
-    @mapengine.compute()
+    @camera.compute()
   end
   def cycle
     @editmap.change()
