@@ -104,4 +104,9 @@ class Characters_Tracker
       c.rect.y += y
     end
   end
+  def draw screen
+    @characters.each do |c|
+      c.draw(screen)
+    end
+  end
 end
