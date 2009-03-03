@@ -37,8 +37,8 @@ class EditEngine < EngineInfo
   def draw screen
     @editui.change_choice(@editmap.return_name_of_current_selection())
     @mapengine.draw()
-    @characters_tracker.sprites.draw(screen)
-    @itemstrack.sprites.draw(screen)
+    @characters_tracker.draw(screen)
+    @itemstracker.sprites.draw(screen)
     @mapsurface.blit(screen,[0,0])
     @editui.draw()
   end
