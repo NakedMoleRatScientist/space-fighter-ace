@@ -64,6 +64,7 @@ class MapEngine
   def restart
     clean()
     @mapdata.datacompute()
-    @mapimages.map_task(@engine.images)
+    @mapdata.terraincompute()
+    @mapimages.load_all_images(@engine.images)
   end
 end
