@@ -25,7 +25,7 @@ class EditCursor
     super()
     @loggerui = loggerui
     @image = Rubygame::Surface.load(STAMP)
-    @rect = Rubygame::Rect.new(0,0,80,60)
+    @rect = Rubygame::Rect.new(80,60,0,0)
     @state = false
   end
   def change_to_false
