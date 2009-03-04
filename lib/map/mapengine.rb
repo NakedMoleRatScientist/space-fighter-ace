@@ -58,6 +58,7 @@ class MapEngine
   # NOTE: Clean out the mapobj array.
   def clean
     @mapobj = []
+    @terrain = []
   end
   # NOTE: Recompute the mapobj array.
   def restart
