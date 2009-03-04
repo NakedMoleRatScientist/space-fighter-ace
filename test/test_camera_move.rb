@@ -28,7 +28,9 @@ class Test_Camera_Move < Test::Unit::TestCase
   end
   def test_camera_move
     @game.following.right()
+    assert @game.following.rect.x == 350
     @game.following.right()
+    assert @game.following.rect.x == 400
     @game.compute()
     assert @game.following.rect.x == 350
     assert @game.camera.width == 50
