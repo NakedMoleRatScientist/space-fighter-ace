@@ -52,7 +52,7 @@ class Test_Move_Cursor < Test::Unit::TestCase
       @editmap.move_right()
     end
     @editmap.edit()
-    assert @mapfiles.map[899] == 1
+    assert @mapfiles.map[29] == 1
   end
   def test_move_right_than_down
     @editmap.move_right()
