@@ -20,6 +20,8 @@ class EditEngine < EngineInfo
   attr_accessor :editui , :editmap
   def initialize
     super()
+    @camera.adjustup = 0
+    @camera.adjustdown = 800
   end
   def setup loggerui , data
     @editmap = EditMap.new(mapfiles,@images)
