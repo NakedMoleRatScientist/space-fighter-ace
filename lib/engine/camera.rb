@@ -159,10 +159,12 @@ class Camera
     if @items != nil
       @items.move(x,y)
     end
-    notacharacter = @following.kind_of?(Character)
-    if notacharacter == false
-      @following.rect.x += x
-      @following.rect.y += y
+    if @following.kind_of?(Character)
+      mutiplier = 2
+    else
+      mutiplier = 1
     end
+    @following.rect.x -= x * mutiplier
+    @following.rect.y -= y * mutiplier
   end
 end
