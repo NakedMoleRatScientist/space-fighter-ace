@@ -74,7 +74,7 @@ class Camera
       if rightlimit() == true
         return
       end
-      length = -width
+      width = -width
       synchronization(width,0)
     end
   end
