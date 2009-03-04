@@ -38,6 +38,11 @@ class Camera
     @adjustup = 60
     @rect = Rect.new(80,60,0,0)
   end
+  def reset
+    @rect = Rect.new(80,60,0,0)
+    @width = 0
+    @height = 0
+  end
   def set engine
     @characters = engine.characters_tracker
     @following = engine.following
