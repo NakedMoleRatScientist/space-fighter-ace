@@ -43,9 +43,11 @@ class EditMode
       @cursor.change_to_false()
     end
   end
-  def draw
+  def set_new_position
     x , y = @engine.return_xy_pos()
     @cursor.set_xy(x,y)
+  end
+  def draw
     @engine.compute()
     @background.blit(@data.display.screen,[0,0])
     @engine.draw(@data.display.screen)
@@ -94,12 +96,16 @@ class EditMode
       case ev.key
       when Rubygame::K_UP
         @engine.editmap.move_up()
+	set_new_position()
       when Rubygame::K_DOWN
         @engine.editmap.move_down()
+	set_new_position()
       when Rubygame::K_RIGHT
         @engine.editmap.move_right()
+	set_new_position()
       when Rubygame::K_LEFT
         @engine.editmap.move_left()
+	set_new_position()
       when Rubygame::K_RETURN
         @engine.cycle()
 	change()
