@@ -106,7 +106,7 @@ class Camera
     # Substract 800 from the mapsize and you get the limit of camera movement. 800 is the horizontal resolution that the map engine is designed for.
     if @width < -1600
       @width = -1600
-      s = - (@rect.x + 1600)
+      s = @rect.x + 1600
       synchronization(s,0)
       return true
     end
