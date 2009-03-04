@@ -22,6 +22,8 @@ class EditMap < Image_Changer
     super(images)
     @mapfiles = mapfiles
     @location = 0
+    @x = 0
+    @y = 0
   end
   def move_by n
     if @location + n > 0 && @location + n < 900
@@ -32,16 +34,35 @@ class EditMap < Image_Changer
     @mapfiles.save()
   end
   def move_left
-    move_by(-1)
+    @x -= 1
+    if @x == -1
+      @x += 1
+    end
+    translate_into_location()
   end
   def move_right
-    move_by(1)
-  end
-  def move_down
-    move_by(30)
+    @x += 1
+    if @x == 30
+      @x -= 1
+    end
+    translate_into_location()
   end
   def move_up
-    move_by(-30)
+    @y -= 1
+    if @y == -1
+      @y += 1
+    end
+    translate_into_location()
+  end
+  def move_down
+    @y += 1
+    if @y == 30
+      @y -= 1
+    end
+    translate_into_location()
+  end
+  def translate_into_location
+    @location = @x + (@y * 30)
   end
   def delete
     @mapfiles.map[@location] = 0
