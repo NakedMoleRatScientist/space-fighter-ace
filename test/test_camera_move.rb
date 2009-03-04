@@ -33,7 +33,7 @@ class Test_Camera_Move < Test::Unit::TestCase
     assert @game.following.rect.x == 400
     @game.compute()
     assert @game.following.rect.x == 350
-    assert @game.camera.width == 50
+    assert @game.camera.width == -50
     assert @game.camera.height == 0
   end
 end
