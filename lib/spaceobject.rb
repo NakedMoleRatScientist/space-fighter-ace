@@ -22,11 +22,12 @@ class SpaceObject < Character
     super(image,engine)
     @speed = 0
     @movement = 0
-    @position = 0
+    @position = 0.0
   end
   def act
   end
   def move
+    @position += @movement
   end
   def set_velocity n
     @speed = n
