@@ -27,5 +27,6 @@ class SpaceObject < Character
   end
   def set_velocity n
     @speed = n
+    @movement = @speed / 10.0
   end
 end
