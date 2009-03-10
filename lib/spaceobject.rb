@@ -17,15 +17,12 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class SpaceObject < Character
-  attr_accessor :movement , :rotation , :angle
+  attr_reader :speed , :movement
   def initialize image, engine
     super(image,engine)
-    @movement = Movement.new(self)
-    @rotation = Rotation.new(self,image)
-    @angle = 0
+    @speed = 0
+    @movement = 0
   end
   def act
-    @movement.directionmove()
-    @rotation.rotation()
   end
 end
