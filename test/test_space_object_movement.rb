@@ -14,4 +14,16 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
     assert @player.speed == 4
     assert @player.movement == 0.4
   end
+  def test_set_velocity_and_move
+    @player.set_vlocity(4)
+    assert @player.speed == 4
+    assert @player.movement == 0.4
+    assert @player.position == 0
+    move()
+  end
+  def move
+    10.times do
+      @player.move()
+    end
+  end
 end
