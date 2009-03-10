@@ -26,5 +26,6 @@ class SpaceObject < Character
   def act
   end
   def set_velocity n
+    @speed = n
   end
 end
