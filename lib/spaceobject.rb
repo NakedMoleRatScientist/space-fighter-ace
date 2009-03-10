@@ -17,11 +17,12 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class SpaceObject < Character
-  attr_reader :speed , :movement
+  attr_reader :speed , :movement , :position
   def initialize image, engine
     super(image,engine)
     @speed = 0
     @movement = 0
+    @position = 0
   end
   def act
   end
