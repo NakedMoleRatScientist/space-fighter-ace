@@ -13,6 +13,7 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
     @player.set_velocity(4)
     assert @player.speed == 4
     assert @player.movement == 0.4
+    assert @player.position == 0
   end
   def test_set_velocity_and_move
     @player.set_velocity(4)
