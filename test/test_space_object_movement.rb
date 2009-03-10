@@ -20,6 +20,7 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
     assert @player.movement == 0.4
     assert @player.position == 0
     move()
+    assert @player.position == 4
   end
   def move
     10.times do
