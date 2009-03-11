@@ -17,13 +17,8 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Rotation
-  def initialize object , image
-    @object = object
-    @orig_image = Surface.load(image)
-  end
-  def change_rotate_speed n
-    @rotatespeed = n
-  end
-  def rotation
+  attr_reader :angle
+  def initialize
+    @angle = 0
   end
 end
