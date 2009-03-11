@@ -29,8 +29,10 @@ class SpaceObject < Character
     @timer = Timer.new(.1) {
       move()
     } 
+    @timer.start()
   end
   def act
+    @timer.check()
   end
   def move
     if @times == 0
