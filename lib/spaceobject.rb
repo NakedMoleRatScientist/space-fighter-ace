@@ -17,41 +17,16 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class SpaceObject < Character
-  attr_reader :speed , :movement , :position
+  attr_accessor :speed
   def initialize image, engine
     super(image,engine)
-    @speed = 0
-    @movement = 0
-    @position = 0.0
-    @addup = 0.0
-    @predicted_position = 0
-    @times = 0
+    @speed = Speed.new(self)
     @timer = Timer.new(0.1) {
-      move()
+      @speed.move()
     } 
     @timer.start()
   end
   def act
     @timer.check()
-  end
-  def move
-    if @times == 0
-      @predicted_position = @rect.x + @speed
-    end
-    @position += @movement
-    @addup += @movement
-    @times += 1
-    if @addup >= 1
-      @addup = 0.0
-      @rect.x += 1
-    end
-    if @times == 10
-      @rect.x = @predicted_position
-      @times = 0
-    end
-  end
-  def set_velocity n
-    @speed = n
-    @movement = @speed / 10.0
   end
 end
