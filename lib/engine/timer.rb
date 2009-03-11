@@ -27,14 +27,13 @@ class Timer
   end
 
   def check
-    t = Time.now.tv_sec
+    t = Time.now.to_f
     if t >= @fire_at
-	    @action.call
-	    @fire_at = t + @interval
+      @action.call
+      @fire_at = t + @interval
     end
   end
-
   def start
-    @fire_at = Time.now.tv_sec + @interval
+    @fire_at = Time.now.to_f + @interval
   end
 end
