@@ -17,10 +17,11 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class SpaceObject < Character
-  attr_accessor :speed
+  attr_accessor :speed , :rotation
   def initialize image, engine
     super(image,engine)
     @speed = Speed.new(self)
+    @rotation = Rotation.new()
     @timer = Timer.new(0.1) {
       @speed.move()
     } 
