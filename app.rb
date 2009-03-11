@@ -28,6 +28,7 @@
 }.each{|lib| require lib}
 
 %w{
+ lib/speed.rb
  lib/spaceobject.rb
  lib/setup.rb
  lib/itemexample.rb
