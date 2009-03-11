@@ -20,10 +20,11 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
     @player.set_velocity(4)
     assert @player.speed == 4
     assert @player.movement == 0.4
-    assert @player.position == 0
+    assert @player.position == 0.0
     assert @player.rect.x == 0
     move()
-    assert @player.position == 4.0
+    assert @player.position.class == Float
+    assert @player.position.round == 4
     assert @player.rect.x == 4
   end
   def move
