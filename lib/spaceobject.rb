@@ -26,6 +26,9 @@ class SpaceObject < Character
     @addup = 0.0
     @predicted_position = 0
     @times = 0
+    @timer = Timer.new(.1) {
+      move()
+    } 
   end
   def act
   end
