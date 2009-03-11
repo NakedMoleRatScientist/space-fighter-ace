@@ -13,6 +13,7 @@ require"test/unit"
 
 #Game code
 %w{
+  lib/speed.rb
   lib/rotation.rb
   lib/movement.rb
   lib/spaceobject.rb

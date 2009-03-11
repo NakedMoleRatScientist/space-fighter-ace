@@ -1,7 +1,8 @@
 
 class Speed
   attr_reader :speed , :movement , :position
-  def initialize
+  def initialize player
+    @player = player
     @speed = 0
     @movement = 0
     @position = 0.0
@@ -11,17 +12,17 @@ class Speed
   end
   def move
     if @times == 0
-      @predicted_position = @rect.x + @speed
+      @predicted_position = @player.rect.x + @speed
     end
     @position += @movement
     @addup += @movement
     @times += 1
     if @addup >= 1
       @addup = 0.0
-      @rect.x += 1
+      @player.rect.x += 1
     end
     if @times == 10
-      @rect.x = @predicted_position
+      @player.rect.x = @predicted_position
       @times = 0
     end
   end
