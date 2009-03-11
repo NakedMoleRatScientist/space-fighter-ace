@@ -10,14 +10,14 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
     assert @player.speed.movement == 0.0
   end
   def test_set_velocity
-    @player.set_velocity(4)
+    @player.speed.set_speed(4)
     assert @player.speed.speed == 4
     assert @player.speed.movement == 0.4
     assert @player.speed.position == 0
     assert @player.rect.x == 0
   end
   def test_set_velocity_and_move
-    @player.set_velocity(4)
+    @player.speed.set_speed(4)
     assert @player.speed.speed == 4
     assert @player.speed.movement == 0.4
     assert @player.speed.position == 0.0
@@ -28,7 +28,7 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
     assert @player.rect.x == 4
   end
   def test_set_velocity_part_way
-    @player.set_velocity(4)
+    @player.speed.set_speed(4)
     assert @player.speed.speed == 4
     assert @player.speed.movement == 0.4
     assert @player.rect.x == 0
@@ -37,7 +37,7 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
     assert @player.rect.x == 1
   end
   def test_time_test
-    @player.set_speed(4)
+    @player.speed.set_speed(4)
     state = false
     timer = Timer.new(1.1) {
       state = true
@@ -54,7 +54,7 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
   end
   def move t
     t.times do
-      @player.move()
+      @player.speed.move()
     end
   end
 end
