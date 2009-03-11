@@ -1,6 +1,6 @@
 
 
-class Test_Space_Object_Movement < Test::Unit::TestCase
+class Test_Space_Object_Speed < Test::Unit::TestCase
   def setup
     @engine = GameEngine.new()
     @player = Player.new(@engine)
