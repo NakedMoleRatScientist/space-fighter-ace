@@ -20,5 +20,6 @@ class Rotation
   attr_reader :angle
   def initialize
     @angle = 0
+    @speed = 0.9
   end
 end
