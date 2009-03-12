@@ -8,23 +8,23 @@ class Speed < Regulator
     @position = 0.0
     @addup = 0.0
     @predicted_position = 0
-    @times = 0
+  end
+  def setup
+    set_action_for_zero {
+      @predicted_position = @player.rect.x + speed
+    }
+    set_action_for_final {
+      @player.rect.x = @predicted_position
+      @time = 0
+
+    }
+    set_do_in_between {
+      @addup += @movement
+      @times += 1
+    }
   end
   def move
-    if @times == 0
-      @predicted_position = @player.rect.x + @speed
-    end
-    @position += @movement
-    @addup += @movement
-    @times += 1
-    if @addup >= 1
-      @addup = 0.0
-      @player.rect.x += 1
-    end
-    if @times == 10
-      @player.rect.x = @predicted_position
-      @times = 0
-    end
+    tick()
   end
   def set_speed n
     @speed = n
