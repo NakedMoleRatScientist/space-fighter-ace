@@ -8,4 +8,9 @@ class Regulator
       @action.call
     end
   end
+  def times_equal_ten? &action
+    if @times == 10
+      @action.call
+    end
+  end
 end
