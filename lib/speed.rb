@@ -1,5 +1,5 @@
 
-class Speed
+class Speed < Regulator
   attr_reader :speed , :movement , :position
   def initialize player
     @player = player
