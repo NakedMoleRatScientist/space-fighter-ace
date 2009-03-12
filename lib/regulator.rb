@@ -7,14 +7,14 @@ class Regulator
   end
   def set_action_for_final &acton_ten
   end
-  def times_equal_zero? &action
+  def times_equal_zero?
     if @times == 0
-      @action.call
+      @action_zero.call
     end
   end
-  def times_equal_ten? &action
+  def times_equal_ten?
     if @times == 10
-      @action.call
+      @action_ten.call
     end
   end
 end
