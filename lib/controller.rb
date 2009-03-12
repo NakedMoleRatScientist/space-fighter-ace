@@ -40,9 +40,6 @@ class Controller
     @hud = Hud.new(@data,@engine)
   end
   def action
-    if @active == true
-      @player.movement.increase()
-    end
     @engine.compute()
     @engine.draw(@data.display.screen)
   end

@@ -30,8 +30,8 @@ class Hud
     @clock.tick()
     @data.clear()
     @data.declare(:Info)
-    @data.text.add("Speed: #{@engine.following.movement.speed}",800,0)
-    @data.text.add("Angle: #{@engine.following.angle}",800,0)
+    @data.text.add("Speed: #{@engine.following.speed.speed}",800,0)
+    @data.text.add("Angle: #{@engine.following.rotation.angle}",800,0)
     @data.text.add("FPS: #{@clock.framerate()}",800,0)
   end
 end
