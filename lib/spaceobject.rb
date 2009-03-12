@@ -21,7 +21,7 @@ class SpaceObject < Character
   def initialize image, engine
     super(image,engine)
     @speed = Speed.new(self)
-    @rotation = Rotation.new()
+    @rotation = Rotation.new(image)
     @timer = Timer.new(0.1) {
       @speed.move()
     } 

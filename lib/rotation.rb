@@ -18,7 +18,8 @@
 
 class Rotation
   attr_reader :angle
-  def initialize
+  def initialize image
+    @reset_image = Surface.load(image)
     @angle = 0
     @speed = 0.9
   end
