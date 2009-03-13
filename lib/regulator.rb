@@ -4,10 +4,13 @@ class Regulator
     @times = 0
   end
   def set_action_for_zero &action_zero
+    @action_zero = action_zero
   end
-  def set_action_for_final &acton_ten
+  def set_action_for_final &action_ten
+    @action_ten = action_ten
   end
   def set_do_in_between &action_between
+    @action_between = action_between
   end
   def tick
     times_equal_zero?
