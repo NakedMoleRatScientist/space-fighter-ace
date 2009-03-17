@@ -30,7 +30,7 @@ class CharactersLaw < ItemsLaw
   def characterscollide target , opt = false
     n = 0
     @c.each do |c|
-	    if eligible?(target,c) == true
+      if eligible?(target,c) == true
         if c.rect.collide_rect?(target)
           if opt == false
             return 1
@@ -51,9 +51,9 @@ class CharactersLaw < ItemsLaw
   end
   def compute
     @c.each do |c|
-	    t = maprevert(c)
-	    c = t
-	    t = charactersrevert(c)
+     t = maprevert(c)
+     c = t
+     t = charactersrevert(c)
     end
   end
   def charactersrevert t

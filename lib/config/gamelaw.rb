@@ -22,19 +22,6 @@ class GameLaw < CharactersLaw
     super engine
   end
   def compute
-    death_from_projectile
     super
-  end
-  def death_from_projectile
-    @c.each do |c|
-       item = characterscollide(c,true)
-       if item != false
-        @characters_tracker.set_control_at(item)
-        if item.kind_of?(Projectile) || c.kind_of?(Projectile)
-          c.kill()
-          @characters_tracker.control.kill()
-        end
-       end
-    end
   end
 end
