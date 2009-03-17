@@ -96,9 +96,8 @@ class Characters_Tracker
     @control = @characters[n]
   end
   def move_all_characters x , y
-    @characters.each do |c|
-      c.rect.x += x
-      c.rect.y += y
+    @characters.each do |character|
+      character.add_to_rect(x,y)
     end
   end
   def draw screen
