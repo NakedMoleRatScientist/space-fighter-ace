@@ -1,6 +1,6 @@
 
 class Speed < Regulator
-  attr_reader :speed , :movement , :position
+  attr_reader :speed , :movement
   def initialize object
     super()
     @object = object
