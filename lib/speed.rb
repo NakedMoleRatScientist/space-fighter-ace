@@ -21,6 +21,10 @@ class Speed < Regulator
     }
     set_do_in_between {
       @addup += @movement
+      if @addup >= 1
+	 @player.rect.x += @addup.round()
+	 @addup = 0
+      end
       @times += 1
     }
   end
