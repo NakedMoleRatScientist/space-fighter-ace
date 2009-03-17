@@ -6,7 +6,6 @@ class Speed < Regulator
     @player = player
     @speed = 0
     @movement = 0
-    @position = 0.0
     @addup = 0.0
     @predicted_position = 0
     setup()
