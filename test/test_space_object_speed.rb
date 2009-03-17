@@ -23,8 +23,6 @@ class Test_Space_Object_Speed < Test::Unit::TestCase
     assert @player.speed.position == 0.0
     assert @player.rect.x == 0
     move(10)
-    assert @player.speed.position.class == Float
-    assert @player.speed.position.round == 4
     assert @player.rect.x == 4
   end
   def test_set_velocity_part_way
@@ -33,7 +31,6 @@ class Test_Space_Object_Speed < Test::Unit::TestCase
     assert @player.speed.movement == 0.4
     assert @player.rect.x == 0
     move(3)
-    assert @player.speed.position.round == 1
     assert @player.rect.x == 1
   end
   def test_time_test
