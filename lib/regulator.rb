@@ -2,6 +2,7 @@
 class Regulator
   def initialize
     @times = 0
+    @timer = Array.new()
   end
   def set_action_for_zero &action_zero
     @action_zero = action_zero
