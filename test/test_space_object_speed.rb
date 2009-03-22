@@ -21,7 +21,7 @@ class Test_Space_Object_Speed < Test::Unit::TestCase
     assert @player.speed.movement == 0.4
     assert @player.rect.x == 0
     move(10)
-    assert @player.rect.x == 4
+    assert @player.rect.x == 3
   end
   def test_set_velocity_part_way
     @player.speed.set_speed(4)
@@ -45,7 +45,7 @@ class Test_Space_Object_Speed < Test::Unit::TestCase
       timer.check()
       @player.act()
     end
-    assert @player.rect.x == 4
+    assert @player.rect.x == 3
   end
   def move t
     t.times do
