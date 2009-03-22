@@ -7,19 +7,14 @@ class Speed < Regulator
     @speed = 0
     @movement = 0
     @addup = 0.0
-    @predicted_position = 0
     setup()
   end
-  def setup
-      @addup += @movement
-      if @addup >= 1
-	 @object.rect.x += @addup.round()
-	 @addup = 0
-      end
-      @times += 1
-  end
   def move
-    tick()
+    @addup += @movement
+    if @addup >= 1
+       @object.rect.x += @addup.round()
+       @addup = 0
+    end
   end
   def set_speed n
     @speed = n
