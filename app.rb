@@ -28,7 +28,6 @@
 }.each{|lib| require lib}
 
 %w{
- lib/regulator.rb
  lib/speed.rb
  lib/spaceobject.rb
  lib/setup.rb
