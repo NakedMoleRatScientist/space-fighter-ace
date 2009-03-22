@@ -11,21 +11,12 @@ class Speed < Regulator
     setup()
   end
   def setup
-    set_action_for_zero {
-      @predicted_position = @object.rect.x + @speed
-    }
-    set_action_for_final {
-      @object.rect.x = @predicted_position
-      @times = 0
-    }
-    set_do_in_between {
       @addup += @movement
       if @addup >= 1
 	 @object.rect.x += @addup.round()
 	 @addup = 0
       end
       @times += 1
-    }
   end
   def move
     tick()
