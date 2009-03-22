@@ -1,5 +1,5 @@
 
-class Speed < Regulator
+class Speed
   attr_reader :speed , :movement
   def initialize object
     super()
@@ -7,7 +7,6 @@ class Speed < Regulator
     @speed = 0
     @movement = 0
     @addup = 0.0
-    setup()
   end
   def move
     @addup += @movement
