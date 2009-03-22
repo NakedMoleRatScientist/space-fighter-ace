@@ -5,14 +5,14 @@ class Speed
     super()
     @object = object
     @speed = 0
-    @movement = 0
-    @addup = 0.0
+    @movement = 0.0
+    @move = 0
   end
   def move
-    @addup += @movement
-    if @addup >= 1
-       @object.rect.x += @addup.round()
-       @addup = 0
+    @move += @movement
+    if @move > 1
+      @object.rect.x += @move.round()
+      @move = 0
     end
   end
   def set_speed n
