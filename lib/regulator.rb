@@ -4,6 +4,8 @@ class Regulator
     @times = 0
     @timer = Array.new()
   end
+  def set_action &action
+  end
   def set_action_for_zero &action_zero
     @action_zero = action_zero
   end
