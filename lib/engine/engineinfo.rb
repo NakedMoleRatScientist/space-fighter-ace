@@ -25,6 +25,7 @@ class EngineInfo
     @file = FileSys.new()
     @mapfiles = MapFiles.new()
     @camera = Camera.new()
+    @log = Log.new()
   end
   def set
     @camera.set(self)
