@@ -29,7 +29,8 @@
 class Camera
   attr_writer :adjustbackward , :adjustforward, :adjustdown, :adjustup
   attr_reader :width , :height , :characters , :following , :map , :items
-  def initialize
+  def initialize log
+    @log = log
     @width = 0
     @height = 0
     @adjustbackward = 250
