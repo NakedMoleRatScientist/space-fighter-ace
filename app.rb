@@ -24,6 +24,7 @@
   rubygame
   rbgooey
   yaml
+  logger
   engine.rb
 }.each{|lib| require lib}
 
