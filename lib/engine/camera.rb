@@ -169,5 +169,6 @@ class Camera
       @following.rect.x += x
       @following.rect.y += y
     end
+    @log.new_position(@following.rect.x,@following.rect.y)
   end
 end
