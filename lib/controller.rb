@@ -51,11 +51,6 @@ class Controller
     @data.display.screen.fill([0,0,0])
     @hud.text()
   end
-  # NOTE: For the attribute direction of player:
-  # 1. Up
-  # 2. Down
-  # 3. Right
-  # 4. Left
   def mode
     loop do
       @engine.prevposition()
