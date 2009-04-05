@@ -58,6 +58,12 @@ class Controller
       :q => :quit,
     }
   end
+  def move_hook
+    Rubygame::Eventhooks.new = {
+      :right => :move_right
+      :left => :move_left
+    }
+  end
   def mode
     loop do
       @engine.prevposition()
