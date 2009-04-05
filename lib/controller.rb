@@ -53,14 +53,14 @@ class Controller
     @hud.text()
   end
   def quit_hook
-    Rubygame::Eventhooks.new = {
+    Rubygame::EventHooks.new = {
       :escape => :quit,
       :q => :quit,
     }
   end
   def move_hook
-    Rubygame::Eventhooks.new = {
-      :right => :move_right
+    Rubygame::EventHooks.new = {
+      :right => :move_right ,
       :left => :move_left
     }
   end
