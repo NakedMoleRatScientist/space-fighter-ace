@@ -113,7 +113,7 @@ class Camera
     if @width < -1600
       @width = -1600
       s = @rect.x + 1600
-      synchronization(s,0)
+      limit_action_x(s)
       return true
     end
     return false
@@ -170,5 +170,14 @@ class Camera
       @following.rect.y += y
     end
     @log.new_position(@following.rect.x,@following.rect.y,@rect)
+  end
+  def limit_action_x s
+    @rect.x -= s
+    if @map != nil
+      @map.move(-s,0)
+    end
+    if @items != nil
+      @items.move(-s,0)
+    end
   end
 end
