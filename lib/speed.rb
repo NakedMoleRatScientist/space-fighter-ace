@@ -20,9 +20,9 @@ class Speed
     @movement = @speed / 10.0
   end
   def left
-    @movement += 1
+    set_speed(4)
   end
   def right
-    @movement -= 1
+    set_speed(4)
   end
 end
