@@ -19,4 +19,10 @@ class Speed
     @speed = n
     @movement = @speed / 10.0
   end
+  def left
+    @movement += 1
+  end
+  def right
+    @movement -= 1
+  end
 end
