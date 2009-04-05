@@ -42,6 +42,7 @@ class GameEngine < EngineInfo
   end
   # NOTE: Draw everything
   def draw screen
+    @mapsurface.fill([0,0,0])
     @mapengine.draw()
     @characters_tracker.draw(@mapsurface)
     @itemstracker.sprites.draw(@mapsurface)
