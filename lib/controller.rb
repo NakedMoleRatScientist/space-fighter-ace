@@ -52,6 +52,12 @@ class Controller
     @data.display.screen.fill([0,0,0])
     @hud.text()
   end
+  def quit_hook
+    Rubygame::Eventhooks.new = {
+      :escape => :quit,
+      :q => :quit,
+    }
+  end
   def mode
     loop do
       @engine.prevposition()
