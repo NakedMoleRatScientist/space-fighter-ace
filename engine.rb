@@ -19,7 +19,7 @@
 }.each{|lib| require lib}
 
 %w{
-  lib/log.rb
+  lib/camera_log.rb
   lib/engine/camera.rb
   lib/engine/timer.rb
   lib/engine/engineinfo.rb
