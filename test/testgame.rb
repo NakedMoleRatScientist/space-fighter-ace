@@ -4,6 +4,7 @@ require"rubygems"
 require"rubygame"
 require"rbgooey"
 require"yaml"
+require"logger"
 require"test/unit"
 
 #Application code
