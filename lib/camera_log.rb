@@ -1,5 +1,5 @@
 
-class Log
+class Camera_Log
   def initialize
     @logger = Logger.new('log/camera.log')
   end
