@@ -36,6 +36,7 @@ class Controller
     @engine.ruleset(GameLaw.new(@engine))
     @player = @engine.following
     @q = Rubygame::EventQueue.new()
+    @q.enable_new_styles()
     @active = false
     @hud = Hud.new(@data,@engine)
   end
@@ -54,7 +55,7 @@ class Controller
   def mode
     loop do
       @engine.prevposition()
-	    @q.each do |ev|
+      @q.each do |ev|
         case ev
         when Rubygame::QuitEvent
           Rubygame.quit()
@@ -64,58 +65,12 @@ class Controller
           when Rubygame::K_ESCAPE
             Rubygame.quit()
             exit
-          end
-          if move(ev) == true
-            @active = true
-          end
-          rotate(ev)
-          shoot(ev)
-        when Rubygame::KeyUpEvent
-          @active = false
-		    end
+          end   
+        end
       end
       draw()
       action()
       @data.display.screen.flip()
-    end
-  end
-  def move ev
-    case ev.key
-    when Rubygame::K_W
-      @player.up()
-      return true
-    when Rubygame::K_S
-      @player.down()
-      return true
-    when Rubygame::K_D
-      @player.right()
-      return true
-    when Rubygame::K_A
-      @player.left()
-      return true
-    when Rubygame::K_Q
-      @player.movement.directionchange(0)
-      return true
-    when Rubygame::K_E
-      @player.movement.change_brust()
-      return true
-    end
-    return false
-  end
-  def rotate ev
-    case ev.key
-    when Rubygame::K_RIGHT
-      @player.speed.right()
-    when Rubygame::K_LEFT
-      @player.speed.left()
-    when Rubygame::K_DOWN
-      @player.rotation.change_rotate_speed(0)
-    end
-  end
-  def shoot ev
-    case ev.key
-    when Rubygame::K_SPACE
-      @player.shoot()
     end
   end
 end
