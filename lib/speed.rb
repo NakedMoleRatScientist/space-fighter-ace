@@ -1,9 +1,8 @@
 
 class Speed
   attr_reader :speed , :movement
-  def initialize object
+  def initialize
     super()
-    @object = object
     @speed = 0
     @movement = 0.0
     @move = 0
