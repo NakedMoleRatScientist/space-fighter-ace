@@ -84,4 +84,9 @@ class Controller
     end
     exit
   end
+  def queue_through
+    @queue.each do |event|
+      Rubygame::EventHandler::HasEventHandler.handle(event)
+    end
+  end
 end
