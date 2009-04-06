@@ -66,6 +66,7 @@ class Controller
   end
   def mode
     hook_quit()
+    @player.hook_move()
     register(@player)
     catch(:quit) do
       loop do
