@@ -53,7 +53,7 @@ class Controller
     @data.display.screen.fill([0,0,0])
     @hud.text()
   end
-  def quit_hook
+  def hook_quit
     quit_hooks = {
       :escape => :quit,
       :q => :quit,
@@ -67,6 +67,7 @@ class Controller
     }
   end
   def mode
+    hook_quit()
     loop do
       @engine.prevposition()
       @q.each do |ev|
