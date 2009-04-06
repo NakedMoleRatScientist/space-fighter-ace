@@ -20,6 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Controller
+  include Rubygame::EventHandlers::HasEventHandler
   def initialize data
     @data = data
     @engine = GameEngine.new()
