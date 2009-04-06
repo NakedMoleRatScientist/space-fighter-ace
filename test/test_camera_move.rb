@@ -27,9 +27,9 @@ class Test_Camera_Move < Test::Unit::TestCase
     assert @game.camera.height == 0
   end
   def test_camera_move
-    @game.following.right()
+    @game.following.rect.x += 50
     assert @game.following.rect.x == 350
-    @game.following.right()
+    @game.following.rect.x += 50
     assert @game.following.rect.x == 400
     @game.compute()
     assert @game.following.rect.x == 350
