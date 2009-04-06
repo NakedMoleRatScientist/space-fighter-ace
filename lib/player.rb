@@ -42,6 +42,9 @@ class Player < SpaceObject
   def right
     @speed.right()
   end
+  def left
+    @speed.left()
+  end
   def hook_move
     hooks = {
       :right => :right ,
