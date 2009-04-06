@@ -75,8 +75,7 @@ class Controller
     catch(:quit) do
       loop do
         @engine.prevposition()
-        @q.each do |ev|
-        end
+	queue_through()
         draw()
         action()
         @data.display.screen.flip()
