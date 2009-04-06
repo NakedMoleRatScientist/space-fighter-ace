@@ -39,7 +39,7 @@ class Player < SpaceObject
   def down
     @rect.y += 50
   end
-  def move_hooks
+  def hook_move
     hooks = {
       :right => :right ,
       :left => :left
