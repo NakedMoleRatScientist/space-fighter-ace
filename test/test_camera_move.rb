@@ -15,7 +15,7 @@ class Test_Camera_Move < Test::Unit::TestCase
     no_movement()
   end
   def test_move_once_only_do_twice
-    @game.following.right()
+    @game.following.rect.x += 50
     @game.compute()
     @game.compute()
     no_movement()
