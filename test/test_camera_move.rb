@@ -39,9 +39,9 @@ class Test_Camera_Move < Test::Unit::TestCase
   def test_camera_move_with_enemies
     @game.characters_tracker.addchar(1,400,100)
     assert @game.following.rect.x == 300
-    @game.following.right()
-    @game.following.right()
-    @game.following.right()
+    @game.following.rect.x += 50
+    @game.following.rect.x += 50
+    @game.following.rect.x += 50
     assert @game.following.rect.x == 450
     assert @game.camera.width == 0
     assert @game.camera.height == 0
