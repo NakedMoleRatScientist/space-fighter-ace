@@ -66,6 +66,7 @@ class Controller
   end
   def mode
     hook_quit()
+    register(@player)
     catch(:quit) do
       loop do
         @engine.prevposition()
