@@ -73,12 +73,14 @@ class Controller
   def mode
     hook_quit()
     catch(:quit) do
-      @engine.prevposition()
-      @q.each do |ev|
+      loop do
+        @engine.prevposition()
+        @q.each do |ev|
+        end
+        draw()
+        action()
+        @data.display.screen.flip()
       end
-      draw()
-      action()
-      @data.display.screen.flip()
     end
     exit
   end
