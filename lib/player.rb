@@ -17,6 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Player < SpaceObject
+  include Rubygame::EventHandler::HasEventHandler
   IMAGE_PATH = "data/game/player.png"
   def initialize engine
     super(IMAGE_PATH,engine)
