@@ -36,7 +36,7 @@ class Controller
     @engine.ruleset(GameLaw.new(@engine))
     @player = @engine.following
     @q = Rubygame::EventQueue.new()
-    @q.enable_new_styles()
+    @q.enable_new_style_events()
     @active = false
     @hud = Hud.new(@data,@engine)
   end
