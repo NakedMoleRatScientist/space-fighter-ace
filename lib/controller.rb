@@ -60,12 +60,6 @@ class Controller
     }
     make_magic_hooks(quit_hooks)
   end
-  def move_hook
-    Rubygame::EventHooks.new = {
-      :right => :move_right ,
-      :left => :move_left
-    }
-  end
   def quit
     Rubygame.quit()
     throw :quit
