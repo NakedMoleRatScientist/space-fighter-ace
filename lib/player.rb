@@ -44,6 +44,6 @@ class Player < SpaceObject
       :right => :right ,
       :left => :left
     }
-    make_magic_hooks
+    make_magic_hooks(hooks)
   end
 end
