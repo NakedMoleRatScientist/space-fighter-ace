@@ -66,26 +66,20 @@ class Controller
       :left => :move_left
     }
   end
+  def quit
+    Rubygame.quit()
+    throw :quit
+  end
   def mode
     hook_quit()
-    loop do
+    catch(:quit) do
       @engine.prevposition()
       @q.each do |ev|
-        case ev
-        when Rubygame::QuitEvent
-          Rubygame.quit()
-          exit
-        when Rubygame::KeyDownEvent
-          case ev.key
-          when Rubygame::K_ESCAPE
-            Rubygame.quit()
-            exit
-          end   
-        end
       end
       draw()
       action()
       @data.display.screen.flip()
     end
+    exit
   end
 end
