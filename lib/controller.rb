@@ -82,4 +82,9 @@ class Controller
       handle(event)
     end
   end
+  def register(*objects)
+    objects.each do |object|
+      append_hook( :owner => object)
+    end
+  end
 end
