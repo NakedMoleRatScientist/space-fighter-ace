@@ -89,4 +89,12 @@ class GameSetup
     }
     make_magic_hooks(enter_hook)
   end
+  def register(*objects)
+    objects.each do |object|
+      append_hook( :owner => object,
+		   :trigger => Rubygame::EventTriggers::YesTrigger.new,
+		   :action => Rubygame::EventActions::MethodAction.new(:handle)
+		 )
+    end
+  end
 end
