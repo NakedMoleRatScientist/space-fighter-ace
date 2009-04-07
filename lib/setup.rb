@@ -51,28 +51,11 @@ class GameSetup
     hook_quit()
     hook_enter()
     catch(:throw) do
-        loop do
-          @q.each do |ev|
-            case ev
-        when Rubygame::QuitEvent
-          Rubygame.quit()
-          exit
-        when Rubygame::KeyDownEvent
-          case ev.key
-          when Rubygame::K_ESCAPE
-            Rubygame.quit()
-            exit
-          when Rubygame::K_RETURN
-            @control.mode()
-          end
-        when Rubygame::MouseDownEvent
-          @data.collide.check()
-        end
-        @data.mouse.tell(ev)
+      loop do
+        queue_through()
+        @data.mouse.update()
+        @data.display.screen.flip()
       end
-      end
-      @data.mouse.update()
-      @data.display.screen.flip()
     end
     exit
   end
