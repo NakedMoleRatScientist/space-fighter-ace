@@ -49,9 +49,10 @@ class GameSetup
   def start
     hook_quit()
     hook_enter()
-    loop do
-	    @q.each do |ev|
-        case ev
+    catch(:throw) do
+        loop do
+          @q.each do |ev|
+            case ev
         when Rubygame::QuitEvent
           Rubygame.quit()
           exit
@@ -67,6 +68,7 @@ class GameSetup
           @data.collide.check()
         end
         @data.mouse.tell(ev)
+      end
       end
       @data.mouse.update()
       @data.display.screen.flip()
