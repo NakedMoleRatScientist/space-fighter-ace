@@ -22,6 +22,7 @@
 %w{
   rubygems
   rubygame
+  rubygame/ftor
   rbgooey
   yaml
   logger
