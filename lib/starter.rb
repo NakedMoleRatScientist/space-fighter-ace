@@ -17,6 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class Starter
+  include Rubygame::EventHandler::HasEventHandler
   def initialize
     @data = UiData.new("data/setup.yml")
     @clock = Rubygame::Clock.new()
