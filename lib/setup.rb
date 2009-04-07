@@ -71,6 +71,7 @@ class GameSetup
       @data.mouse.update()
       @data.display.screen.flip()
     end
+    exit
   end
   def hook_quit
     quit_hook = {
