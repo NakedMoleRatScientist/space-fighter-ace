@@ -66,7 +66,7 @@ class GameSetup
   end
   def hook_quit
     quit = {
-      :escape => :quit
+      :escape => :quit ,
       :q => :quit
     }
     make_magic_hooks(quit)
