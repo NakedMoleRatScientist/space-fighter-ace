@@ -40,6 +40,9 @@ class GameSetup
       exit
     }
   end
+  def control_execute
+    @control.mode()
+  end
   def start
     loop do
 	    @q.each do |ev|
