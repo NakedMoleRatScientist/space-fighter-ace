@@ -62,4 +62,11 @@ class Starter
       @clock.tick()
     end
   end
+  def hook_quit
+    quit = {
+      :escape => :quit
+      :q => :quit
+    }
+    make_magic_hooks(quit)
+  end
 end
