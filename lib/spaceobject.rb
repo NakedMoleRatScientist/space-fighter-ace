@@ -31,4 +31,7 @@ class SpaceObject < Character
   def act
     @timer.check()
   end
+  def convert_rect_to_vector
+    @location = Ftor.new(@rect.x,@rect.y)
+  end
 end
