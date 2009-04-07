@@ -40,6 +40,10 @@ class GameSetup
       exit
     }
   end
+  def quit
+    Rubygame.quit()
+    exit
+  end
   def control_execute
     @control.mode()
   end
