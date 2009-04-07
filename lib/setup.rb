@@ -36,8 +36,7 @@ class GameSetup
     }
     @data.imageui.add("quit.png",300,330)
     @data.imageui.active() {
-      Rubygame.quit()
-      exit
+      quit()
     }
   end
   def quit
