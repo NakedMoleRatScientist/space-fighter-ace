@@ -17,8 +17,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class SpaceObject < Character
-  attr_accessor :speed , :rotation
-  attr_writer :location
+  attr_accessor :speed , :rotation , :location
   def initialize image, engine
     super(image,engine)
     @location = Rubygame::Ftor.new(@rect.x,@rect.y)
