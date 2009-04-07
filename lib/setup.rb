@@ -20,6 +20,7 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class GameSetup
+  include Rubygame::EventHandler::HasEventHandler
   def initialize
     @data = UiData.new("data/setup.yml")
     @q = Rubygame::EventQueue.new()
@@ -62,5 +63,12 @@ class GameSetup
       @data.mouse.update()
       @data.display.screen.flip()
     end
+  end
+  def hook_quit
+    quit = {
+      :escape => :quit
+      :q => :quit
+    }
+    make_magic_hooks(quit)
   end
 end
