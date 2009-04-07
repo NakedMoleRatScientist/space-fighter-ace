@@ -24,6 +24,7 @@ class GameSetup
   def initialize
     @data = UiData.new("data/setup.yml")
     @q = Rubygame::EventQueue.new()
+    @q.enable_new_style_events()
     @control = Controller.new(@data)
     @background = Rubygame::Surface.load("data/startscreen.jpeg")
     @background.blit(@data.display.screen,[0,0])
