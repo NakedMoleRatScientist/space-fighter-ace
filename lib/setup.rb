@@ -77,4 +77,10 @@ class GameSetup
     }
     make_magic_hooks(quit)
   end
+  def hook_enter
+    enter = {
+      :return => :control_execute
+    }
+    make_magic_hooks(quit)
+  end
 end
