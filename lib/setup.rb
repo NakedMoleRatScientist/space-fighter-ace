@@ -73,16 +73,16 @@ class GameSetup
     end
   end
   def hook_quit
-    quit = {
+    quit_hook = {
       :escape => :quit ,
       :q => :quit
     }
-    make_magic_hooks(quit)
+    make_magic_hooks(quit_hook)
   end
   def hook_enter
-    enter = {
+    enter_hook = {
       :return => :control_execute
     }
-    make_magic_hooks(quit)
+    make_magic_hooks(enter_hook)
   end
 end
