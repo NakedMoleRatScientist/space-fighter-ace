@@ -48,6 +48,7 @@ class GameSetup
   end
   def start
     hook_quit()
+    hook_enter()
     loop do
 	    @q.each do |ev|
         case ev
