@@ -34,4 +34,7 @@ class SpaceObject < Character
   def convert_rect_to_vector
     @location = Ftor.new(@rect.x,@rect.y)
   end
+  def convert_vector_to_rect
+    @rect.topleft = @location.to_ary()
+  end
 end
