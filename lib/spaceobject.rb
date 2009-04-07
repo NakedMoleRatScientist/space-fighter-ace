@@ -20,7 +20,7 @@ class SpaceObject < Character
   attr_accessor :speed , :rotation
   def initialize image, engine
     super(image,engine)
-    @location = Ftor.new(@rect.x,@rect.y)
+    @location = Rubygame::Ftor.new(@rect.x,@rect.y)
     @speed = Speed.new(self)
     @rotation = Rotation.new(image)
     @timer = Timer.new(0.1) {
