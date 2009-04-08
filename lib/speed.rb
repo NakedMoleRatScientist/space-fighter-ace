@@ -11,7 +11,7 @@ class Speed
   def move
     @move += @movement
     if @move > 1
-      @object.location.magnitude += @move.round()
+      @object.location.magnitude +=  @move.round()
       @move = 0
     end
   end
