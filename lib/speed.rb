@@ -9,11 +9,7 @@ class Speed
     @move = 0
   end
   def move
-    @move += @movement
-    if @move > 1
-      @object.location.magnitude +=  @move.round()
-      @move = 0
-    end
+    @object.location = @object.location.magnitude * @speed
   end
   def set_speed n
     @speed = n
