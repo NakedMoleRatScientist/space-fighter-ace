@@ -42,6 +42,7 @@ class Controller
     @hud = Hud.new(@data,@engine)
   end
   def action
+    puts"bling"
     @engine.compute()
     @engine.draw(@data.display.screen)
   end
@@ -57,23 +58,21 @@ class Controller
     make_magic_hooks(quit_hooks)
   end
   def quit
+    puts "Quiting!"
     Rubygame.quit()
-    throw :quit
+    exit
   end
   def mode
     hook_quit()
     @player.hook_move()
     register(@player)
-    catch(:quit) do
-      loop do
-        @engine.prevposition()
-	queue_through()
-        draw()
-        action()
-        @data.display.screen.flip()
-      end
+    loop do
+      @engine.prevposition()
+      queue_through()
+      draw()
+      action()
+      @data.display.screen.flip()
     end
-    exit
   end
   def queue_through
     @q.each do |event|

@@ -28,6 +28,7 @@ class GameSetup
     @control = Controller.new(@data)
     @background = Rubygame::Surface.load("data/startscreen.jpeg")
     @background.blit(@data.display.screen,[0,0])
+    @n = 0
   end
   def ui
     @data.declare(:menu)
@@ -45,7 +46,8 @@ class GameSetup
     exit
   end
   def control_execute
-    puts"You have entered game mode."
+    puts "You have entered game mode. #{@n}"
+    @n += 1
     @control.mode()
   end
   def start
