@@ -38,7 +38,6 @@
  lib/enemy.rb
  lib/movement.rb
  lib/rotation.rb
- lib/hud.rb
  lib/projectile.rb
  lib/controller.rb
 }.each{|lib| require lib}
