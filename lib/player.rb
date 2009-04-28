@@ -30,8 +30,6 @@ class Player < SpaceObject
     @engine.charstrack.set_control_last()
     @engine.charstrack.control.state = false
     @engine.charstrack.control.image_set()
-    @engine.charstrack.control.movement.directionchange(1)
-    @engine.charstrack.control.movement.speed = @movement.speed + 5
   end
   def up
     @rect.y -= 50
@@ -40,10 +38,10 @@ class Player < SpaceObject
     @rect.y += 50
   end
   def right
-    @speed.right()
+    @rect.x += 50
   end
   def left
-    @speed.left()
+    @rect.x -= 50
   end
   def hook_move
     hooks = {

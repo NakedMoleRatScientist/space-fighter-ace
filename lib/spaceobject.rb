@@ -20,21 +20,7 @@ class SpaceObject < Character
   attr_accessor :speed , :rotation , :location
   def initialize image, engine
     super(image,engine)
-    @location = Rubygame::Ftor.new(0,-1)
-    @location.angle = 3 * Math::PI/ 2
-    @location.magnitude = 1
-    @speed = Speed.new(self)
-    @rotation = Rotation.new(image)
-    @timer = Timer.new(0.1) {
-      @speed.move()
-    } 
-    @timer.start()
   end
   def act
-    @timer.check()
-    convert_vector_to_rect()
-  end
-  def convert_vector_to_rect
-    @rect.center = @location.to_ary
   end
 end
