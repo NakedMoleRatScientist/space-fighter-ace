@@ -42,22 +42,20 @@ class GameSetup
   end
   def quit
     Rubygame.quit()
-    throw :quit
+    exit
   end
   def control_execute
+    puts"You have entered game mode."
     @control.mode()
   end
   def start
     hook_quit()
     hook_enter()
-    catch(:throw) do
-      loop do
-        queue_through()
-        @data.mouse.update()
-        @data.display.screen.flip()
-      end
+    loop do
+      queue_through()
+      @data.mouse.update()
+      @data.display.screen.flip()
     end
-    exit
   end
   def hook_quit
     quit_hook = {
