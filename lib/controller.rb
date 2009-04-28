@@ -41,11 +41,7 @@ class Controller
     @active = false
     @hud = Hud.new(@data,@engine)
   end
-  def feedback
-    object = @engine.characters_tracker.lookup("Enemy Fighter A",true)
-  end
   def action
-    feedback()
     @engine.compute()
     @engine.draw(@data.display.screen)
   end
