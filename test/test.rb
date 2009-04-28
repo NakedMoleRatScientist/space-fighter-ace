@@ -24,6 +24,8 @@ require"test/unit"
 include Rubygame
 TTF.setup
 #test code
-require"test/test_setup_game_engine.rb"
-require"test/test_setup_camera.rb"
-require"test/test_camera_move.rb"
+%w{
+  test_setup_game_engine.rb
+  test_setup_camera.rb
+  test_camera_move.rb
+}.each{|test| require "test/" + test}
