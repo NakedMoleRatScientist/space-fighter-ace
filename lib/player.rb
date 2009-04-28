@@ -46,6 +46,8 @@ class Player < SpaceObject
   def hook_move
     hooks = {
       :right => :right ,
+      :left => :left ,
+      :down => :down ,
       :left => :left
     }
     make_magic_hooks(hooks)
