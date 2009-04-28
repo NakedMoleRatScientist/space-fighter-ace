@@ -39,16 +39,13 @@ class Controller
     @q = Rubygame::EventQueue.new()
     @q.enable_new_style_events()
     @active = false
-    @hud = Hud.new(@data,@engine)
   end
   def action
-    puts"bling"
     @engine.compute()
     @engine.draw(@data.display.screen)
   end
   def draw
     @data.display.screen.fill([0,0,0])
-    @hud.text()
   end
   def hook_quit
     quit_hooks = {
