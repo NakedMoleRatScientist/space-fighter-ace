@@ -6,6 +6,7 @@ require"rbgooey"
 require"yaml"
 require"logger"
 require"test/unit"
+require"shoulda"
 
 #Application code
 %w{
