@@ -18,8 +18,8 @@
 
 class SpaceObject < Character
   attr_accessor :speed , :rotation , :location
-  def initialize image, engine
-    super(image,engine)
+  def initialize image
+    super(image)
   end
   def act
   end
