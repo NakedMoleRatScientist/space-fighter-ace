@@ -29,4 +29,5 @@ TTF.setup
   test_setup_game_engine.rb
   test_setup_camera.rb
   test_camera_move.rb
+  test_space_object_movement.rb
 }.each{|test| require "test/" + test}
