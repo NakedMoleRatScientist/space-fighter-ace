@@ -17,9 +17,10 @@
 #You can contact the author at wikipediankiba@gmail.com
 
 class SpaceObject < Character
-  attr_accessor :speed , :rotation , :location
+  attr_accessor :movement
   def initialize image
     super(image)
+    @movement = Array.new()
   end
   def act
   end
