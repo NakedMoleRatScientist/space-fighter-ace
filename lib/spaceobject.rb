@@ -23,4 +23,6 @@ class SpaceObject < Character
   end
   def act
   end
+  def simulate
+  end
 end
