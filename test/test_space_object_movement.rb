@@ -9,7 +9,7 @@ class Test_Space_Object_Movement < Test::Unit::TestCase
       @object.simulate()
     end
     should "should have 10 objects.." do
-      @object.movement.length == 10
+      assert @object.movement.length == 10
     end
   end
 end
