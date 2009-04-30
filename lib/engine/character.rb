@@ -20,14 +20,13 @@
 class Character
   include Rubygame::Sprites::Sprite
   attr_accessor :action , :retainer , :health , :state , :rect , :name , :engine , :image , :death
-  def initialize image , engine
+  def initialize image
     super()
     @image = Rubygame::Surface.load(image)
     @rect = Rubygame::Rect.new(0,0, *@image.size)
     @health = 30
     @death = false
     @name = "unspecified"
-    @engine = engine
   end
   # NOTE: Set the location of the Character on the map.
   def sets x , y
