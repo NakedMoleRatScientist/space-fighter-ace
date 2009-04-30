@@ -19,8 +19,8 @@
 
 class Enemy < SpaceObject
   IMAGE_PATH = "data/game/enemy.png"
-  def initialize engine
-    super(IMAGE_PATH,engine)
+  def initialize
+    super(IMAGE_PATH)
     @image = Rubygame::Surface.load(IMAGE_PATH)
   end
   def act
