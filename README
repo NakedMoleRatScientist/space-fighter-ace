@@ -24,8 +24,8 @@ rubygame http://rubygame.sourceforge.net
   --Required libsdl1.2-all
   --Required libsdl-image1.2-dev
   --Required libsdl-ttf2.0-dev
-
-rbgooey http://kibabase.libregamewiki.org/index.php/RbGooey
+chipmunk http://wiki.slembcke..net/main/published/Chipmunk
+rbgooey http://wiki.kibabase.com/i/RbGooey
 
 ==Documentation==
 Documentation for KRPGE is sparse.
