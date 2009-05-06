@@ -27,7 +27,6 @@
   yaml
   logger
   engine.rb
-  chipmunk
 }.each{|lib| require lib}
 
 %w{
