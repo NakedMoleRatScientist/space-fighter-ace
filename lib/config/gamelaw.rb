@@ -22,7 +22,6 @@ class GameLaw < CharactersLaw
   def initialize engine
     super engine
     @space = Space.new()
-    @space.gravity = vec2(0,0)
   end
   def compute
     super
