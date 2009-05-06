@@ -20,7 +20,7 @@ class SpaceObject < Character
   attr_accessor :movement
   def initialize image
     super(image)
-    @movement = Array.new()
+    @mass = 50
   end
   def act
   end
