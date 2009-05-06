@@ -8,22 +8,23 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
-   id="svg2393"
+   width="100"
+   height="100"
+   id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.46"
+   version="1.0"
    sodipodi:docname="player.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape">
   <defs
-     id="defs2395">
+     id="defs4">
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
        inkscape:vp_x="0 : 526.18109 : 1"
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_z="744.09448 : 526.18109 : 1"
        inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
-       id="perspective2401" />
+       id="perspective10" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -35,18 +36,20 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-116.42857"
-     inkscape:cy="520.53502"
+     inkscape:zoom="5.7498467"
+     inkscape:cx="53.837336"
+     inkscape:cy="61.088658"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1440"
-     inkscape:window-height="840"
-     inkscape:window-x="-5"
-     inkscape:window-y="-3" />
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="654"
+     inkscape:window-height="672"
+     inkscape:window-x="354"
+     inkscape:window-y="60" />
   <metadata
-     id="metadata2398">
+     id="metadata7">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -60,29 +63,42 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       style="opacity:0.8;fill:#0000ff;stroke:#808000"
-       d="M 122.85714,700.93361 C 222.4081,529.04408 305.6284,345.21317 400,169.50504 C 407.93101,155.62577 419.20117,138.8753 428.57143,129.50504 C 542.14212,341.48985 617.92661,517.71099 711.42857,706.6479"
-       id="path2405"
-       sodipodi:nodetypes="cccc" />
+    <g
+       id="g2481"
+       transform="matrix(0.1415187,0,0,0.1610201,16.239097,35.363397)">
+      <g
+         id="g2478">
+        <path
+           style="opacity:0.8;fill:#0000ff;stroke:#808000;stroke-width:1.00896752"
+           d="M -79.99552,371.50555 C 19.867335,197.06588 103.34837,10.507678 198.01564,-167.80725 C 205.9715,-181.89243 217.27696,-198.89141 226.67659,-208.40069 C 333.44821,4.9460133 402.37227,170.75314 517.94989,367.9217"
+           id="path2405"
+           sodipodi:nodetypes="cccc" />
+      </g>
+    </g>
     <rect
-       style="opacity:0.8;fill:#00ffff;stroke:#808000"
+       style="opacity:0.8;fill:#00ffff;stroke:#808000;stroke-width:0.16301551"
        id="rect2413"
-       width="108.57143"
-       height="117.14286"
-       x="254.28572"
-       y="586.64789" />
+       width="11.336675"
+       height="20.944374"
+       x="21.414036"
+       y="72.850685"
+       transform="matrix(0.9995417,3.0271198e-2,3.9254549e-2,0.9992292,0,0)"
+       ry="0" />
     <rect
-       style="opacity:0.8;fill:#00ffff;stroke:#808000"
+       style="opacity:0.8;fill:#00ffff;stroke:#808000;stroke-width:0.15558515"
        id="rect2415"
-       width="91.428574"
-       height="122.85714"
-       x="491.42856"
-       y="583.79077" />
+       width="13.877704"
+       height="19.592999"
+       x="54.64072"
+       y="74.799721" />
     <path
        sodipodi:nodetypes="cccc"
        id="path2417"
-       d="M 328.22819,300.55497 C 359.75602,245.02951 386.11191,187.03787 415.99941,130.43917 C 418.51117,125.95808 422.08044,120.51314 425.048,117.40072 C 461.01587,171.32225 485.01682,238.39488 514.62894,296.1644"
-       style="opacity:1;fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.31356877;stroke-opacity:1" />
+       d="M 33.986402,30.114382 C 38.531879,21.20241 42.331699,11.89461 46.640678,2.8103794 C 47.002805,2.0911544 47.5174,1.2172281 47.945246,0.71767795 C 53.130854,9.3722142 56.591153,20.137536 60.860434,29.409685"
+       style="opacity:1;fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.04769976;stroke-opacity:1" />
   </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="new_stuff" />
 </svg>
