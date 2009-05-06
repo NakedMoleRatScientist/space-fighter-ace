@@ -16,10 +16,13 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+require"chipmunk"
 class GameLaw < CharactersLaw
+  include CP
   def initialize engine
     super engine
+    @space = Space.new()
+    @space.gravity = vec2(0,0)
   end
   def compute
     super
