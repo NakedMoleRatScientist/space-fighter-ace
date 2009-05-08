@@ -50,7 +50,7 @@ class Controller
   def hook_quit
     quit_hooks = {
       :escape => :quit,
-      :q => :quit,
+      Rubygame::Events::QuitRequested => :quit,
     }
     make_magic_hooks(quit_hooks)
   end
