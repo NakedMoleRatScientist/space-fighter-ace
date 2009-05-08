@@ -21,6 +21,7 @@ class SpaceObject < Character
   def initialize image
     super(image)
     @mass = 50
+    @location = vec2(100,100)
   end
   def act
   end
