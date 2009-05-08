@@ -1,8 +1,8 @@
-Kiba Role Playing Game Engine(KRPGE):
+Space Fighter Ace(SFA):
 
-KRPGE is a framework for creating RPG games. This version is 0.0.3.
+Space Fighter Ace is a 2D space combat game with semi-realistic physics. This version is 0.0.3.
 
-The homepage of KRPGE is http://kibabase.libregamewiki.org/index.php/KRPGE
+The homepage of Space Fighter Ace is http://wiki.kibabase.com/SpaceFighterAce
 
 ==INSTALLION(Debian based GNU/Linux Distro)==
 You will need Rubygem to accomplish this task.
@@ -27,41 +27,21 @@ rubygame http://rubygame.sourceforge.net
 chipmunk http://wiki.slembcke..net/main/published/Chipmunk
 rbgooey http://wiki.kibabase.com/i/RbGooey
 
-==Documentation==
-Documentation for KRPGE is sparse.
-
-MapEditor documentation:
-
-ruby mapeditor.rb to run the program.
-
-When the screen opened up, you will see the list of files that you can load. Press J to list additional files.
-Type in a numerical value to load a file corresponding to that value.
-Press TAB for typing and then finishing. You will not be able to do anything else while you're typing.
-
-If successful, it will load the map and enter editing mode.
-Use the arrow key to move the stamp/delete cursor(Indicated by S or D). To change your choice for stamping, press enter.
-Press J to change the edit cursor mode.
-
-To stamp: press spacebar
-
-To save: type save.
-
-Also, you can alway quit the program by the escape key.
 ==License==
-The KRPGE source code is copyright (C) 2008 Han Dao and contributors.
+The Space Fighter Ace source code is copyright (C) 2008-2009 Han Dao and contributors.
 
-KRPGE is free software; you can redistribute it and/or modify it
+Space Fighter Ace is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
-The KRPGE is distributed in the hope that it will be useful, but
+The Space Fighter Ace is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with KRPGE; if not, write to the Free Software Foundation,
+along with Space Fighter Ace; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 Graphics are public domain and yml files are under the public domain.
