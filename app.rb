@@ -30,17 +30,17 @@
 }.each{|lib| require lib}
 
 %w{
- lib/speed.rb
- lib/spaceobject.rb
- lib/setup.rb
- lib/itemexample.rb
- lib/player.rb
- lib/enemy.rb
- lib/movement.rb
- lib/rotation.rb
- lib/projectile.rb
- lib/controller.rb
-}.each{|lib| require lib}
+ speed.rb
+ spaceobject.rb
+ setup.rb
+ itemexample.rb
+ player.rb
+ enemy.rb
+ movement.rb
+ rotation.rb
+ projectile.rb
+ controller.rb
+}.each{|lib| require "lib/" + lib}
 include Rubygame
 TTF.setup
 
