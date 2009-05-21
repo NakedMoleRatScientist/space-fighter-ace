@@ -46,7 +46,6 @@ class GameSetup
   end
   def control_execute
     puts "You have entered game mode."
-    @n += 1
     @control.mode()
   end
   def start
