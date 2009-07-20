@@ -1,0 +1,15 @@
+---
+version: 'space-fighter-ace-0.0.3'
+files:
+- 'AUTHORS'
+- 'ARTS'
+- 'CHANGES'
+- 'README'
+- 'Rakefile'
+- 'app.rb'
+- 'engine.rb'
+dir:
+- 'data'
+- 'lib'
+- 'log'
+- 'test'
